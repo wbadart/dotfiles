@@ -47,21 +47,14 @@ linkrcs(){
     ln -s $PWD/.vimrc     $HOME/.vimrc
     ln -s $PWD/.zshrc     $HOME/.zshrc
     ln -s $PWD/.tmux.conf $HOME/.tmux.conf
-    source $HOME/.zshrc
-    echo "Done."
-}
+    ln -s $PWD/.gitconfig $HOME/.gitconfig
 
-#============
-# Git config
-#============
+    testormake $HOME/.config/i3
+    ln -s $PWD/config_i3_config $HOME/.config/i3/config
+    ln -s $PWD/etc_i3status.conf /etc/i3status.conf
 
-gitconfig(){
-    echo "Configuring git..."
-    git config --global user.name    "$NAME"
-    git config --global user.email   "$EMAIL"
-    git config --global core.editor  "$EDITOR"
-    git config --global push.default "simple"
     echo "Done."
+    echo "Please source $HOME/.zshrc"
 }
 
 
@@ -129,13 +122,11 @@ done
 
 case $1 in
     link)      linkrcs ;;
-    git)       gitconfig ;;
     ssh)       sshconfig ;;
     powerline) powerlineconfig ;;
     all)
         echo "Executing all configuration..."
         linkrcs
-        gitconfig
         sshconfig
         powerlineconfig
         ;;

@@ -1,0 +1,7 @@
+[user]
+	name = Will Badart
+	email = wbadart@nd.edu
+[core]
+	editor = vim
+[push]
+	default = simple
