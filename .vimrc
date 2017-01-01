@@ -89,7 +89,7 @@ autocmd BufWritePost * StripTailingWhitespace
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 autocmd BufNewFile,BufReadPost *.{rb,elm} set sw=2 sts=2 et
 autocmd BufNewFile,BufReadPost *.{md,html} set spell
-autocmd BufNewFile,BufReadPost *.go command! make !go run expand('%')
+autocmd BufNewFile,BufReadPost *.go set makeprg=go\ run\ %
 
 nmap <leader>gd :Gdiff<cr>
 nmap <leader>gs :Gstatus<cr>
