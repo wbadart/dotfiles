@@ -18,6 +18,7 @@ endif
 
 call plug#begin("~/.vim/bundle")
 
+Plug 'kien/ctrlp.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'jistr/vim-nerdtree-tabs'
 Plug 'Xuyuanp/nerdtree-git-plugin'
@@ -27,18 +28,26 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 
-Plug 'bling/vim-airline'
+
 Plug 'pangloss/vim-javascript'
-Plug 'tomasr/molokai'
+Plug 'fatih/vim-go'
+Plug 'lambdatoast/elm.vim'
 Plug 'othree/html5.vim'
+
+Plug 'scrooloose/syntastic'
+Plug 'bling/vim-airline'
+Plug 'tomasr/molokai'
 Plug 'shougo/vimproc.vim', {'do': 'make'} | Plug 'shougo/vimshell.vim'
 Plug 'kana/vim-textobj-user' | Plug 'kana/vim-textobj-indent'
 
 call plug#end()
 
+let mapleader=","
+
 set nocompatible
 set wildmenu
 set showcmd
+set noswapfile
 set incsearch
 set hlsearch
 set complete+=kspell
@@ -63,7 +72,7 @@ nmap J 5j
 nmap K 5k
 nmap L <End>
 
-nmap <leader>rl :source %<cr>:noh<cr>
+nmap <leader>rl :source %<cr>:noh<cr>:echo "reloaded"<cr>
 nmap ,html :-1read $HOME/.vim/snippets/html5.html<cr>3jwf>a
 command! MakeTags !ctags -f ".tags" -R .
 
@@ -78,8 +87,9 @@ command! StripTailingWhitespace call StripTailingWhitespace()
 autocmd BufWritePost * StripTailingWhitespace
 
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown
-autocmd BufNewFile,BufReadPost *.rb set sw=2 sts=2 et
+autocmd BufNewFile,BufReadPost *.{rb,elm} set sw=2 sts=2 et
 autocmd BufNewFile,BufReadPost *.{md,html} set spell
+autocmd BufNewFile,BufReadPost *.go command! make !go run expand('%')
 
 nmap <leader>gd :Gdiff<cr>
 nmap <leader>gs :Gstatus<cr>
