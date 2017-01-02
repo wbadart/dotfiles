@@ -35,6 +35,7 @@ Plug 'lambdatoast/elm.vim'
 Plug 'othree/html5.vim'
 
 Plug 'scrooloose/syntastic'
+Plug 'mattn/emmet-vim'
 Plug 'bling/vim-airline'
 Plug 'tomasr/molokai'
 Plug 'shougo/vimproc.vim', {'do': 'make'} | Plug 'shougo/vimshell.vim'
@@ -87,8 +88,8 @@ command! StripTailingWhitespace call StripTailingWhitespace()
 autocmd BufWritePost * StripTailingWhitespace
 
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown
+autocmd BufNewFile,BufReadPost *.{md} set spell
 autocmd BufNewFile,BufReadPost *.{rb,elm} set sw=2 sts=2 et
-autocmd BufNewFile,BufReadPost *.{md,html} set spell
 autocmd BufNewFile,BufReadPost *.go set makeprg=go\ run\ %
 
 nmap <leader>gd :Gdiff<cr>
