@@ -8,6 +8,9 @@
 #
 # Will Badart
 # created: FEB 2017
+#
+# Check out these links for more:
+# - https://github.com/pricco/gnome-terminal-colors-monokai.git
 ##
 
 #=========
