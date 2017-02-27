@@ -35,11 +35,13 @@ testormake(){
 #===================
 
 linkrcs(){
+    echo "Linking rc files...";
     ln -s $PWD/.vim       $HOME/.vim
     ln -s $PWD/.vimrc     $HOME/.vimrc
     ln -s $PWD/.zshrc     $HOME/.zshrc
     ln -s $PWD/.tmux.conf $HOME/.tmux.conf
     source $HOME/.zshrc
+    echo "Done."
 }
 
 #============
@@ -47,10 +49,12 @@ linkrcs(){
 #============
 
 gitconfig(){
+    echo "Configuring git..."
     git config --global user.name    "$NAME"
     git config --global user.email   "$EMAIL"
     git config --global core.editor  "$EDITOR"
     git config --global push.default "simple"
+    echo "Done."
 }
 
 
@@ -59,6 +63,7 @@ gitconfig(){
 #============
 
 sshconfig(){
+    echo "Creating ssh identity..."
     testormake $HOME/.ssh
     ln -s $PWD/ssh.conf $HOME/.ssh/config
 
@@ -69,6 +74,7 @@ sshconfig(){
         eval "$(ssh-agent -s)"
         ssh-add $HOME/.ssh/id_rsa
     fi
+    echo "Done."
 }
 
 
@@ -77,6 +83,7 @@ sshconfig(){
 #========================
 
 powerlineconfig(){
+    echo "Installing powerline..."
     which pip || curl https://bootstrap.pypa.io/get-pip.py | python -
     pip install --user powerline-status
 
@@ -95,6 +102,7 @@ powerlineconfig(){
     cp 10-powerline-symbols.conf $HOME/.config/fontconfig/conf.d
 
     cd .. && rm -rf wd
+    echo "Done."
 }
 
 
@@ -118,6 +126,7 @@ case $1 in
     ssh)       sshconfig ;;
     powerline) powerlineconfig ;;
     all)
+        echo "Executing all configuration..."
         linkrcs
         gitconfig
         sshconfig
