@@ -12,10 +12,7 @@
 # Check out these links for more:
 # - https://github.com/pricco/gnome-terminal-colors-monokai.git
 #
-# Don't forget to install:
-# - git
-# - python
-# - vim
+# Don't forget to install: git, python, vim, zsh
 ##
 
 #=========
@@ -44,6 +41,7 @@ testormake(){
 
 linkrcs(){
     echo "Linking rc files...";
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
     ln -s $PWD/.vim       $HOME/.vim
     ln -s $PWD/.vimrc     $HOME/.vimrc
     ln -s $PWD/.zshrc     $HOME/.zshrc
