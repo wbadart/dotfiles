@@ -11,6 +11,7 @@
 #
 # Check out these links for more:
 # - https://github.com/pricco/gnome-terminal-colors-monokai.git
+# - https://raw.githubusercontent.com/KittyKatt/screenFetch/master/screenfetch-dev
 #
 # Don't forget to install: git, python, vim, zsh
 ##
