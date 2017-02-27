@@ -11,6 +11,11 @@
 #
 # Check out these links for more:
 # - https://github.com/pricco/gnome-terminal-colors-monokai.git
+#
+# Don't forget to install:
+# - git
+# - python
+# - vim
 ##
 
 #=========
