@@ -141,6 +141,6 @@ case $1 in
         powerlineconfig
         ;;
     *) echo "Invalid command: $1" >&2
-        usage 1
+        usage 1 ;;
 esac
 
