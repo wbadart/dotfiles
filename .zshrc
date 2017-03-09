@@ -19,4 +19,5 @@ alias vconf="$EDITOR ~/.vimrc"
 alias x="exit"
 alias cls="clear"
 alias pacaur='yaourt'
+alias xclip='xclip -selection clipboard'
 
