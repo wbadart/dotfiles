@@ -74,7 +74,7 @@ nmap K 5k
 nmap L <End>
 
 nmap <leader>rl :source %<cr>:noh<cr>:echo "reloaded"<cr>
-nmap ,html :-1read $HOME/.vim/snippets/html5.html<cr>3jwf>a
+nmap ,html :-1read $HOME/.vim/snippets/html5.html<cr>5jwf>a
 command! MakeTags !ctags -f ".tags" -R .
 
 highlight ExtraWhitespace ctermbg=red

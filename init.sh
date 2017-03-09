@@ -50,8 +50,8 @@ linkrcs(){
     ln -s $PWD/.gitconfig $HOME/.gitconfig
 
     testormake $HOME/.config/i3
-    ln -s $PWD/config_i3_config $HOME/.config/i3/config
-    ln -s $PWD/etc_i3status.conf /etc/i3status.conf
+    # ln -s $PWD/config_i3_config $HOME/.config/i3/config
+    # ln -s $PWD/etc_i3status.conf /etc/i3status.conf
 
     echo "Done."
     echo "Please source $HOME/.zshrc"

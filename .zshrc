@@ -2,14 +2,15 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH=/home/ubuntu/.oh-my-zsh
+export PATH="$HOME/.bin:$PATH"
+export ZSH=/home/user/.oh-my-zsh
 export EDITOR="vim"
 export TERM="xterm-256color"
 export NAME="Will Badart"
 export EMAIL="wbadart@nd.edu"
 
 plugins=(git tmux)
-ZSH_THEME="avit"
+ZSH_THEME="clean"
 
 source $ZSH/oh-my-zsh.sh
 
@@ -17,4 +18,5 @@ alias zconf="$EDITOR ~/.zshrc; source ~/.zshrc"
 alias vconf="$EDITOR ~/.vimrc"
 alias x="exit"
 alias cls="clear"
+alias pacaur='yaourt'
 
