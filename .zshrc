@@ -20,4 +20,4 @@ alias x="exit"
 alias cls="clear"
 alias pacaur='yaourt'
 alias xclip='xclip -selection clipboard'
-
+alias smb="test -d /mnt/smb || sudo mkdir -p /mnt/smb; sudo mount -t cifs //fs.nd.edu/~wbadart -o uid=1000,domain=adnd,username=wbadart /mnt/smb"
