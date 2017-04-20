@@ -33,6 +33,7 @@ Plug 'pangloss/vim-javascript'
 Plug 'fatih/vim-go'
 Plug 'lambdatoast/elm.vim'
 Plug 'othree/html5.vim'
+Plug 'stanangeloff/php.vim'
 
 Plug 'scrooloose/syntastic'
 Plug 'mattn/emmet-vim'
@@ -66,6 +67,7 @@ set expandtab
 set smarttab
 set laststatus=2
 set scrolloff=5
+set colorcolumn=67
 
 imap jk <Esc>
 nmap H <Home>
@@ -85,10 +87,10 @@ function! StripTailingWhitespace()
     normal! `m
 endfunction
 command! StripTailingWhitespace call StripTailingWhitespace()
-autocmd BufWritePost * StripTailingWhitespace
+autocmd BufWritePre * StripTailingWhitespace
 
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown
-autocmd BufNewFile,BufReadPost *.{md} set spell
+autocmd BufNewFile,BufReadPost *.md set spell
 autocmd BufNewFile,BufReadPost *.{rb,elm} set sw=2 sts=2 et
 autocmd BufNewFile,BufReadPost *.go set makeprg=go\ run\ %
 

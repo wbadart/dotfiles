@@ -22,7 +22,7 @@
 
 usage(){
     echo "usage: $0 CMD [ -h ]" >&2
-    echo "    CMD    (link|git|ssh|powerline|all) Run the specified configuration commands" >&2
+    echo "    CMD    (link|git|ssh|nvm|powerline|all) Run the specified configuration commands" >&2
     echo "   -h      Display this help message" >&2
     if [ -z "$1" ]; then
         exit 0;
@@ -77,6 +77,17 @@ sshconfig(){
     echo "Done."
 }
 
+#=============
+# Install NVM
+#=============
+
+nvm(){
+    echo "Installing Node Version manager..."
+    curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.1/install.sh | zsh
+    source $HOME/.zshrc
+    nvm install node
+    npm i -g yarn pm2
+}
 
 #========================
 # Powerline installation
@@ -123,6 +134,7 @@ done
 case $1 in
     link)      linkrcs ;;
     ssh)       sshconfig ;;
+    nvm)       nvm;;
     powerline) powerlineconfig ;;
     all)
         echo "Executing all configuration..."
