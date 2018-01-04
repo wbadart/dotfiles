@@ -13,8 +13,11 @@ for f in `ls $ZSH_DIR`; do
     source "$ZSH_DIR/$f"
 done
 
+autoload -U colors && colors
+
 export PS1="
-%n@%m[%~]
-%(?..[%?] )%# "
-export RPROMPT="%T"
+%{$fg[red]%}%n%{$reset_color%}@%m[%{$fg[green]%}%~%{$reset_color%}]
+%(?..[%?] )%# %{$fg[white]%}"
+preexec () { echo -ne "\e[0m" }
+postexec () { echo -ne "\e[0m" }
 export EMAIL="wbadart@live.com"
