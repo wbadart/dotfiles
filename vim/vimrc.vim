@@ -15,16 +15,17 @@ call plug#end()
 
 colorscheme molokai
 
+set hlsearch
 set nocompatible
+set noswapfile
 set number
 set relativenumber
 set wildmenu
-set hlsearch
 
-set tabstop=4
-set shiftwidth=4
 set expandtab
+set shiftwidth=4
 set smarttab
+set tabstop=4
 
 inoremap jk <esc>
 nnoremap J 5j
