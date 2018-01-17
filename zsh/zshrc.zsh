@@ -20,4 +20,11 @@ export PS1="
 %(?..[%?] )%# %{$fg[white]%}"
 preexec () { echo -ne "\e[0m" }
 postexec () { echo -ne "\e[0m" }
+
 export EMAIL="wbadart@live.com"
+export PATH="$PATH:/home/user/.gem/ruby/2.5.0/bin"
+
+# Import colorscheme from 'wal' asynchronously
+# &   # Run the process in the background.
+# ( ) # Hide shell job control messages.
+(cat ~/.cache/wal/sequences &)
