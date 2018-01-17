@@ -19,5 +19,6 @@ alias gr='git remote'
 alias grv='git remote -v'
 alias gl='git pull'
 alias gp='git push'
+alias gd='git diff -v'
 
 alias ya='yaourt'
