@@ -7,6 +7,7 @@
 # created: JAN 2018
 ##
 
+setopt PROMPT_SUBST
 ZSH_DIR="$HOME/.zsh"
 
 for f in `ls $ZSH_DIR`; do
@@ -15,9 +16,9 @@ done
 
 autoload -U colors && colors
 
-export PS1="
-%{$fg[red]%}%n%{$reset_color%}@%m[%{$fg[green]%}%~%{$reset_color%}]
-%(?..[%?] )%# %{$fg[white]%}"
+export PROMPT='
+%{$fg[red]%}%n%{$reset_color%}$(_git_color @)%m[%{$fg[green]%}%~%{$reset_color%}]
+%(?..[%?] )%# %{$fg[white]%}'
 preexec () { echo -ne "\e[0m" }
 postexec () { echo -ne "\e[0m" }
 
