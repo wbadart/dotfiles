@@ -1,4 +1,4 @@
 #!/bin/sh
 
-ln -sf $PWD/zshrc.zsh $HOME/.zshrc
-ln -sf $PWD/zshresources $HOME/.zsh
+ln -sf $PWD/zshrc.zsh $HOME/.zshrc || exit 1
+ln -sf $PWD/zshresources $HOME/.zsh || exit 1
