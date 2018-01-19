@@ -36,8 +36,6 @@ autoload -U colors && colors
 export PROMPT='
 %{$fg[red]%}%n%{$reset_color%}$(_git_color @)%m[%{$fg[green]%}%~%{$reset_color%}]
 %(?..[%?] )%# %{$fg[white]%}'
-preexec () { echo -ne "\e[0m" }
-postexec () { echo -ne "\e[0m" }
 
 export EMAIL="wbadart@live.com"
 export PATH="$PATH:/home/user/.gem/ruby/2.5.0/bin"
