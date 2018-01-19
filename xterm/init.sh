@@ -1,3 +1,3 @@
 #!/bin/sh
 
-ln -sf $PWD/xresources $HOME/.Xresources
+ln -sf $PWD/Xresources $HOME/.Xresources
