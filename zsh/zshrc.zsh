@@ -29,6 +29,7 @@ zstyle ':completion:*' group-name ''
 for f in `ls $ZSH_DIR`; do
     source "$ZSH_DIR/$f"
 done
+source "$ZSH_DIR/completion.zsh"
 
 autoload -U colors && colors
 
