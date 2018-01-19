@@ -45,3 +45,5 @@ export PATH="$PATH:/home/user/.gem/ruby/2.5.0/bin"
 # &   # Run the process in the background.
 # ( ) # Hide shell job control messages.
 (cat ~/.cache/wal/sequences &)
+
+bindkey ' ' magic-space
