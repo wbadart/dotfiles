@@ -12,4 +12,5 @@
 for dir in `ls`; do
     cd $dir
     ./init.sh || echo "Couldn't initialize $dir"
+    cd ..
 done
