@@ -9,23 +9,25 @@
 
 ZSH_DIR="$HOME/.zsh"
 
-for f in `ls $ZSH_DIR`; do
-    source "$ZSH_DIR/$f"
+for f in `ls $ZSH_DIR/*.zsh`; do
+    source "$f"
 done
-source "$ZSH_DIR/completion.zsh"
+for f in `ls $ZSH_DIR/hosts/*.zsh`; do
+    f=`basename "$f" .zsh`
+    if [ "$f" = "`hostname`" -o "$f" = "`uname`" ]; then
+        source "$ZSH_DIR/hosts/$f.zsh"
+    fi
+done
 
+source "$ZSH_DIR/completion.zsh"
 autoload -U colors && colors
 setopt PROMPT_SUBST
 export PROMPT='
 %{$fg[red]%}%n%{$reset_color%}$(_git_color @)%m[%{$fg[green]%}%~%{$reset_color%}]
 %(?..[%?] )%# %{$fg[white]%}'
 
-export EMAIL="wbadart@live.com"
+export EMAIL='wbadart@live.com'
 export PATH="$PATH:/home/user/.gem/ruby/2.5.0/bin"
-
-# Import colorscheme from 'wal' asynchronously
-# &   # Run the process in the background.
-# ( ) # Hide shell job control messages.
-(cat ~/.cache/wal/sequences &)
+export TERM='xterm-256color'
 
 bindkey ' ' magic-space
