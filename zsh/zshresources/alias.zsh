@@ -22,3 +22,5 @@ alias gp='git push'
 alias gd='git diff -v'
 
 alias ya='yaourt'
+alias sprunge='curl -F "sprunge=<-" http://spunge.us'
+alias yld='curl --data-binary @- https://yld.me/paste <'
