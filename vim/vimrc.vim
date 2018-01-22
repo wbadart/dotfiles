@@ -51,3 +51,4 @@ autocmd BufWritePre * StripTailingWhitespace
 autocmd BufNewFile,BufReadPost *.py set colorcolumn=79
 
 command WW w !sudo tee %
+abbreviate pydebug from pudb import set_trace<cr>set_trace()
