@@ -23,7 +23,7 @@ source "$ZSH_DIR/completion.zsh"
 autoload -U colors && colors
 setopt PROMPT_SUBST
 export PROMPT='
-%{$fg[red]%}%n%{$reset_color%}$(_git_color @)%m[%{$fg[green]%}%~%{$reset_color%}]
+%{$fg[red]%}%n%{$reset_color%}@%m[$(_git_prompt)%{$fg[green]%}%~%{$reset_color%}]
 %(?..[%?] )%# %{$fg[white]%}'
 
 export EMAIL='wbadart@live.com'
