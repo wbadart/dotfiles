@@ -29,5 +29,7 @@ export PROMPT='
 export EMAIL='wbadart@live.com'
 export PATH="$PATH:/home/user/.gem/ruby/2.5.0/bin"
 export TERM='xterm-256color'
+export EDITOR='vim'
+export VISUAL="$EDITOR"
 
 bindkey ' ' magic-space
