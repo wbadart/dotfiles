@@ -8,6 +8,7 @@
 """
 
 call plug#begin()
+Plug 'kien/ctrlp.vim'
 Plug 'mattn/emmet-vim'
 Plug 'tomasr/molokai'
 Plug 'tpope/vim-commentary'
