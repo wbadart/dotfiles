@@ -9,7 +9,9 @@
 # created: JAN 2018
 ##
 
-for dir in `ls`; do
+
+for dir in "$@"; do
+    test -d $dir || continue
     cd $dir
     ./init.sh || echo "Couldn't initialize $dir"
     cd ..
