@@ -8,6 +8,7 @@
 """
 
 call plug#begin()
+Plug 'kien/ctrlp.vim'
 Plug 'mattn/emmet-vim'
 Plug 'tomasr/molokai'
 Plug 'tpope/vim-commentary'
@@ -19,6 +20,7 @@ call plug#end()
 
 colorscheme molokai
 let mapleader = ','
+let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
 
 set hlsearch
 set nocompatible
@@ -45,10 +47,10 @@ function! StripTailingWhitespace()
     %s/\s\+$//e
     normal! `m
 endfunction
-command StripTailingWhitespace call StripTailingWhitespace()
+command! StripTailingWhitespace call StripTailingWhitespace()
 
 autocmd BufWritePre * StripTailingWhitespace
 autocmd BufNewFile,BufReadPost *.py set colorcolumn=79
 
-command WW w !sudo tee %
+command! WW w !sudo tee %
 abbreviate pydebug from pudb import set_trace<cr>set_trace()
