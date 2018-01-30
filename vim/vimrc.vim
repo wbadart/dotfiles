@@ -22,6 +22,10 @@ colorscheme molokai
 let mapleader = ','
 let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
 
+set rtp+=/usr/lib/python3.6/site-packages/powerline/bindings/vim/
+set laststatus=2
+set t_Co=256
+
 set hlsearch
 set nocompatible
 set noswapfile
