@@ -24,7 +24,7 @@ autoload -U colors && colors
 setopt PROMPT_SUBST
 export PROMPT='
 %{$fg[red]%}%n%{$reset_color%}@%m[$(_git_prompt)%{$fg[green]%}%~%{$reset_color%}]
-%(?..[%?] )%# %{$fg[white]%}'
+%(?..[%?] )%# '
 
 export EMAIL='wbadart@live.com'
 export PATH="$PATH:$HOME/.gem/ruby/2.5.0/bin"
