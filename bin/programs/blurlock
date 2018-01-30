@@ -5,6 +5,7 @@ BLURRED_PATH=/tmp/blur.png
 
 scrot $SCREENSHOT_PATH
 convert $SCREENSHOT_PATH -brightness-contrast -5 -monochrome -blur 0x9 $BLURRED_PATH
+composite -gravity center ~/pic/lock_small.png $BLURRED_PATH $BLURRED_PATH
 rm $SCREENSHOT_PATH
 i3lock -i $BLURRED_PATH
 rm $BLURRED_PATH
