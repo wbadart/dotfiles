@@ -23,7 +23,8 @@ if [ ! -f "$SSH_CONFDIR/id_rsa" ]; then
         printf 'email: '
         read email
     fi
-    ssh-keygen -t rsa -b 4096 -C "$email"
-    eval "$(ssh-agent -s)"
-    ssh-add "$SSH_CONFDIR/id_rsa"
+    fname="$SSH_CONFDIR/id_rsa"
+    ssh-keygen -t rsa -b 4096 -C "$email" -f "$fname"
+    eval "`ssh-agent -s`"
+    ssh-add "$fname"
 fi
