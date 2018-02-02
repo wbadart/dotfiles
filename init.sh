@@ -3,7 +3,7 @@
 ##
 # init.sh
 #
-# Initialize specified subsystems.
+# Initialize subsystems specified by command line args.
 #
 # Will Badart <wbadart@live.com>
 # created: JAN 2018
