@@ -1,6 +1,6 @@
 # dotfiles
 
-The dotfiles of [Will Badart](wbadart.info).
+The dotfiles of [Will Badart][wbadart.info].
 
 
 ## Installation
