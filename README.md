@@ -30,7 +30,7 @@ to their expected locations in the filesystem.
 
 I'm always open to new ideas, so if there's a cool vim hack or i3
 trick you think would work well in this ecosystem, please submit a
-[pull request](issues)! I'm always open to new ideas.
+[pull request][issues]! I'm always open to new ideas.
 
 
 ## License
