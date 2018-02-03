@@ -3,11 +3,28 @@
 ##
 # zsh/zshresources/git.zsh
 #
-# Git-related helper functions for zsh.
+# Git-related helper functions and aliases for zsh.
 #
 # Will Badart <wbadart@live.com>
 # created: JAN 2018
 ##
+
+
+alias g='git'
+alias gst='git status'
+alias gcl='git clone --recursive'
+alias gc='git commit -v'
+alias gca='git commit -av'
+alias ga='git add'
+alias gaa='git add -A'
+alias gco='git checkout'
+alias gcb='git checkout -b'
+alias gb='git branch'
+alias gr='git remote'
+alias grv='git remote -v'
+alias gl='git pull'
+alias gp='git push'
+alias gd='git diff -v'
 
 
 _git_prompt() {
