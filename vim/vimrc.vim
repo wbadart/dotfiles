@@ -14,17 +14,14 @@ Plug 'tomasr/molokai'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
-Plug 'vim-airline/vim-airline'
 Plug 'w0rp/ale'
 call plug#end()
 
+source $HOME/.vim/resources/plugin.conf.vim
+
+
 colorscheme molokai
 let mapleader = ','
-let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
-
-set rtp+=/usr/lib/python3.6/site-packages/powerline/bindings/vim/
-set laststatus=2
-set t_Co=256
 
 set hlsearch
 set nocompatible
@@ -41,6 +38,7 @@ set tabstop=4
 inoremap jk <esc>
 nnoremap J 5j
 nnoremap K 5k
+nnoremap s :set spell!<cr>
 
 nnoremap <leader>html :read $HOME/.vim/snippets/html5.html<cr>ggdd5jwcit
 
