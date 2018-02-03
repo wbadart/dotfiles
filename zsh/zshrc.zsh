@@ -28,8 +28,6 @@ export PROMPT='
 
 export EMAIL='wbadart@live.com'
 export PATH="$PATH:$HOME/.gem/ruby/2.5.0/bin"
-# export TERM='xterm-256color'
-export TERM='rxvt-unicode-256color'
 export EDITOR='vim'
 export VISUAL="$EDITOR"
 

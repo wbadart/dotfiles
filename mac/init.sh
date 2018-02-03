@@ -25,13 +25,11 @@ defaults write com.apple.Terminal "Startup Window Settings" 'Molokai'
 defaults write ~/Library/Preferences/.GlobalPreferences AppleInterfaceStyle Dark
 
 
-exit 0
-
 # Set system preferences
-cd defaults
-for plist in `ls`; do
-    arg=\'`cat $plist`\'
-    echo $arg
-    defaults write $plist $arg
-done
-cd ..
+# cd defaults
+# for plist in `ls`; do
+#     arg=\'`cat $plist`\'
+#     echo $arg
+#     defaults write $plist $arg
+# done
+# cd ..
