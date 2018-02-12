@@ -9,7 +9,22 @@
 # created: FEB 2018
 ##
 
-which pip > /dev/null || echo 'Requires pip' && exit 1
+if ! which pip > /dev/null; then
+    echo 'Requires pip'
+    exit 1
+fi
 pip install --user powerline-status > /dev/null
-echo 'Powerline installed to:' >&2
-pip show powerline-status | awk '/Location/{ print $2 }'
+installdir=`pip show powerline-status | awk '/Location/{ print $2 }'`
+
+if [ -z "$POWERLINE_RTP" ]; then
+    echo "export POWERLINE_RTP='$installdir'" >> "$ZSH_DIR/env.zsh"
+    echo "Please source $ZSH_DIR/env.zsh to use \$POWERLINE_RTP"
+fi
+
+
+# Get the powerline fonts
+git clone https://github.com/powerline/fonts.git --depth=1
+cd fonts
+./install.sh
+cd ..
+rm -rf fonts
