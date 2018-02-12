@@ -9,6 +9,12 @@
 # created: JAN 2018
 ##
 
+dir=`dirname $0`
+pushd "$dir" > /dev/null
+
+if [ -z "$DOTFILE_DIR" -a ! -z "$ZSH_DIR" ]; then
+    echo "export DOTFILE_DIR='`pwd`'" >> "$ZSH_DIR/env.zsh"
+fi
 
 for dir in "$@"; do
     test -d $dir || continue
@@ -17,3 +23,5 @@ for dir in "$@"; do
     ./init.sh || echo "Couldn't initialize $dir"
     cd ..
 done
+
+popd > /dev/null
