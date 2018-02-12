@@ -1,5 +1,5 @@
 ##
-# .zshrc
+# dotfiles/zsh/zshrc.zsh
 #
 # Main zsh configuration.
 #
@@ -7,7 +7,10 @@
 # created: JAN 2018
 ##
 
-ZSH_DIR="$HOME/.zsh"
+export ZSH_DIR="$HOME/.zsh"
+
+
+# Source the submodules
 
 for f in `\ls $ZSH_DIR/*.zsh`; do
     source "$f"
@@ -19,16 +22,12 @@ for f in `\ls $ZSH_DIR/hosts/*.zsh`; do
     fi
 done
 
+
+# Prompt config
+
 source "$ZSH_DIR/completion.zsh"
 autoload -U colors && colors
 setopt PROMPT_SUBST
 export PROMPT='
 %{$fg[red]%}%n%{$reset_color%}@%m[$(_git_prompt)%{$fg[green]%}%~%{$reset_color%}]
 %(?..[%?] )%# '
-
-export EMAIL='wbadart@live.com'
-export PATH="$PATH:$HOME/.gem/ruby/2.5.0/bin"
-export EDITOR='vim'
-export VISUAL="$EDITOR"
-
-bindkey ' ' magic-space
