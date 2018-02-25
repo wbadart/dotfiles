@@ -17,8 +17,8 @@ pip install --user powerline-status > /dev/null
 installdir=`pip show powerline-status | awk '/Location/{ print $2 }'`
 
 if [ -z "$POWERLINE_RTP" ]; then
-    echo "export POWERLINE_RTP='$installdir'" >> "$ZSH_DIR/env.zsh"
-    echo "Please source $ZSH_DIR/env.zsh to use \$POWERLINE_RTP"
+    echo "export POWERLINE_RTP='$installdir'" >> "$ZSH_DIR/env.local.zsh"
+    echo "Please source $ZSH_DIR/env.local.zsh to use \$POWERLINE_RTP"
 fi
 
 
