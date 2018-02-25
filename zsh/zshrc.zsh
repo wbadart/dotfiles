@@ -27,8 +27,9 @@ export PROMPT='
 %(?..[%?] )%# '
 
 export EMAIL='wbadart@live.com'
-export PATH="$PATH:$HOME/.gem/ruby/2.5.0/bin"
+export PATH="$PATH:$HOME/.gem/ruby/2.5.0/bin:/home/user/.nvm/versions/node/v9.5.0/bin:/home/user/.config/yarn/global/node_modules/.bin"
 export EDITOR='vim'
 export VISUAL="$EDITOR"
 
 bindkey ' ' magic-space
+# source /usr/share/nvm/init-nvm.sh
