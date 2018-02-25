@@ -28,3 +28,5 @@ URxvt*internalBorder: 20
 ! Disable scrollback for pagers
 URxvt*secondaryScreen: 1
 URxvt*secondaryScroll: 0
+
+URxvt.perl-ext-common: selection-to-clipboard
