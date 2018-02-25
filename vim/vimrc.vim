@@ -35,6 +35,8 @@ set shiftwidth=4
 set smarttab
 set tabstop=4
 
+set scrolloff=5
+
 inoremap jk <esc>
 nnoremap J 5j
 nnoremap K 5k
