@@ -1,5 +1,5 @@
 ##
-# .zshrc
+# dotfiles/zsh/zshrc.zsh
 #
 # Main zsh configuration.
 #
@@ -7,7 +7,10 @@
 # created: JAN 2018
 ##
 
-ZSH_DIR="$HOME/.zsh"
+export ZSH_DIR="$HOME/.zsh"
+
+
+# Source the submodules
 
 for f in `\ls $ZSH_DIR/*.zsh`; do
     source "$f"
@@ -18,6 +21,9 @@ for f in `\ls $ZSH_DIR/hosts/*.zsh`; do
         source "$ZSH_DIR/hosts/$f.zsh"
     fi
 done
+
+
+# Prompt config
 
 source "$ZSH_DIR/completion.zsh"
 autoload -U colors && colors
