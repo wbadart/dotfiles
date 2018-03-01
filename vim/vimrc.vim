@@ -54,7 +54,15 @@ endfunction
 command! StripTailingWhitespace call StripTailingWhitespace()
 
 autocmd BufWritePre * StripTailingWhitespace
-autocmd BufNewFile,BufReadPost *.py set colorcolumn=79
+autocmd BufNewFile,BufReadPost *.{py,hs} set colorcolumn=79
 
 command! WW w !sudo tee %
 abbreviate pydebug from pudb import set_trace<cr>set_trace()
+
+
+" ========
+" w0rp/ale
+" ========
+
+nnoremap <leader>n :ALENextWrap<cr>
+nnoremap <leader>p :ALEPreviousWrap<cr>
