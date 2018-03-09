@@ -35,3 +35,4 @@ export PROMPT='
 
 bindkey ' ' magic-space
 # source /usr/share/nvm/init-nvm.sh
+# . $POWERLINE_RTP/bindings/zsh/powerline.zsh
