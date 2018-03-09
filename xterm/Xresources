@@ -12,6 +12,7 @@ URxvt*renderFont: true
 URxvt*font: xft:Noto Mono for Powerline:antalias=true:pixelsize=14
 URxvt*boldFont: xft:Noto Mono for Powerline:antalias=true:pixelsize=14
 URxvt*letterSpacing: 1
+URxvt*lineSpace: 2
 
 ! Scrollback length
 URxvt*savelines: 16384
