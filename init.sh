@@ -10,7 +10,6 @@
 ##
 
 dir=`dirname $0`
-pushd "$dir" > /dev/null
 
 if [ -z "$DOTFILE_DIR" -a ! -z "$ZSH_DIR" ]; then
     echo "export DOTFILE_DIR='`pwd`'" >> "$ZSH_DIR/env.zsh"
@@ -23,5 +22,3 @@ for dir in "$@"; do
     ./init.sh || echo "Couldn't initialize $dir"
     cd ..
 done
-
-popd > /dev/null
