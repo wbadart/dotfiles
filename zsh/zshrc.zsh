@@ -31,3 +31,8 @@ setopt PROMPT_SUBST
 export PROMPT='
 %{$fg[red]%}%n%{$reset_color%}@%m[$(_git_prompt)%{$fg[green]%}%~%{$reset_color%}]
 %(?..[%?] )%# '
+
+
+bindkey ' ' magic-space
+# source /usr/share/nvm/init-nvm.sh
+# . $POWERLINE_RTP/bindings/zsh/powerline.zsh

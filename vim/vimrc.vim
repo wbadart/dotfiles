@@ -23,17 +23,22 @@ source $HOME/.vim/resources/plugin.conf.vim
 colorscheme molokai
 let mapleader = ','
 
-set hlsearch
 set nocompatible
 set noswapfile
 set number
 set relativenumber
 set wildmenu
+set ignorecase
+set smartcase
+set hlsearch
+set incsearch
 
 set expandtab
 set shiftwidth=4
 set smarttab
 set tabstop=4
+
+set scrolloff=5
 
 inoremap jk <esc>
 nnoremap J 5j
@@ -52,7 +57,16 @@ endfunction
 command! StripTailingWhitespace call StripTailingWhitespace()
 
 autocmd BufWritePre * StripTailingWhitespace
-autocmd BufNewFile,BufReadPost *.py set colorcolumn=79
+autocmd BufNewFile,BufReadPost *.{py,hs} set colorcolumn=79
+autocmd BufNewFile,BufReadPost *.tex.tmpl set filetype=tex
 
 command! WW w !sudo tee %
 abbreviate pydebug from pudb import set_trace<cr>set_trace()
+
+
+" ========
+" w0rp/ale
+" ========
+
+nnoremap <leader>n :ALENextWrap<cr>
+nnoremap <leader>p :ALEPreviousWrap<cr>

@@ -19,6 +19,6 @@ let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclu
 " powerline
 " ==========
 
-set rtp+=$POWERLINE_RTP/powerline/bindings/vim
+set rtp+=$POWERLINE_RTP/bindings/vim
 set laststatus=2
 set t_Co=256

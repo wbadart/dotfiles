@@ -1,8 +1,9 @@
+#!/usr/bin/env zsh
 # Environment config
 
 export EMAIL='wbadart@live.com'
-export PATH="$PATH:$HOME/.gem/ruby/2.5.0/bin"
 export EDITOR='vim'
 export VISUAL="$EDITOR"
-export POWERLINE_RTP='/Users/wbadart/Library/Python/2.7/lib/python/site-packages'
-export DOTFILE_DIR='/Users/wbadart/Documents/dotfiles'
+export PAGER='less'
+
+export PATH="$PATH:$HOME/.local/bin:$HOME/.gem/ruby/2.5.0/bin:/home/user/.nvm/versions/node/v9.5.0/bin:/home/user/.config/yarn/global/node_modules/.bin"
