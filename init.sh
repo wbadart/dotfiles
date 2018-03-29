@@ -9,9 +9,6 @@
 # created: JAN 2018
 ##
 
-dir=`dirname $0`
-cd "$dir"
-
 if [ -z "$DOTFILE_DIR" -a ! -z "$ZSH_DIR" ]; then
     echo "export DOTFILE_DIR='`pwd`'" >> "$ZSH_DIR/env.local.zsh"
 fi
