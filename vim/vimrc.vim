@@ -18,6 +18,7 @@ Plug 'w0rp/ale'
 call plug#end()
 
 source $HOME/.vim/resources/plugin.conf.vim
+runtime ftplugin/man.vim
 
 
 colorscheme molokai
@@ -39,6 +40,7 @@ set smarttab
 set tabstop=4
 
 set scrolloff=5
+set linebreak
 
 inoremap jk <esc>
 nnoremap J 5j
