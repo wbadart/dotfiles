@@ -16,7 +16,7 @@ fi
 for dir in "$@"; do
     test -d $dir || continue
     echo "Initializing '$dir'..."
-    cd $dir
+    pushd $dir > /dev/null
     ./init.sh || echo "Couldn't initialize $dir"
-    cd ..
+    popd > /dev/null
 done
