@@ -1,5 +1,5 @@
 ##
-# zsh/zshresources/env.common.zsh
+# zsh/zshresources/common.zsh
 #
 # Environment variables shared across all hosts.
 #
@@ -21,3 +21,9 @@ $PATH
 /usr/local/bin
 EOF
 )"
+
+alias grep='grep --color'
+alias cls='clear'
+alias x='exit'
+alias sprunge='curl -F "sprunge=<-" http://spunge.us'
+alias yld='curl --data-binary @- https://yld.me/paste <'
