@@ -27,3 +27,7 @@ alias cls='clear'
 alias x='exit'
 alias sprunge='curl -F "sprunge=<-" http://spunge.us'
 alias yld='curl --data-binary @- https://yld.me/paste <'
+
+alias ts='tmux new-session -s'
+alias ta='tmux attach -t'
+alias tl='tmux ls'
