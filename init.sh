@@ -13,7 +13,8 @@ if [ -z "$DOTFILE_DIR" -a ! -z "$ZSH_DIR" ]; then
     echo "export DOTFILE_DIR='`pwd`'" >> "$ZSH_DIR/env.local.zsh"
 fi
 
-for dir in "$@"; do
+for module in "$@"; do
+    dir="modules/$module"
     test -d $dir || continue
     echo "Initializing '$dir'..."
     pushd $dir > /dev/null
