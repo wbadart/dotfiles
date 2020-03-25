@@ -2,6 +2,8 @@ source $ZSH_DIR/util.zsh
 
 export JAVA_HOME="$HOME/.local/jdk-12.jdk/Contents/Home"
 export AGDA_DIR="$HOME/.agda"
+export NVM_DIR="$HOME/.config/nvm"
+export NVM_LAZY_LOAD='true'
 
 export PATH="$(join ':' <<EOF
 /usr/local/opt/coreutils/libexec/gnubin
@@ -32,10 +34,5 @@ export AGKOZAK_BLANK_LINES=1
 source $HOME/.cache/antibody/plugins.sh
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
 eval "$(stack --bash-completion-script stack)"
-
 eval "$(pyenv init -)"

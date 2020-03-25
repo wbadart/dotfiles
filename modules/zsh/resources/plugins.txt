@@ -2,3 +2,4 @@ zsh-users/zsh-completions
 zsh-users/zsh-syntax-highlighting
 softmoth/zsh-vim-mode
 agkozak/agkozak-zsh-prompt
+lukechilds/zsh-nvm
