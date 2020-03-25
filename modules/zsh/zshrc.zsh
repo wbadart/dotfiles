@@ -8,11 +8,52 @@
 ##
 
 export ZSH_DIR="$HOME/.config/zsh"
+source $ZSH_DIR/util.zsh
 
 autoload -U +X compinit && compinit
 autoload -U +X bashcompinit && bashcompinit
 autoload edit-command-line; zle -N edit-command-line
 bindkey '^e' edit-command-line
+
+export NAME='Will Badart'
+export EMAIL='will@willbadart.com'
+export EDITOR='vim'
+export VISUAL="$EDITOR"
+export PAGER='less'
+
+export PATH="$(join ':' <<EOF
+$HOME/.local/bin
+$PATH
+/usr/local/bin
+EOF
+)"
+
+alias grep='grep --color'
+alias cls='clear'
+alias x='exit'
+alias sprunge='curl -F "sprunge=<-" http://spunge.us'
+alias yld='curl --data-binary @- https://yld.me/paste <'
+
+alias ts='tmux new-session -s'
+alias ta='tmux attach -t'
+alias tl='tmux ls'
+
+alias g='git'
+alias ga='git add'
+alias gaa='git add -A'
+alias gb='git branch'
+alias gc='git commit -v'
+alias gca='git commit -av'
+alias gcb='git checkout -b'
+alias gcl='git clone --recursive'
+alias gco='git checkout'
+alias gd='git diff -v'
+alias gfp='git fetch --prune'
+alias gl='git pull'
+alias gp='git push'
+alias gr='git remote'
+alias grv='git remote -v'
+alias gst='git status'
 
 # Source the submodules
 for f in $(ls $ZSH_DIR/*.zsh); do
