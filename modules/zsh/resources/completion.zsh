@@ -1,3 +1,6 @@
+autoload -U +X compinit && compinit
+autoload -U +X bashcompinit && bashcompinit
+
 # Do menu-driven completion.
 zstyle ':completion:*' menu select
 

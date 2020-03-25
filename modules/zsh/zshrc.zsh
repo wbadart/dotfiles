@@ -8,13 +8,19 @@
 ##
 
 export ZSH_DIR="$HOME/.config/zsh"
-source $ZSH_DIR/util.zsh
+source "$ZSH_DIR/util.zsh"
 
-autoload -U +X compinit && compinit
-autoload -U +X bashcompinit && bashcompinit
+# Zsh settings
+export HISTFILE="$HOME/.histfile"
+export HISTSIZE=1000
+export SAVEHIST=10000
+setopt autocd nomatch notify sharehistory
+unsetopt beep extendedglob
 autoload edit-command-line; zle -N edit-command-line
 bindkey '^e' edit-command-line
+bindkey -v
 
+# User settings
 export NAME='Will Badart'
 export EMAIL='will@willbadart.com'
 export EDITOR='vim'
