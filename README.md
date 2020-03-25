@@ -8,13 +8,15 @@ At the top-level of the repo, I provide `init.sh`, which can be run
 to initialize a module. Specify the desired modules by their
 directory names. For example:
 
-    $ git clone https://github.com/wbadart/dotfiles.git && cd dotfiles
+```shell
+$ git clone https://github.com/wbadart/dotfiles.git && cd dotfiles
 
-    $ ls modules  # show available modules
-    i3 mac powerline ssh tmux vim xterm zsh
+$ ls modules  # show available modules
+i3 mac powerline ssh tmux vim xterm zsh
 
-    $ ./init.sh vim zsh
-    ...
+$ ./init.sh vim zsh
+...
+```
 
 For the most part, the init scripts within these directories just
 set up a few symbolic links from the config files here in the repo
