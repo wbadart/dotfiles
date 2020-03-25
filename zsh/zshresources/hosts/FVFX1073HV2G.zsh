@@ -23,7 +23,6 @@ export LDFLAGS="-L/usr/local/opt/openblas/lib -L/usr/local/opt/sqlite/lib -L /Li
 export CPPFLAGS="-I/usr/local/opt/openssl/include"
 export CPPFLAGS="-I/usr/local/opt/openblas/include -I/usr/local/opt/sqlite/include -I/Library/Frameworks/GStreamer.framework/Headers"
 
-source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 alias vim='nvim'
 alias k='kubectl'
 alias wk='watch kubectl'
