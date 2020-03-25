@@ -1,7 +1,7 @@
 #!/usr/bin/env zsh
 
 ##
-# zsh/zshresources/git.zsh
+# zsh/resources/git.zsh
 #
 # Git-related helper functions and aliases for zsh.
 #

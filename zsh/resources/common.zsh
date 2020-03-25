@@ -1,5 +1,5 @@
 ##
-# zsh/zshresources/common.zsh
+# zsh/resources/common.zsh
 #
 # Environment variables shared across all hosts.
 #
