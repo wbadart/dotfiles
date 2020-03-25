@@ -11,20 +11,21 @@
 
 
 alias g='git'
-alias gst='git status'
-alias gcl='git clone --recursive'
-alias gc='git commit -v'
-alias gca='git commit -av'
 alias ga='git add'
 alias gaa='git add -A'
-alias gco='git checkout'
-alias gcb='git checkout -b'
 alias gb='git branch'
-alias gr='git remote'
-alias grv='git remote -v'
+alias gc='git commit -v'
+alias gca='git commit -av'
+alias gcb='git checkout -b'
+alias gcl='git clone --recursive'
+alias gco='git checkout'
+alias gd='git diff -v'
+alias gfp='git fetch --prune'
 alias gl='git pull'
 alias gp='git push'
-alias gd='git diff -v'
+alias gr='git remote'
+alias grv='git remote -v'
+alias gst='git status'
 
 
 _git_prompt() {
