@@ -1,11 +1,14 @@
 call plug#begin()
+Plug 'itchyny/lightline.vim'
 Plug 'airblade/vim-gitgutter'
-Plug 'derekelkins/agda-vim'
 Plug 'flazz/vim-colorschemes'
+Plug 'https://github.com/alok/notational-fzf-vim'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/goyo.vim'
 Plug 'kien/ctrlp.vim'
 Plug 'lervag/vimtex'
 Plug 'lnl7/vim-nix'
+Plug 'michal-h21/vim-zettel'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'neovimhaskell/haskell-vim'
 Plug 'psf/black'
@@ -16,8 +19,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
+Plug 'vimwiki/vimwiki'
 Plug 'vmchale/dhall-vim'
 call plug#end()
 
@@ -28,7 +30,7 @@ set noswapfile
 set number relativenumber
 set scrolloff=5
 set smartcase
-set statusline^=%{coc#status()}
+" set statusline^=%{coc#status()}
 set wildmenu
 
 colorscheme molokai
@@ -89,3 +91,12 @@ augroup fmt
   autocmd!
   autocmd BufWritePre * undojoin | Neoformat
 augroup END
+
+let g:zettel_format = "%y%V%u%file_no-%title"
+let g:vimwiki_list = [ {'path':'~/Documents/Kasten/','ext':'.md','syntax':'markdown' } ]
+let g:nv_search_paths = [ '~/Documents/Kasten' ]
+nnoremap <silent> <c-s> :NV<CR>
+
+let g:lightline = {
+      \ 'colorscheme': 'powerline',
+      \ }
