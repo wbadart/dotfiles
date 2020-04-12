@@ -1,8 +1,9 @@
 call plug#begin()
-Plug 'itchyny/lightline.vim'
 Plug 'airblade/vim-gitgutter'
+Plug 'dag/vim-fish'
 Plug 'flazz/vim-colorschemes'
 Plug 'https://github.com/alok/notational-fzf-vim'
+Plug 'itchyny/lightline.vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/goyo.vim'
 Plug 'kien/ctrlp.vim'
