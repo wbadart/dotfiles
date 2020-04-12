@@ -3,6 +3,7 @@ source $HOME/.nix-profile/etc/profile.d/nix.sh
 
 export AGDA_DIR="$HOME/.agda"
 export JAVA_HOME="$HOME/.local/jdk-12.jdk/Contents/Home"
+export KASTEN="$HOME/Documents/Kasten"
 export LEDGER_FILE="$HOME/.config/ledger/MAR2020.journal"
 export NVM_DIR="$HOME/.config/nvm"
 export NVM_LAZY_LOAD='true'
@@ -18,6 +19,10 @@ $HOME/miniconda3/bin
 $JAVA_HOME/bin
 EOF
 )"
+
+export XDG_CACHE_HOME="$HOME/.cache"
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_DATA_HOME="$HOME/.local/share"
 
 export PKG_CONFIG_PATH="/usr/local/opt/openssl/lib/pkgconfig"
 export PKG_CONFIG_PATH="$PKG_CONFIG_PATH:/Library/Frameworks/GStreamer.framework/Versions/1.0/lib/pkgconfig"
