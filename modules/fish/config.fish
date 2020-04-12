@@ -3,3 +3,4 @@ set fish_color_host brblack
 set fish_prompt_pwd_dir_length 0
 
 set -U fish_user_paths $HOME/.local/bin $HOME/.nix-profile/bin
+set fish_greeting
