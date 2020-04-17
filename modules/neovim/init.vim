@@ -1,4 +1,6 @@
 call plug#begin()
+Plug 'vito-c/jq.vim'
+Plug 'hashivim/vim-terraform'
 Plug 'airblade/vim-gitgutter'
 Plug 'dag/vim-fish'
 Plug 'flazz/vim-colorschemes'
@@ -65,13 +67,14 @@ nnoremap <C-H> <C-W><C-H>
 nnoremap <leader>go :Goyo<cr>
 
 autocmd BufNewFile,BufReadPost *.py set fileformat=unix foldmethod=indent
-autocmd BufNewFile,BufReadPost *.{md,tex} set colorcolumn=69 tw=69 spell
+autocmd BufNewFile,BufReadPost *.{md,tex} set colorcolumn=79 tw=79 spell
 autocmd BufNewFile,BufReadPost *.{py,hs} set colorcolumn=79
 autocmd BufNewFile,BufReadPost *.{y{a,}ml,{ba,z,}sh,hs} set tabstop=2
 autocmd BufNewFile,BufReadPost .dockerignore set filetype=conf
 autocmd BufNewFile,BufReadPost COMMIT_EDITMSG set spell
 autocmd BufNewFile,BufReadPost Dockerfile{.,-,_}* set filetype=dockerfile
 autocmd BufNewFile,BufReadPost Jenkinsfile set filetype=groovy
+autocmd BufNewFile,BufReadPost Vagrantfile set filetype=ruby
 
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
@@ -87,11 +90,6 @@ function! s:show_documentation()
     call CocAction('doHover')
   endif
 endfunction
-
-augroup fmt
-  autocmd!
-  autocmd BufWritePre * undojoin | Neoformat
-augroup END
 
 let g:zettel_format = "%y%V%u%file_no-%title"
 let g:vimwiki_list = [ {'path':'~/Documents/Kasten/','ext':'.md','syntax':'markdown' } ]
