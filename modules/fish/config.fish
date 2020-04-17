@@ -12,3 +12,5 @@ set -U LESSHISTFILE '-'
 set -U fish_user_paths $HOME/.local/bin $HOME/.nix-profile/bin $PYENV_ROOT/bin
 
 pyenv init - | source
+fenv source $HOME/.nix-profile/etc/profile.d/nix.sh
+eval (direnv hook fish)
