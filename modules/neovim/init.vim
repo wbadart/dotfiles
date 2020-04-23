@@ -1,4 +1,5 @@
 call plug#begin()
+Plug 'edkolev/tmuxline.vim'
 Plug 'vito-c/jq.vim'
 Plug 'hashivim/vim-terraform'
 Plug 'airblade/vim-gitgutter'
@@ -99,3 +100,4 @@ nnoremap <silent> <c-s> :NV<CR>
 let g:lightline = {
       \ 'colorscheme': 'powerline',
       \ }
+" let g:tmuxline_preset = 'lightline'
