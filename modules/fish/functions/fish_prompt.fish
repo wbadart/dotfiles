@@ -1,4 +1,15 @@
 function fish_prompt --description 'Write out the prompt'
+    # if [ (uname -s) = 'Darwin' ]
+    #     set -l val (defaults read -g AppleInterfaceStyle 2>/dev/null)
+    #     if [ "$val" = "Dark" ]
+    #         echo -ne "\033]50;SetProfile=Dark\a"
+    #         set -g  ITERM_PROFILE "Dark"
+    #     else
+    #         echo -ne "\033]50;SetProfile=Light\a"
+    #         set -g  ITERM_PROFILE "Light"
+    #     end
+    # end
+
     set -l last_pipestatus $pipestatus
     set -l normal (set_color normal)
 
