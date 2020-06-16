@@ -40,6 +40,7 @@
         && vim /Users/williambadart/.config/ledger/JUN2020.journal \
         && cd -
     '';
+    l = "ls -alh";
     v = "nvim +Files";
     vim = "nvim";
   };
