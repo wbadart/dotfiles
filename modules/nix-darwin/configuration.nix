@@ -49,7 +49,7 @@
     GNUPGHOME = "$HOME/.config/gnupg";
     LEDGER_FILE = "$HOME/.config/ledger/JUN2020.journal";
     STOCKS_EXCLUDE = "USD|LifePath|Put|Call|ETH|BTC";
-  } // import ./secrets.nix;
+  } // (if builtins.pathExists ./secrets.nix then import ./secrets.nix else {});
 
   # Auto upgrade nix package and the daemon service.
   services.nix-daemon.enable = true;
