@@ -13,6 +13,7 @@
       pkgs.fzf
       pkgs.gnupg
       pkgs.hledger
+      pkgs.hugo
       pkgs.jq
       pkgs.python38Packages.poetry
     ];
@@ -48,7 +49,7 @@
     GNUPGHOME = "$HOME/.config/gnupg";
     LEDGER_FILE = "$HOME/.config/ledger/JUN2020.journal";
     STOCKS_EXCLUDE = "USD|LifePath|Put|Call|ETH|BTC";
-  };
+  } // import ./secrets.nix;
 
   # Auto upgrade nix package and the daemon service.
   services.nix-daemon.enable = true;
