@@ -59,20 +59,32 @@
     configure = {
       packages.darwin.start = with pkgs.vimPlugins; [
         fzf-vim
+        jq-vim  # not included in polyglot :(
         lightline-vim
         vim-colorschemes
         vim-commentary
+        vim-fugitive
+        vim-gitgutter
         vim-polyglot
         vim-surround
       ];
       customRC = ''
         colorscheme molokai
-        inoremap jk <esc>
-        nnoremap <c-p> :Files<cr>
-        set number relativenumber scrolloff=5
         set expandtab
+        set hidden nobackup nowritebackup noswapfile
+        set number relativenumber scrolloff=5
         set smartcase hlsearch incsearch wildmenu
-        set noswapfile
+        autocmd BufNewFile,BufReadPost *.{md,tex} set colorcolumn=79 tw=79 spell
+        autocmd BufNewFile,BufReadPost COMMIT_EDITMSG set spell
+        let g:netrw_liststyle=3  " tree
+        let mapleader = ','
+        inoremap jk <Esc>
+        nnoremap <C-H> <C-W><C-H>
+        nnoremap <C-J> <C-W><C-J>
+        nnoremap <C-K> <C-W><C-K>
+        nnoremap <C-L> <C-W><C-L>
+        nnoremap <Leader><Leader> :G<CR>
+        nnoremap <C-P> :Files<CR>
       '';
     };
   };
