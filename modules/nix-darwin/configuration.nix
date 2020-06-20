@@ -5,6 +5,10 @@
   # $ darwin-rebuild switch -I darwin-config=$HOME/.config/nixpkgs/darwin/configuration.nix
   environment.darwinConfig = "$HOME/Documents/dotfiles/modules/nix-darwin/configuration.nix";
 
+  system.defaults.dock = {
+    autohide = true;
+  };
+
   # List packages installed in system profile. To search by name, run:
   # $ nix-env -qaP | grep wget
   environment.systemPackages =
@@ -35,13 +39,10 @@
     gr = "git remote";
     gst = "git status";
     h = "hledger -V";
-    he = ''
-      cd /Users/williambadart/.config/ledger \
-        && vim /Users/williambadart/.config/ledger/JUN2020.journal \
-        && cd -
-    '';
+    he = "cd $HOME/.config/ledger && nvim +Files && cd -";
     l = "ls -alh";
-    v = "nvim +Files";
+    v = "nvim +GFiles";
+    vc = "cd $HOME/Documents/dotfiles && nvim +Files && cd -";
     vim = "nvim";
   };
 
@@ -49,6 +50,7 @@
     EDITOR = "nvim";
     GNUPGHOME = "$HOME/.config/gnupg";
     LEDGER_FILE = "$HOME/.config/ledger/JUN2020.journal";
+    PATH = "$HOME/.local/bin:$PATH";
     STOCKS_EXCLUDE = "USD|LifePath|Put|Call|ETH|BTC";
   } // (if builtins.pathExists ./secrets.nix then import ./secrets.nix else {});
 
@@ -59,7 +61,10 @@
   programs.vim.package = pkgs.neovim.override {
     configure = {
       packages.darwin.start = with pkgs.vimPlugins; [
+        coc-nvim
+        coc-python
         fzf-vim
+        goyo-vim
         jq-vim  # not included in polyglot :(
         lightline-vim
         vim-colorschemes
@@ -85,7 +90,7 @@
         nnoremap <C-K> <C-W><C-K>
         nnoremap <C-L> <C-W><C-L>
         nnoremap <Leader><Leader> :G<CR>
-        nnoremap <C-P> :Files<CR>
+        nnoremap <C-P> :GFiles<CR>
       '';
     };
   };
