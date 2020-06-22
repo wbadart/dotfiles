@@ -11,16 +11,21 @@
 
   # List packages installed in system profile. To search by name, run:
   # $ nix-env -qaP | grep wget
-  environment.systemPackages =
-    [ config.programs.vim.package
-      pkgs.fish
-      pkgs.fzf
-      pkgs.gnupg
-      pkgs.hledger
-      pkgs.hugo
-      pkgs.jq
-      pkgs.python38Packages.poetry
-    ];
+  environment.systemPackages = with pkgs; [
+    config.programs.vim.package
+    cachix
+    fish
+    fzf
+    gnupg
+    hledger
+    hugo
+    jq
+    haskellPackages.cabal-install
+    haskellPackages.cabal2nix
+    haskellPackages.ghc
+    haskellPackages.stack
+    python38Packages.poetry
+  ];
 
   environment.shellAliases = {
     g = "git";
@@ -62,7 +67,6 @@
     configure = {
       packages.darwin.start = with pkgs.vimPlugins; [
         coc-nvim
-        coc-python
         fzf-vim
         goyo-vim
         jq-vim  # not included in polyglot :(
