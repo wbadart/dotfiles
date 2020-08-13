@@ -13,17 +13,29 @@
   # $ nix-env -qaP | grep wget
   environment.systemPackages = with pkgs; [
     config.programs.vim.package
+    bat
     cachix
+    direnv nix-direnv
     fish
     fzf
+    git
+    git-lfs
     gnupg
     hledger
+    htop
     hugo
     jq
+    mosh
+    nmap
+    ripgrep
+    texlive.combined.scheme-full
+    watch
+    # zathura
     haskellPackages.cabal-install
     haskellPackages.cabal2nix
     haskellPackages.ghc
     haskellPackages.stack
+    elmPackages.elm
     python38Packages.poetry
   ];
 
@@ -54,14 +66,21 @@
   environment.variables = {
     EDITOR = "nvim";
     GNUPGHOME = "$HOME/.config/gnupg";
-    LEDGER_FILE = "$HOME/.config/ledger/JUN2020.journal";
+    LEDGER_FILE = "$HOME/.config/ledger/AUG2020.journal";
     PATH = "$HOME/.local/bin:$PATH";
-    STOCKS_EXCLUDE = "USD|LifePath|Put|Call|ETH|BTC";
+    STOCKS_EXCLUDE = "USD|LifePath|Put|Call|ETH|BTC|BRK.B";
   } // (if builtins.pathExists ./secrets.nix then import ./secrets.nix else {});
 
   # Auto upgrade nix package and the daemon service.
   services.nix-daemon.enable = true;
   nix.package = pkgs.nix;
+  nix.extraOptions = ''
+    keep-outputs = true
+    keep-derivations = true
+  '';
+  environment.pathsToLink = [
+    "/share/nix-direnv"
+  ];
 
   programs.vim.package = pkgs.neovim.override {
     configure = {
@@ -71,6 +90,7 @@
         goyo-vim
         jq-vim  # not included in polyglot :(
         lightline-vim
+        vimtex
         vim-colorschemes
         vim-commentary
         vim-fugitive
@@ -85,6 +105,7 @@
         set number relativenumber scrolloff=5
         set smartcase hlsearch incsearch wildmenu
         autocmd BufNewFile,BufReadPost *.{md,tex} set colorcolumn=79 tw=79 spell
+        autocmd BufNewFile,BufReadPost *.{hs} set colorcolumn=100 ts=2 sw=2
         autocmd BufNewFile,BufReadPost COMMIT_EDITMSG set spell
         let g:netrw_liststyle=3  " tree
         let mapleader = ','
@@ -106,6 +127,7 @@
       set fish_color_host brblack
       set fish_prompt_pwd_dir_length 0
       set fish_greeting
+      eval (direnv hook fish)
     '';
   };
   programs.bash.enable = true;
