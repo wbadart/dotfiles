@@ -25,15 +25,16 @@ hostConfig:
       imagemagick
       mosh
       nmap
+      procs
       ripgrep
-      sloc
+      rustup
       starship
+      tokei
       universal-ctags
       watch
-      haskellPackages.stack
       elmPackages.elm
+      haskellPackages.stack
       python38Packages.poetry
-      rustup
     ];
   };
 
@@ -69,7 +70,6 @@ hostConfig:
   programs.fzf = {
     enable = true;
     enableFishIntegration = true;
-    enableZshIntegration = true;
   };
 
   programs.git = {
@@ -100,6 +100,7 @@ hostConfig:
     interactiveShellInit = ''
       starship init fish | source
       set fish_greeting
+      set --global --export GPG_TTY (tty)
     '';
     shellAliases = {
       cat = "bat";
@@ -153,6 +154,11 @@ hostConfig:
     keyMode = "vi";
     terminal = "xterm-256color";
     extraConfig = builtins.readFile ./config/tmux.conf;
+  };
+
+  programs.zoxide = {
+    enable = true;
+    enableFishIntegration = true;
   };
 
   programs.home-manager.enable = true;
