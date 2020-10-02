@@ -1,26 +1,42 @@
 # dotfiles
 
-The dotfiles of [Will Badart](https://willbadart.com).
+These are [my](https://willbadart.com) dotfiles. I hope you find something
+interesting and useful in here!
 
-## Installation
+99% of my configuration is handled by [`home-manager`][hm], a [Nix]-based
+dotfile/ general program configuration manager. The top-level
+[`./home.nix`](./home.nix) file has all of the common config, and each entry
+under [`./hosts/`](./hosts) has some specifics for each machine I'm using this
+repo on.
 
-At the top-level of the repo, I provide `init.sh`, which can be run
-to initialize a module. Specify the desired modules by their
-directory names. For example:
+[hm]: https://github.com/rycee/home-manager
+[Nix]: https://nixos.org
 
-```shell
-$ git clone https://github.com/wbadart/dotfiles.git && cd dotfiles
+To get started, install `home-manager`, and run the following:
 
-$ ls modules  # show available modules
-i3 mac powerline ssh tmux vim xterm zsh
-
-$ ./init.sh vim zsh
-...
+```sh
+git clone https://github.com/wbadart/dotfiles.git
+cd dotfiles
 ```
 
-For the most part, the init scripts within these directories just
-set up a few symbolic links from the config files here in the repo
-to their expected locations in the filesystem.
+Now, create a `./hosts/` entry for your machine using this template:
+
+```nix
+import ../home.nix
+{
+  username = "...";
+  homeDirectory = "...";
+  email = "...";
+}
+```
+
+Finally,
+
+```sh
+mkdir -p $HOME/.config/nixpkgs
+ln -s $PWD/hosts/this_machine.nix $HOME/.config/nixpkgs/home.nix
+home-manager switch
+```
 
 ## Contributing
 
