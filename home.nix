@@ -104,6 +104,7 @@ hostConfig:
     shellAliases = {
       cat = "bat";
       tree = "exa -T";
+      grep = "rg";
       g = "git";
       ga = "git add";
       gb = "git branch";
