@@ -5,6 +5,7 @@ set number relativenumber scrolloff=5
 set ignorecase smartcase hlsearch incsearch wildmenu
 autocmd BufNewFile,BufReadPost *.{md,tex} set colorcolumn=79 tw=79 spell
 autocmd BufNewFile,BufReadPost *.{hs} set colorcolumn=100 ts=2 sw=2
+autocmd BufNewFile,BufReadPost, *.{sh,bash} set ts=2 sw=2
 autocmd BufNewFile,BufReadPost COMMIT_EDITMSG set spell
 let g:netrw_liststyle=3  " tree
 let mapleader = ','
