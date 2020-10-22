@@ -9,14 +9,19 @@ hostConfig:
   home = {
     username = hostConfig.username;
     homeDirectory = hostConfig.homeDirectory;
+    sessionPath = [
+      "$HOME/.local/bin"
+      "/Applications/Racket v7.8/bin"
+    ];
     sessionVariables = {
-      PATH = "$HOME/.local/bin:$PATH";
       LEDGER_FILE = "$HOME/.config/ledger/OCT2020.journal";
       STOCKS_EXCLUDE = "USD|LifePath|Put|Call|ETH|BTC|BRK.B";
       GNUPGHOME = "$HOME/.config/gnupg";
       EDITOR = "nvim";
     } // (if builtins.pathExists ./secrets.nix then import ./secrets.nix else {});
     packages = with pkgs; [
+      cachix
+      curlie
       dhall-lsp-server
       exa
       fd
@@ -35,6 +40,9 @@ hostConfig:
       elmPackages.elm
       haskellPackages.stack
       python38Packages.poetry
+      # racket-minimal
+      (let neuronSrc = builtins.fetchTarball "https://github.com/srid/neuron/archive/master.tar.gz";
+      in import neuronSrc {})
     ];
   };
 
@@ -104,6 +112,7 @@ hostConfig:
     '';
     shellAliases = {
       cat = "bat";
+      curl = "curlie";
       tree = "exa -T";
       grep = "rg";
       g = "git";
