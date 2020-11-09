@@ -14,13 +14,14 @@ hostConfig:
       "/Applications/Racket v7.8/bin"
     ];
     sessionVariables = {
-      LEDGER_FILE = "$HOME/.config/ledger/OCT2020.journal";
+      LEDGER_FILE = "$HOME/.config/ledger/NOV2020.journal";
       STOCKS_EXCLUDE = "USD|LifePath|Put|Call|ETH|BTC|BRK.B";
       GNUPGHOME = "$HOME/.config/gnupg";
       EDITOR = "nvim";
     } // (if builtins.pathExists ./secrets.nix then import ./secrets.nix else {});
     packages = with pkgs; [
       cachix
+      cue
       curlie
       dhall-lsp-server
       exa
@@ -39,6 +40,7 @@ hostConfig:
       watch
       elmPackages.elm
       haskellPackages.stack
+      agda
       python38Packages.poetry
       # racket-minimal
       (let neuronSrc = builtins.fetchTarball "https://github.com/srid/neuron/archive/master.tar.gz";
@@ -61,8 +63,11 @@ hostConfig:
       fzf-vim
       goyo-vim
       lightline-vim
+      neuron-vim
+      unicode-vim
       vim-colorschemes
       vim-commentary
+      vim-cue
       vim-fugitive
       vim-gitgutter
       vim-polyglot
