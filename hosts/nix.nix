@@ -1,5 +1,5 @@
-{ config, pkgs, ... }:
-import /home/will/.config/nixpkgs/home.nix
+{ pkgs, ... }:
+import /home/will/doc/dotfiles/home.nix
 {
   username = "will";
   homeDirectory = "/home/will";
@@ -9,10 +9,11 @@ import /home/will/.config/nixpkgs/home.nix
     firefox
     signal-desktop
     tmux
+    protonvpn-cli
   ];
   extraConfig = {
     services.syncthing.enable = true;
     services.unclutter.enable = true;
   };
 }
-{ config = config; pkgs = pkgs; }
+{ pkgs = pkgs; }

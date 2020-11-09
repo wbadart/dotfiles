@@ -57,7 +57,7 @@ hostConfig:
   programs.neovim = {
     enable = true;
     plugins = with pkgs.vimPlugins; [
-      # SimpylFold
+      SimpylFold
       coc-nvim
       coc-rls
       fzf-vim
@@ -178,10 +178,6 @@ hostConfig:
   #   enableFishIntegration = true;
   # };
 
-  programs.bash = {
-    enable = true;
-    initExtra = "exec fish";
-  };
   programs.home-manager.enable = true;
   home.stateVersion = "20.09";
 } // hostConfig.extraConfig
