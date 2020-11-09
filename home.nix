@@ -45,7 +45,7 @@ hostConfig:
       # racket-minimal
       (let neuronSrc = builtins.fetchTarball "https://github.com/srid/neuron/archive/master.tar.gz";
       in import neuronSrc {})
-    ];
+    ] ++ hostConfig.extraPackages;
   };
 
 
@@ -57,7 +57,7 @@ hostConfig:
   programs.neovim = {
     enable = true;
     plugins = with pkgs.vimPlugins; [
-      SimpylFold
+      # SimpylFold
       coc-nvim
       coc-rls
       fzf-vim
@@ -78,6 +78,9 @@ hostConfig:
     extraConfig = builtins.readFile ./config/init.vim;
     withNodeJs = true;
     extraPython3Packages = (pythonPackages: with pythonPackages; [ jedi ]);
+    viAlias = true;
+    vimAlias = true;
+    vimdiffAlias = true;
   };
 
   programs.fzf = {
@@ -170,11 +173,11 @@ hostConfig:
     extraConfig = builtins.readFile ./config/tmux.conf;
   };
 
-  programs.zoxide = {
-    enable = true;
-    enableFishIntegration = true;
-  };
+  # programs.zoxide = {
+  #   enable = true;
+  #   enableFishIntegration = true;
+  # };
 
   programs.home-manager.enable = true;
   home.stateVersion = "20.09";
-}
+} // hostConfig.extraConfig
