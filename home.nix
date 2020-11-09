@@ -4,7 +4,7 @@
 # - email (default: will (at) willbadart (dot) com)
 # - hmPath
 hostConfig:
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 {
   home = {
     username = hostConfig.username;
@@ -45,7 +45,7 @@ hostConfig:
       # racket-minimal
       (let neuronSrc = builtins.fetchTarball "https://github.com/srid/neuron/archive/master.tar.gz";
       in import neuronSrc {})
-    ] ++ hostConfig.extraPackages;
+    ] ++ hostConfig.extraPackages or [];
   };
 
 
@@ -180,4 +180,4 @@ hostConfig:
 
   programs.home-manager.enable = true;
   home.stateVersion = "20.09";
-} // hostConfig.extraConfig
+} // hostConfig.extraConfig or {}
