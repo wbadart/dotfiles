@@ -4,7 +4,7 @@
 # - email (default: will (at) willbadart (dot) com)
 # - hmPath
 hostConfig:
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 {
   home = {
     username = hostConfig.username;
@@ -46,7 +46,7 @@ hostConfig:
       # racket-minimal
       (let neuronSrc = builtins.fetchTarball "https://github.com/srid/neuron/archive/master.tar.gz";
       in import neuronSrc {})
-    ];
+    ] ++ hostConfig.extraPackages or [];
   };
 
 
@@ -79,6 +79,9 @@ hostConfig:
     extraConfig = builtins.readFile ./config/init.vim;
     withNodeJs = true;
     extraPython3Packages = (pythonPackages: with pythonPackages; [ jedi ]);
+    viAlias = true;
+    vimAlias = true;
+    vimdiffAlias = true;
   };
 
   programs.fzf = {
@@ -172,11 +175,11 @@ hostConfig:
     extraConfig = builtins.readFile ./config/tmux.conf;
   };
 
-  programs.zoxide = {
-    enable = true;
-    enableFishIntegration = true;
-  };
+  # programs.zoxide = {
+  #   enable = true;
+  #   enableFishIntegration = true;
+  # };
 
   programs.home-manager.enable = true;
   home.stateVersion = "20.09";
-}
+} // hostConfig.extraConfig or {}
