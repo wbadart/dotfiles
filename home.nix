@@ -28,6 +28,7 @@ hostConfig:
       fd
       hledger
       hugo
+      hyperfine
       imagemagick
       mosh
       nmap
@@ -120,6 +121,7 @@ hostConfig:
       curl = "curlie";
       tree = "exa -T";
       grep = "rg";
+      timeit = "hyperfine";
       g = "git";
       ga = "git add";
       gb = "git branch";
