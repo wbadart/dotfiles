@@ -14,8 +14,8 @@ hostConfig:
       "/Applications/Racket v7.8/bin"
     ];
     sessionVariables = {
-      LEDGER_FILE = "$HOME/.config/ledger/NOV2020.journal";
-      STOCKS_EXCLUDE = "USD|LifePath|Put|Call|ETH|BTC|BRK.B";
+      LEDGER_FILE = "$HOME/Documents/ledger/JAN2021.journal";
+      STOCKS_EXCLUDE = "USD|LifePath|Put|Call|ETH|BTC|BRK.B|NT_HRS";
       GNUPGHOME = "$HOME/.config/gnupg";
       EDITOR = "nvim";
     } // (if builtins.pathExists ./secrets.nix then import ./secrets.nix else {});
@@ -23,7 +23,7 @@ hostConfig:
       cachix
       cue
       curlie
-      dhall-lsp-server
+      # dhall-lsp-server
       exa
       fd
       hledger
@@ -119,6 +119,17 @@ hostConfig:
       set fish_greeting
       set --global --export GPG_TTY (tty)
     '';
+    plugins = [
+      {
+        name = "fenv";
+        src = pkgs.fetchFromGitHub {
+          owner = "oh-my-fish";
+          repo = "plugin-foreign-env";
+          rev = "dddd9213272a0ab848d474d0cbde12ad034e65bc";
+          sha256 = "00xqlyl3lffc5l0viin1nyp819wf81fncqyz87jx8ljjdhilmgbs";
+        };
+      }
+    ];
     shellAliases = {
       cat = "bat";
       curl = "curlie";
@@ -141,7 +152,7 @@ hostConfig:
       gr = "git remote";
       gst = "git status";
       h = "hledger -V";
-      he = "cd $HOME/.config/ledger && nvim +Files && cd -";
+      he = "cd (dirname $LEDGER_FILE) && nvim +Files && cd -";
       ls = "exa --git";
       l = "exa -l --git";
       ll = "exa -al --git";
