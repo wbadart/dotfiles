@@ -18,3 +18,4 @@ nnoremap <C-L> <C-W><C-L>
 nnoremap <Leader><Leader> :G<CR>
 nnoremap <C-P> :GFiles<CR>
 nnoremap <C-T> :BTags<CR>
+cmap w!! w !sudo tee > /dev/null %

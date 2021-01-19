@@ -1,64 +1,50 @@
-# host-specific-config is an attribute set that must include:
-# - username
-# - homeDirectory
-# - email (default: will (at) willbadart (dot) com)
-# - hmPath
-hostConfig:
-{ pkgs, ... }:
+{ pkgs, config, ... }:
 {
+  imports = [
+    ./hosts/current.nix
+  ];
+
   home = {
-    username = hostConfig.username;
-    homeDirectory = hostConfig.homeDirectory;
-    sessionPath = [
-      "$HOME/.local/bin"
-      "/Applications/Racket v7.8/bin"
-    ];
     sessionVariables = {
-      LEDGER_FILE = "$HOME/Documents/ledger/JAN2021.journal";
       STOCKS_EXCLUDE = "USD|LifePath|Put|Call|ETH|BTC|BRK.B|NT_HRS";
-      GNUPGHOME = "$HOME/.config/gnupg";
       EDITOR = "nvim";
     } // (if builtins.pathExists ./secrets.nix then import ./secrets.nix else {});
+
     packages = with pkgs; [
       cachix
-      cue
       curlie
-      # dhall-lsp-server
       exa
       fd
       hledger
       hugo
-      hyperfine
-      imagemagick
       mosh
       nmap
       procs
       ripgrep
-      rustup
-      starship
       tokei
       universal-ctags
       watch
-      elmPackages.elm
       haskellPackages.stack
       agda
-      python38Packages.poetry
-      # racket-minimal
-      (let neuronSrc = builtins.fetchTarball "https://github.com/srid/neuron/archive/master.tar.gz";
-      in import neuronSrc {})
-    ] ++ hostConfig.extraPackages or [];
+      neuron-notes
+    ];
   };
-
 
   programs.bat.enable = true;
   programs.gpg.enable = true;
   programs.htop.enable = true;
   programs.jq.enable = true;
   programs.texlive.enable = true;
+
   programs.neovim = {
     enable = true;
     plugins = with pkgs.vimPlugins; [
       SimpylFold
+      coc-metals
+      coc-css
+      coc-html
+      coc-json
+      coc-markdownlint
       coc-nvim
       coc-rls
       fzf-vim
@@ -78,7 +64,6 @@ hostConfig:
     ];
     extraConfig = builtins.readFile ./config/init.vim;
     withNodeJs = true;
-    extraPython3Packages = (pythonPackages: with pythonPackages; [ jedi ]);
     viAlias = true;
     vimAlias = true;
     vimdiffAlias = true;
@@ -87,6 +72,8 @@ hostConfig:
   programs.fzf = {
     enable = true;
     enableFishIntegration = true;
+    changeDirWidgetCommand = "fd --type d";
+    fileWidgetCommand = "fd --type f";
   };
 
   programs.git = {
@@ -105,13 +92,16 @@ hostConfig:
       signByDefault = true;
       key = "B1B7F6AF530849E66D9AD057C0BFCABCFFB2398B";
     };
-    userEmail = hostConfig.email or "will@willbadart.com";
     userName = "Will Badart";
     extraConfig = {
       core.editor = "nvim";
     };
   };
 
+  programs.starship = {
+    enable = true;
+    enableFishIntegration = true;
+  };
   programs.fish = {
     enable = true;
     interactiveShellInit = ''
@@ -136,6 +126,11 @@ hostConfig:
       tree = "exa -T";
       grep = "rg";
       timeit = "hyperfine";
+      find = "fd";
+      ls = "exa --git";
+      ps = "procs";
+      l = "exa -l --git";
+      ll = "exa -al --git";
       g = "git";
       ga = "git add";
       gb = "git branch";
@@ -153,23 +148,10 @@ hostConfig:
       gst = "git status";
       h = "hledger -V";
       he = "cd (dirname $LEDGER_FILE) && nvim +Files && cd -";
-      ls = "exa --git";
-      l = "exa -l --git";
-      ll = "exa -al --git";
       v = "nvim +GFiles";
       vim = "nvim";
       vc = "cd $HOME/Documents/dotfiles && nvim +Files && cd -";
     };
-  };
-
-  programs.zsh = {
-    enable = true;
-    initExtra = ''
-      if [ -e $HOME/.nix-profile/etc/profile.d/nix.sh ]; then
-        . $HOME/.nix-profile/etc/profile.d/nix.sh;
-      fi
-      exec fish --login --interactive
-    '';
   };
 
   programs.direnv = {
@@ -186,11 +168,6 @@ hostConfig:
     extraConfig = builtins.readFile ./config/tmux.conf;
   };
 
-  # programs.zoxide = {
-  #   enable = true;
-  #   enableFishIntegration = true;
-  # };
-
   programs.home-manager.enable = true;
   home.stateVersion = "20.09";
-} // hostConfig.extraConfig or {}
+}
