@@ -1,7 +1,7 @@
 { pkgs, config, ... }:
 {
   imports = [
-    ./hosts/current.nix
+    ./hosts/current/home.nix
   ];
 
   home = {

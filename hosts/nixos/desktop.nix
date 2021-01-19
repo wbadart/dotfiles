@@ -23,7 +23,7 @@
         enable = true;
         enableContribAndExtras = true;
         ghcArgs = [ "-Wall" ];
-        config = ../config/xmonad.hs;
+        config = ../../config/xmonad.hs;
       };
     };
   };

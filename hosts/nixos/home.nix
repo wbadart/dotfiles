@@ -26,10 +26,18 @@
       mpdSupport = true;
       pulseSupport = true;
     };
+    extraConfig = ''
+      [bar/bar]
+      monitor = ''${env:MONITOR:eDP-1}
+      width = 100%
+      height = 48
+      radius = 6.0
+      fixed-center = true
+      background = #000000
+      foreground = #ffffff
+      modules-center = date
+    '';
     config = {
-      bar = {
-        modules-center = "date";
-      };
       "module/date" = {
         type = "internal/date";
         internal = 5;

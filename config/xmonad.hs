@@ -1,12 +1,11 @@
 import XMonad
 import XMonad.Config.Desktop
-import XMonad.Hooks.DynamicLog
 import XMonad.Layout.Gaps
 import XMonad.Layout.Spacing
 import XMonad.Util.EZConfig ( additionalKeys )
 
 main :: IO ()
-main = launch =<< xmobar myConfig
+main = launch myConfig
   where myConfig = desktopConfig
           { terminal = "alacritty"
           , focusedBorderColor = "#5e81ac"
@@ -23,7 +22,7 @@ main = launch =<< xmobar myConfig
           , startupHook = do
               startupHook desktopConfig
               spawn "bgs -z Pictures/wallpapers/a0il9g1km4461.jpg &"
-              spawn "trayer --edge top --align right --SetDockType true --SetPartialStrut true --expand true --width 15 --height 12 --transparent true &"
+              -- spawn "trayer --edge top --align right --SetDockType true --SetPartialStrut true --expand true --width 15 --height 12 --transparent true &"
           }
           `additionalKeys`
           [   ((mod4Mask, xK_q), restart "xmonad" True)

@@ -6,8 +6,8 @@
 
 {
   imports =
-    [ ./hardware-configuration.nix
-      ./desktop.nix
+    [ ./hosts/current/configuration.nix
+      ./hosts/current/hardware-configuration.nix
       /etc/nixos/cachix.nix
       <home-manager/nixos>
     ];
@@ -21,13 +21,10 @@
   # boot.loader.efi.efiSysMountPoint = "/boot/efi";
   # Define on which hard drive you want to install Grub.
   # boot.loader.grub.device = "/dev/sda"; # or "nodev" for efi only
-  boot.loader.grub.device = "/dev/nvme0n1";
-  boot.loader.grub.enableCryptodisk = true;
   boot.loader.grub.useOSProber = true;
   boot.loader.grub.splashImage = null;
   boot.loader.timeout = 1;
 
-  networking.hostName = "wb-machine"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Set your time zone.
@@ -37,10 +34,7 @@
   # Per-interface useDHCP will be mandatory in the future, so this generated config
   # replicates the default behaviour.
   networking.useDHCP = false;
-  networking.interfaces.enp0s31f6.useDHCP = true;
-  networking.interfaces.wlp4s0.useDHCP = true;
   networking.networkmanager.enable = true;
-  
 
   # Enable CUPS to print documents.
   # services.printing.enable = true;
@@ -58,7 +52,7 @@
   };
   programs.fish.enable = true;
   programs.adb.enable = true;
-  home-manager.users.will = (import ../home.nix pkgs);
+  home-manager.users.will = (import ./home.nix pkgs);
 
   security.sudo.extraRules = [
     { users = [ "will" "root" ];
@@ -74,7 +68,6 @@
   environment.systemPackages = with pkgs; [
     git
     vim
-    haskellPackages.xmobar
   ];
 
   programs.light.enable = true;
