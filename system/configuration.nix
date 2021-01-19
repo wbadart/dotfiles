@@ -72,13 +72,9 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    bgs
-    firefox
     git
     vim
-    rofi
     haskellPackages.xmobar
-    alacritty
   ];
 
   programs.light.enable = true;

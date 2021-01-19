@@ -27,6 +27,12 @@
       };
     };
   };
+
+  environment.systemPackages = with pkgs; [
+    bgs
+    firefox
+  ];
+
   fonts.fonts = with pkgs; [
     (nerdfonts.override { fonts = [ "FiraCode" ]; })
   ];
