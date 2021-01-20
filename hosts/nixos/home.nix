@@ -57,11 +57,27 @@
       };
     };
 
+  systemd.user.services.protonvpn = {
+    Unit = {
+      Description = "ProtonVPN Auto-connect";
+      Wants = [ "online.target" ];
+    };
+    Service = {
+      Type = "forking";
+      ExecStart = "${pkgs.protonvpn-cli}/bin/protonvpn connect -f";
+      Environment = [
+        "PVPN_WAIT=300"
+        "PVPN_DEBUG=1"
+        "SUDO_USER=will"
+      ];
+    };
+    Install.WantedBy = [ "multi-user.target" ];
+  };
+
   services.picom = {
     enable = true;
     activeOpacity = "1.0";
-    inactiveOpacity = "0.95";
-    inactiveDim = "0.2";
+    inactiveDim = "0.3";
     backend = "glx";
     fade = true;
     fadeDelta = 1;
