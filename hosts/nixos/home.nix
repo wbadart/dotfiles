@@ -1,5 +1,10 @@
 { pkgs, ... }:
 {
+  imports = [
+    ../../config/polybar/home.nix
+    ../../config/lockscreen/home.nix
+  ];
+
   home = {
     username = "will";
     homeDirectory = "/home/will";
@@ -16,37 +21,6 @@
     enable = true;
     terminal = "${pkgs.alacritty}/bin/alacritty";
     theme = builtins.fetchurl "https://raw.githubusercontent.com/davatorium/rofi/next/themes/sidebar.rasi";
-  };
-
-  services.polybar = {
-    enable = true;
-    package = pkgs.polybar.override {
-      alsaSupport = true;
-      githubSupport = true;
-      mpdSupport = true;
-      pulseSupport = true;
-    };
-    extraConfig = ''
-      [bar/bar]
-      monitor = ''${env:MONITOR:eDP-1}
-      width = 100%
-      height = 48
-      radius = 6.0
-      fixed-center = true
-      background = #000000
-      foreground = #ffffff
-      modules-center = date
-    '';
-    config = {
-      "module/date" = {
-        type = "internal/date";
-        internal = 5;
-        date = "%d.%m.%y";
-        time = "%H:%M";
-        label = "%time%  %date%";
-      };
-    };
-    script = "polybar bar &";
   };
 
   programs.alacritty = {
@@ -82,4 +56,17 @@
         ExecStart = "${neuron}/bin/neuron -d ${notesDir} rib -wS";
       };
     };
+
+  services.picom = {
+    enable = true;
+    activeOpacity = "1.0";
+    inactiveOpacity = "0.95";
+    inactiveDim = "0.2";
+    backend = "glx";
+    fade = true;
+    fadeDelta = 1;
+    opacityRule = [ "100:name *= 'i3lock'" ];
+    shadow = true;
+    shadowOpacity = "0.75";
+  };
 }

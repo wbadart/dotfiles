@@ -21,10 +21,13 @@ main = launch myConfig
              $ layoutHook desktopConfig
           , startupHook = do
               startupHook desktopConfig
-              spawn "bgs -z Pictures/wallpapers/a0il9g1km4461.jpg &"
-              -- spawn "trayer --edge top --align right --SetDockType true --SetPartialStrut true --expand true --width 15 --height 12 --transparent true &"
+              mapM_ spawn
+                [ "nitrogen --restore --set-zoom-fill &"
+                , "nm-applet --sm-disable --indicator &"
+                ]
           }
           `additionalKeys`
-          [   ((mod4Mask, xK_q), restart "xmonad" True)
-              , ((mod1Mask, xK_p), spawn "rofi -modi \"window,run,ssh,combi\" -show combi")
+          [ ((mod4Mask, xK_q), restart "xmonad" True)
+          , ((mod1Mask, xK_p), spawn "rofi -modi \"window,run,ssh,combi\" -show combi")
+          , ((mod1Mask .|. shiftMask, xK_q), spawn "betterlockscreen -l dimblur -t'Enter password to unlock'")
           ]  

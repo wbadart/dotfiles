@@ -29,8 +29,9 @@
   };
 
   environment.systemPackages = with pkgs; [
-    bgs
+    nitrogen
     firefox
+    gnome3.networkmanagerapplet
   ];
 
   fonts.fonts = with pkgs; [
