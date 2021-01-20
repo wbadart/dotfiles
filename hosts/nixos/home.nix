@@ -82,6 +82,7 @@
     fade = true;
     fadeDelta = 1;
     opacityRule = [ "100:name *= 'i3lock'" ];
+    noDockShadow = false;
     shadow = true;
     shadowOpacity = "0.75";
   };

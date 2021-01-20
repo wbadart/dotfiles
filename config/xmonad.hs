@@ -8,7 +8,7 @@ main :: IO ()
 main = launch myConfig
   where myConfig = desktopConfig
           { terminal = "alacritty"
-          , focusedBorderColor = "#5e81ac"
+          , focusedBorderColor = "#e53935"
           , borderWidth = 2
           , layoutHook =
             spacingRaw
