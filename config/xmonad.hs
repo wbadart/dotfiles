@@ -23,7 +23,6 @@ main = launch myConfig
               startupHook desktopConfig
               mapM_ spawn
                 [ "nitrogen --restore --set-zoom-fill &"
-                , "nm-applet --sm-disable --indicator &"
                 ]
           }
           `additionalKeys`

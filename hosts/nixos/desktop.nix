@@ -31,7 +31,7 @@
   environment.systemPackages = with pkgs; [
     nitrogen
     firefox
-    gnome3.networkmanagerapplet
+    networkmanager_dmenu dmenu
   ];
 
   fonts.fonts = with pkgs; [

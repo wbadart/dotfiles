@@ -7,7 +7,7 @@
       mpdSupport = true;
       pulseSupport = true;
     };
-    extraConfig = builtins.readFile ./config.ini;
+    extraConfig = builtins.readFile ./themes/simple/docky/config.ini;
     script = "polybar main &";
   };
 }
