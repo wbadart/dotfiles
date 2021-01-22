@@ -9,7 +9,6 @@
     username = "will";
     homeDirectory = "/home/will";
     sessionVariables = {
-      LEDGER_FILE = "/home/will/Documents/ledger/JAN2021.journal";
     };
     packages = with pkgs; [
       signal-desktop

@@ -5,21 +5,28 @@
   ];
 
   home = {
+    sessionPath = [
+      "$HOME/.local/bin"
+      "$HOME/.local/miniconda3/bin"
+    ];
     sessionVariables = {
-      STOCKS_EXCLUDE = "USD|LifePath|Put|Call|ETH|BTC|BRK.B|NT_HRS";
       EDITOR = "nvim";
-      LEDGER_FILE = "$HOME/Documents/ledger/JAN2021.journal";
       GNUPGHOME="$HOME/.config/gnupg";
+      LEDGER_FILE = "$HOME/Documents/ledger/JAN2021.journal";
+      STOCKS_EXCLUDE = "USD|LifePath|Put|Call|ETH|BTC|BRK.B|NT_HRS|Index";
     } // (if builtins.pathExists ./secrets.nix then import ./secrets.nix else {});
 
     packages = with pkgs; [
       cachix
       curlie
+      dhall-lsp-server
+      entr
       exa
       fd
       hledger
       hugo
       mosh
+      neuron-notes
       nmap
       procs
       ripgrep
@@ -27,8 +34,7 @@
       universal-ctags
       watch
       haskellPackages.stack
-      agda
-      neuron-notes
+      python38Packages.poetry
     ];
   };
 
@@ -42,11 +48,11 @@
     enable = true;
     plugins = with pkgs.vimPlugins; [
       SimpylFold
-      coc-metals
       coc-css
       coc-html
       coc-json
       coc-markdownlint
+      coc-metals
       coc-nvim
       coc-rls
       fzf-vim
@@ -111,17 +117,6 @@
       set fish_greeting
       set --global --export GPG_TTY (tty)
     '';
-    plugins = [
-      {
-        name = "fenv";
-        src = pkgs.fetchFromGitHub {
-          owner = "oh-my-fish";
-          repo = "plugin-foreign-env";
-          rev = "dddd9213272a0ab848d474d0cbde12ad034e65bc";
-          sha256 = "00xqlyl3lffc5l0viin1nyp819wf81fncqyz87jx8ljjdhilmgbs";
-        };
-      }
-    ];
     shellAliases = {
       cat = "bat";
       curl = "curlie";
