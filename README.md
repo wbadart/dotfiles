@@ -3,40 +3,23 @@
 These are [my](https://willbadart.com) dotfiles. I hope you find something
 interesting and useful in here!
 
-99% of my configuration is handled by [`home-manager`][hm], a [Nix]-based
-dotfile/ general program configuration manager. The top-level
-[`./home.nix`](./home.nix) file has all of the common config, and each entry
-under [`./hosts/`](./hosts) has some specifics for each machine I'm using this
-repo on.
+As you can tell from the sidebar, I use [nix][Nix] to do all the heavy lifting,
+including [`home-manager`][hm] for managing dotfiles and the like. Shared
+system configuration lives in [`./configuration.nix`](./configuration.nix)
+while shared home configuration lives in [`./home.nix`](./home.nix).
+Host-specific configurations each live in their respective subdirectory of
+[`./hosts/`](./hosts). On the local clone on each host, I create a symlink
+called `./hosts/current` which links to that host's configuration directory
+(this symlink is ignored by `.gitignore`).
 
-[hm]: https://github.com/rycee/home-manager
+The `current` config is automatically imported by the shared home or system
+configuration, so "installing" my configs is a simple matter of linking
+`./configuration.nix` to `/etc/nixos/configuration.nix` and/ or linking
+`./home.nix` to `~/.config/nixpkgs/home.nix` and running the appropriate
+`{nixos-rebuild,home-manager} switch` command.
+
+[hm]: https://github.com/nix-community/home-manager
 [Nix]: https://nixos.org
-
-To get started, install `home-manager`, and run the following:
-
-```sh
-git clone https://github.com/wbadart/dotfiles.git
-cd dotfiles
-```
-
-Now, create a `./hosts/` entry for your machine using this template:
-
-```nix
-import ../home.nix
-{
-  username = "...";
-  homeDirectory = "...";
-  email = "...";
-}
-```
-
-Finally,
-
-```sh
-mkdir -p $HOME/.config/nixpkgs
-ln -s $PWD/hosts/this_machine.nix $HOME/.config/nixpkgs/home.nix
-home-manager switch
-```
 
 ## Contributing
 
@@ -44,13 +27,12 @@ I'm always open to new ideas, so if there's a cool vim hack or i3
 trick you think would work well in this ecosystem, please submit a
 [pull request][PRs]! I'm always open to new ideas.
 
+[PRs]: https://github.com/wbadart/dotfiles/pulls
 
 ## License
 
 MIT license; go to town. See [LICENSE] and [opensource.org] for
 more details.
 
-
-[PRs]: https://github.com/wbadart/dotfiles/pulls
 [LICENSE]: ./LICENSE
 [opensource.org]: https://opensource.org/licenses/MIT
