@@ -6,9 +6,6 @@
     sessionPath = [
       "/Applications/Racket v7.8/bin"
     ];
-    sessionVariables = {
-      LEDGER_FILE = "$HOME/Documents/ledger/JAN2021.journal";
-    };
   };
 
   programs.git.userEmail = "Badart_William@bah.com";
