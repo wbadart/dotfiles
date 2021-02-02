@@ -32,6 +32,8 @@
     nitrogen
     firefox
     networkmanager_dmenu dmenu
+    scrot
+    xsel
   ];
 
   fonts.fonts = with pkgs; [

@@ -12,7 +12,7 @@
     sessionVariables = {
       EDITOR = "nvim";
       GNUPGHOME="$HOME/.config/gnupg";
-      LEDGER_FILE = "$HOME/Documents/ledger/JAN2021.journal";
+      LEDGER_FILE = "$HOME/Documents/ledger/FEB2021.journal";
       STOCKS_EXCLUDE = "USD|LifePath|Put|Call|ETH|BTC|BRK.B|NT_HRS|Index";
     } // (if builtins.pathExists ./secrets.nix then import ./secrets.nix else {});
 
