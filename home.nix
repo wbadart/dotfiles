@@ -155,6 +155,14 @@
     enable = true;
     enableFishIntegration = true;
     enableNixDirenvIntegration = true;
+    stdlib = ''
+      layout_poetry() {
+        local VENV="$(dirname "$(poetry run which python)")"
+        PATH_add "$VENV"
+        export VIRTUAL_ENV="$(dirname "$VENV")"
+        export POETRY_ACTIVE=1
+      }
+      '';
   };
 
   programs.tmux = {
