@@ -11,6 +11,8 @@
     sessionVariables = {
     };
     packages = with pkgs; [
+      mpv
+      transmission
       signal-desktop
       protonvpn-cli
     ];
