@@ -6,6 +6,12 @@
     sessionPath = [
       "/Applications/Racket v7.8/bin"
     ];
+    packages = with pkgs; [
+      agda
+      emacs26
+      emacs26Packages.agda2-mode
+      emacs26Packages.doom
+    ];
   };
 
   programs.git.userEmail = "Badart_William@bah.com";
