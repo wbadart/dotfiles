@@ -1,12 +1,25 @@
+function! StripTrailingWhitespace()
+    let l:winview = winsaveview()
+    silent! %s/\s\+$//
+    call winrestview(l:winview)
+endfunction
+autocmd BufWritePre * call StripTrailingWhitespace()
+
+highlight ExtraWhitespace ctermbg=red guibg=red
+autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red
+autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
+autocmd InsertLeave * match ExtraWhitespace /\s\+$/
 colorscheme molokai
+
 set expandtab
 set hidden nobackup nowritebackup noswapfile
 set number relativenumber scrolloff=5
 set ignorecase smartcase hlsearch incsearch wildmenu
 autocmd BufNewFile,BufReadPost *.{md,tex,rst} set colorcolumn=79 tw=79 spell
 autocmd BufNewFile,BufReadPost *.{hs} set colorcolumn=100 ts=2 sw=2
-autocmd BufNewFile,BufReadPost, *.{sh,bash} set ts=2 sw=2
+autocmd BufNewFile,BufReadPost *.{sh,bash} set ts=2 sw=2
 autocmd BufNewFile,BufReadPost COMMIT_EDITMSG set spell
+autocmd BufNewFile,BufReadPost *.stan set filetype=stan
 let g:netrw_liststyle=3  " tree
 let mapleader = ','
 let g:tex_flavor = 'latex'
