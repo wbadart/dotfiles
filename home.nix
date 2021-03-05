@@ -12,7 +12,7 @@
     sessionVariables = {
       EDITOR = "nvim";
       GNUPGHOME="$HOME/.config/gnupg";
-      LEDGER_FILE = "$HOME/Documents/ledger/FEB2021.journal";
+      LEDGER_FILE = "$HOME/Documents/ledger/MAR2021.journal";
       STOCKS_EXCLUDE = "USD|LifePath|Put|Call|ETH|BTC|BRK.B|NT_HRS|Index";
     } // (if builtins.pathExists ./secrets.nix then import ./secrets.nix else {});
 
@@ -28,13 +28,16 @@
       mosh
       neuron-notes
       nmap
+      pandoc
       procs
       ripgrep
+      texlive.combined.scheme-full
+      haskellPackages.lhs2tex
       tokei
       universal-ctags
       watch
       haskellPackages.stack
-      python38Packages.poetry
+      python39Packages.poetry
     ];
   };
 
@@ -42,7 +45,6 @@
   programs.gpg.enable = true;
   programs.htop.enable = true;
   programs.jq.enable = true;
-  programs.texlive.enable = true;
 
   programs.neovim = {
     enable = true;
@@ -59,6 +61,7 @@
       goyo-vim
       lightline-vim
       neuron-vim
+      stan-vim
       unicode-vim
       vim-colorschemes
       vim-commentary
