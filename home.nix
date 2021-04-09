@@ -12,7 +12,7 @@
     sessionVariables = {
       EDITOR = "nvim";
       GNUPGHOME="$HOME/.config/gnupg";
-      LEDGER_FILE = "$HOME/Documents/ledger/MAR2021.journal";
+      LEDGER_FILE = "$HOME/Documents/ledger/APR2021.journal";
       STOCKS_EXCLUDE = "USD|LifePath|Put|Call|ETH|BTC|BRK.B|NT_HRS|Index";
     } // (if builtins.pathExists ./secrets.nix then import ./secrets.nix else {});
 
@@ -37,6 +37,8 @@
       universal-ctags
       watch
       haskellPackages.stack
+      haskell-language-server
+      ormolu
       python39Packages.poetry
     ];
   };
@@ -126,7 +128,6 @@
       tree = "exa -T";
       grep = "rg";
       timeit = "hyperfine";
-      find = "fd";
       ls = "exa --git";
       ps = "procs";
       l = "exa -l --git";
