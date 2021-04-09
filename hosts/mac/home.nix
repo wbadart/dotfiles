@@ -8,9 +8,10 @@
     ];
     packages = with pkgs; [
       agda
-      emacs26
-      emacs26Packages.agda2-mode
-      emacs26Packages.doom
+      agda-pkg
+      emacs
+      emacs.pkgs.agda2-mode
+      emacs.pkgs.doom
     ];
   };
 
