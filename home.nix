@@ -17,9 +17,18 @@
     } // (if builtins.pathExists ./secrets.nix then import ./secrets.nix else {});
 
     packages = with pkgs; [
-      cachix
-      curlie
-      dhall-lsp-server
+      # cachix
+      # curlie
+      # dhall-lsp-server
+      # haskell-language-server
+      # haskellPackages.lhs2tex
+      # haskellPackages.stack
+      # ormolu
+      # pandoc
+      # procs
+      # texlive.combined.scheme-full
+      # tokei
+      # universal-ctags
       entr
       exa
       fd
@@ -28,18 +37,9 @@
       mosh
       neuron-notes
       nmap
-      pandoc
-      procs
-      ripgrep
-      texlive.combined.scheme-full
-      haskellPackages.lhs2tex
-      tokei
-      universal-ctags
-      watch
-      haskellPackages.stack
-      haskell-language-server
-      ormolu
       python39Packages.poetry
+      ripgrep
+      watch
     ];
   };
 
@@ -47,6 +47,14 @@
   programs.gpg.enable = true;
   programs.htop.enable = true;
   programs.jq.enable = true;
+
+  programs.lazygit = {
+    enable = true;
+    settings = {
+      allBranchesLogCmd = "git log --all --graph --oneline --color=always --abbrev-commit --decorate --date=relative --pretty=medium {{branchName}}";
+      branchLogCmd = "git log --graph --oneline --color=always --abbrev-commit --decorate --date=relative --pretty=medium {{branchName}}";
+    };
+  };
 
   programs.neovim = {
     enable = true;
@@ -124,12 +132,12 @@
     '';
     shellAliases = {
       cat = "bat";
-      curl = "curlie";
+      # curl = "curlie";
       tree = "exa -T";
       grep = "rg";
       timeit = "hyperfine";
       ls = "exa --git";
-      ps = "procs";
+      # ps = "procs";
       l = "exa -l --git";
       ll = "exa -al --git";
       g = "git";
@@ -158,7 +166,7 @@
   programs.direnv = {
     enable = true;
     enableFishIntegration = true;
-    enableNixDirenvIntegration = true;
+    nix-direnv.enable = true;
     stdlib = ''
       layout_poetry() {
         local VENV="$(dirname "$(poetry run which python)")"
