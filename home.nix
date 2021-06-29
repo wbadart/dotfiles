@@ -11,8 +11,7 @@
     ];
     sessionVariables = {
       EDITOR = "nvim";
-      GNUPGHOME="$HOME/.config/gnupg";
-      LEDGER_FILE = "$HOME/Documents/ledger/APR2021.journal";
+      LEDGER_FILE = "$HOME/Documents/ledger/JUN2021.journal";
       STOCKS_EXCLUDE = "USD|LifePath|Put|Call|ETH|BTC|BRK.B|NT_HRS|Index";
     } // (if builtins.pathExists ./secrets.nix then import ./secrets.nix else {});
 
@@ -44,7 +43,6 @@
   };
 
   programs.bat.enable = true;
-  programs.gpg.enable = true;
   programs.htop.enable = true;
   programs.jq.enable = true;
 
@@ -105,7 +103,7 @@
     delta = {
       enable = true;
       options = {
-        features = "side-by-side line-numbers decorations";
+        features = "line-numbers decorations";
       };
     };
     lfs = { enable = true; };
@@ -116,6 +114,7 @@
     userName = "Will Badart";
     extraConfig = {
       core.editor = "nvim";
+      init.defaultBranch = "master";
     };
   };
 
@@ -132,12 +131,11 @@
     '';
     shellAliases = {
       cat = "bat";
-      # curl = "curlie";
-      tree = "exa -T";
+      curl = "curlie";
+      tree = "exa -T --group-directories-first";
       grep = "rg";
       timeit = "hyperfine";
       ls = "exa --git";
-      # ps = "procs";
       l = "exa -l --git";
       ll = "exa -al --git";
       g = "git";
