@@ -16,7 +16,7 @@
     } // (if builtins.pathExists ./secrets.nix then import ./secrets.nix else {});
 
     packages = with pkgs; [
-      # cachix
+      cachix
       # curlie
       # dhall-lsp-server
       # haskell-language-server
@@ -34,7 +34,7 @@
       hledger
       hugo
       mosh
-      neuron-notes
+      # neuron-notes
       nmap
       python39Packages.poetry
       ripgrep
@@ -148,7 +148,7 @@
       gco = "git checkout";
       gd = "git diff";
       gdc = "git diff --cached";
-      gf = "git fetch";
+      gf = "git fetch --prune";
       gl = "git pull";
       gp = "git push";
       gr = "git remote";

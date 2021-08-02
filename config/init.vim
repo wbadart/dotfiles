@@ -20,9 +20,10 @@ autocmd BufNewFile,BufReadPost *.{hs} set colorcolumn=100 ts=2 sw=2
 autocmd BufNewFile,BufReadPost *.{sh,bash} set ts=2 sw=2
 autocmd BufNewFile,BufReadPost COMMIT_EDITMSG set spell
 autocmd BufNewFile,BufReadPost *.stan set filetype=stan
-let g:netrw_liststyle=3  " tree
 let mapleader = ','
+let g:netrw_liststyle=3  " tree
 let g:tex_flavor = 'latex'
+let g:neuron_dir = '~/Documents/zettelkasten'
 inoremap jk <Esc>
 nnoremap <C-H> <C-W><C-H>
 nnoremap <C-J> <C-W><C-J>

@@ -1,3 +1,7 @@
+let neuronRev = "master";
+    neuronSrc = builtins.fetchTarball "https://github.com/srid/neuron/archive/${neuronRev}.tar.gz";
+    neuronPkg = import neuronSrc;
+in
 { pkgs, ... }:
 {
   home = {
@@ -11,6 +15,7 @@
       emacs
       emacs.pkgs.agda2-mode
       emacs.pkgs.doom
+      neuronPkg.default
     ];
   };
 
@@ -37,6 +42,9 @@
         normal.family = "LiterationMono Nerd Font Mono";
         offset.y = 10;
         glyph_offset.y = 5;
+      };
+      mouse = {
+        hide_when_typing = true;
       };
       cursor = {
         style = {
