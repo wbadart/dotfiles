@@ -154,6 +154,7 @@
       gst = "git status";
       h = "hledger -V";
       he = "cd (dirname $LEDGER_FILE) && nvim +Files && cd -";
+      t = "tmux";
       v = "nvim +GFiles";
       vim = "nvim";
       vc = "cd $HOME/Documents/dotfiles && nvim +Files && cd -";
