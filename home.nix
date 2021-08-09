@@ -131,7 +131,6 @@
     '';
     shellAliases = {
       cat = "bat";
-      curl = "curlie";
       tree = "exa -T --group-directories-first";
       grep = "rg";
       timeit = "hyperfine";
