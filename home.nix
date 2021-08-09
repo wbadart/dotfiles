@@ -155,6 +155,7 @@
       h = "hledger -V";
       he = "cd (dirname $LEDGER_FILE) && nvim +Files && cd -";
       t = "tmux";
+      tn = "tmux new -s (basename $PWD)";
       v = "nvim +GFiles";
       vim = "nvim";
       vc = "cd $HOME/Documents/dotfiles && nvim +Files && cd -";

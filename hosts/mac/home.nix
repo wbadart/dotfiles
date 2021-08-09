@@ -1,6 +1,8 @@
-let neuronRev = "master";
-    neuronSrc = builtins.fetchTarball "https://github.com/srid/neuron/archive/${neuronRev}.tar.gz";
-    neuronPkg = import neuronSrc;
+let neuronPkg = import (builtins.fetchGit {
+  url = "https://github.com/srid/neuron.git";
+  ref = "master";
+  rev = "998fce27ccc91231ef9757e2bebeb39327850092";
+});
 in
 { pkgs, ... }:
 {
