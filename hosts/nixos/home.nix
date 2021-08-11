@@ -10,6 +10,7 @@
       transmission
       signal-desktop
       protonvpn-cli
+      protonvpn-gui
       wineWowPackages.stable
       unzip
     ];

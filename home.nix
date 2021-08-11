@@ -11,7 +11,7 @@
     ];
     sessionVariables = {
       EDITOR = "nvim";
-      LEDGER_FILE = "$HOME/Documents/ledger/JUN2021.journal";
+      LEDGER_FILE = "$HOME/Documents/ledger/JUL2021.journal";
       STOCKS_EXCLUDE = "USD|LifePath|Put|Call|ETH|BTC|BRK.B|NT_HRS|Index";
     } // (if builtins.pathExists ./secrets.nix then import ./secrets.nix else {});
 
