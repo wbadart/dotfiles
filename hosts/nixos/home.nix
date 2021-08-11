@@ -1,5 +1,9 @@
-{ pkgs, ... }:
+{ pkgs, config, ... }:
 {
+  imports = [
+    ../../modules/hledger.nix
+  ];
+
   home = {
     username = "will";
     homeDirectory = "/home/will";
@@ -11,9 +15,11 @@
       signal-desktop
       protonvpn-cli
       protonvpn-gui
-      wineWowPackages.stable
       unzip
     ];
+    sessionVariables = {
+      LEDGER_DIR = "${config.home.homeDirectory}/Documents/ledger";
+    };
   };
 
   programs.alacritty = {
@@ -42,7 +48,7 @@
 
   systemd.user.services.neuron =
     let notesDir = "/home/will/Documents/Kasten";
-        neuron = pkgs.neuron-notes;
+        neuron = import ../../modules/neuron-pkg.nix;
     in {
       Unit.Description = "Neuron zettelkasten service";
       Install.WantedBy = [ "graphical-session.target" ];
@@ -50,21 +56,4 @@
         ExecStart = "${neuron}/bin/neuron -d ${notesDir} rib -wS";
       };
     };
-
-  systemd.user.services.protonvpn = {
-    Unit = {
-      Description = "ProtonVPN Auto-connect";
-      Wants = [ "online.target" ];
-    };
-    Service = {
-      Type = "forking";
-      ExecStart = "${pkgs.protonvpn-cli}/bin/protonvpn connect -f";
-      Environment = [
-        "PVPN_WAIT=300"
-        "PVPN_DEBUG=1"
-        "SUDO_USER=will"
-      ];
-    };
-    Install.WantedBy = [ "multi-user.target" ];
-  };
 }

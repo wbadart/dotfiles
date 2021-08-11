@@ -1,3 +1,5 @@
+let importIfExists = path: default: if builtins.pathExists path then import path else default;
+in
 { pkgs, config, ... }:
 {
   imports = [
@@ -7,13 +9,10 @@
   home = {
     sessionPath = [
       "$HOME/.local/bin"
-      "$HOME/.local/miniconda3/bin"
     ];
     sessionVariables = {
       EDITOR = "nvim";
-      LEDGER_FILE = "$HOME/Documents/ledger/JUL2021.journal";
-      STOCKS_EXCLUDE = "USD|LifePath|Put|Call|ETH|BTC|BRK.B|NT_HRS|Index";
-    } // (if builtins.pathExists ./secrets.nix then import ./secrets.nix else {});
+    } // importIfExists ./secrets.nix {};
 
     packages = with pkgs; [
       cachix
@@ -31,10 +30,8 @@
       entr
       exa
       fd
-      hledger
       hugo
       mosh
-      # neuron-notes
       nmap
       python39Packages.poetry
       ripgrep
