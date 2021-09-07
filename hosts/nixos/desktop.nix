@@ -26,6 +26,7 @@
   environment.systemPackages = with pkgs; [
     firefox
     gnome3.gnome-tweak-tool
+    # gnomeExtensions.material-shell
     xsel
   ];
 

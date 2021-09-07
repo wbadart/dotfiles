@@ -31,6 +31,7 @@ in
       exa
       fd
       hugo
+      j
       mosh
       nmap
       python39Packages.poetry
@@ -151,6 +152,7 @@ in
       gst = "git status";
       h = "hledger -V";
       he = "cd (dirname $LEDGER_FILE) && nvim +Files && cd -";
+      j = "jconsole";
       t = "tmux";
       tn = "tmux new -s (basename $PWD)";
       ta = "tmux a -t";
