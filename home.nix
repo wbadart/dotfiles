@@ -32,6 +32,7 @@ in
       fd
       hugo
       j
+      magic-wormhole
       mosh
       nmap
       python39Packages.poetry
