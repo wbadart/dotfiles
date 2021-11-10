@@ -2,6 +2,8 @@
 {
   imports = [
     ../../modules/hledger.nix
+    ../../modules/emanote.nix
+    ../../modules/neuron.nix
   ];
 
   home = {
@@ -10,12 +12,21 @@
     packages = with pkgs; [
       calibre
       chromium
+      firefox
+      nextcloud-client
       niv
       transmission
       signal-desktop
       protonvpn-cli
-      protonvpn-gui
+      # protonvpn-gui
       unzip
+
+      # https://nixos.wiki/wiki/Sway
+      # swaylock
+      # swayidle
+      # wl-clipboard
+      # mako # notification daemon
+      # dmenu # Dmenu is the default in the config but i recommend wofi since its wayland native
     ];
     sessionVariables = {
       LEDGER_DIR = "${config.home.homeDirectory}/Documents/ledger";
@@ -56,4 +67,9 @@
         ExecStart = "${neuron}/bin/neuron -d ${notesDir} rib -wS";
       };
     };
+
+    # wayland.windowManager.sway = {
+    #   enable = true;
+    #   wrapperFeatures.gtk = true ;
+    # };
 }

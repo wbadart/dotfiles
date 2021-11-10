@@ -1,5 +1,5 @@
 import (builtins.fetchGit {
   url = "https://github.com/srid/neuron.git";
   ref = "master";
-  rev = "998fce27ccc91231ef9757e2bebeb39327850092";
+  rev = "e3f3349e42dab59384a705001209e0e8741c4af4";
 })
