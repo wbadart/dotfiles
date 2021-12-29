@@ -1,18 +1,36 @@
-{ pkgs, ... }:
+{ pkgs, config, ... }:
 {
+  imports = [
+    ../../modules/hledger.nix
+    ../../modules/emanote.nix
+    ../../modules/neuron.nix
+  ];
+
   home = {
     username = "will";
     homeDirectory = "/home/will";
     packages = with pkgs; [
       calibre
       chromium
+      firefox
+      nextcloud-client
       niv
       transmission
       signal-desktop
       protonvpn-cli
-      wineWowPackages.stable
+      # protonvpn-gui
       unzip
+
+      # https://nixos.wiki/wiki/Sway
+      # swaylock
+      # swayidle
+      # wl-clipboard
+      # mako # notification daemon
+      # dmenu # Dmenu is the default in the config but i recommend wofi since its wayland native
     ];
+    sessionVariables = {
+      LEDGER_DIR = "${config.home.homeDirectory}/Documents/ledger";
+    };
   };
 
   programs.alacritty = {
@@ -41,7 +59,7 @@
 
   systemd.user.services.neuron =
     let notesDir = "/home/will/Documents/Kasten";
-        neuron = pkgs.neuron-notes;
+        neuron = import ../../modules/neuron-pkg.nix;
     in {
       Unit.Description = "Neuron zettelkasten service";
       Install.WantedBy = [ "graphical-session.target" ];
@@ -50,20 +68,8 @@
       };
     };
 
-  systemd.user.services.protonvpn = {
-    Unit = {
-      Description = "ProtonVPN Auto-connect";
-      Wants = [ "online.target" ];
-    };
-    Service = {
-      Type = "forking";
-      ExecStart = "${pkgs.protonvpn-cli}/bin/protonvpn connect -f";
-      Environment = [
-        "PVPN_WAIT=300"
-        "PVPN_DEBUG=1"
-        "SUDO_USER=will"
-      ];
-    };
-    Install.WantedBy = [ "multi-user.target" ];
-  };
+    # wayland.windowManager.sway = {
+    #   enable = true;
+    #   wrapperFeatures.gtk = true ;
+    # };
 }

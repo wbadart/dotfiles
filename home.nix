@@ -1,3 +1,5 @@
+let importIfExists = path: default: if builtins.pathExists path then import path else default;
+in
 { pkgs, config, ... }:
 {
   imports = [
@@ -12,9 +14,7 @@
     ];
     sessionVariables = {
       EDITOR = "nvim";
-      LEDGER_FILE = "$HOME/Documents/ledger/JUN2021.journal";
-      STOCKS_EXCLUDE = "USD|LifePath|Put|Call|ETH|BTC|BRK.B|NT_HRS|Index";
-    } // (if builtins.pathExists ./secrets.nix then import ./secrets.nix else {});
+    } // importIfExists ./secrets.nix {};
 
     packages = with pkgs; [
       cachix
@@ -32,11 +32,11 @@
       entr
       exa
       fd
-      hledger
       hugo
       jq jiq
+      j
+      magic-wormhole
       mosh
-      # neuron-notes
       nmap
       python39Packages.poetry
       ripgrep
@@ -155,6 +155,7 @@
       gst = "git status";
       h = "hledger -V";
       he = "cd (dirname $LEDGER_FILE) && nvim +Files && cd -";
+      j = "jconsole";
       t = "tmux";
       tn = "tmux new -s (basename $PWD)";
       ta = "tmux a -t";

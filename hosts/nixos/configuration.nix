@@ -5,6 +5,8 @@ in {
     ./desktop.nix
   ];
 
+  nix.trustedUsers = ["root" "will"];
+
   services.fprintd.enable = true;
   services.fwupd.enable = true;
   # services.tailscale.enable = true;

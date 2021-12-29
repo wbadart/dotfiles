@@ -1,11 +1,9 @@
-let neuronPkg = import (builtins.fetchGit {
-  url = "https://github.com/srid/neuron.git";
-  ref = "master";
-  rev = "998fce27ccc91231ef9757e2bebeb39327850092";
-});
-in
 { pkgs, ... }:
 {
+  imports = [
+    ../../modules/neuron.nix
+  ];
+
   home = {
     username = "williambadart";
     homeDirectory = "/Users/williambadart";
@@ -17,7 +15,7 @@ in
       emacs
       emacs.pkgs.agda2-mode
       emacs.pkgs.doom
-      # racket-minimal
+      racket-minimal
       neuronPkg.default
       smimesign
     ];
