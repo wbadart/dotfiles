@@ -17,11 +17,20 @@ in
       emacs
       emacs.pkgs.agda2-mode
       emacs.pkgs.doom
+      # racket-minimal
       neuronPkg.default
+      smimesign
     ];
   };
 
-  programs.git.userEmail = "Badart_William@bah.com";
+  programs.git = {
+    userEmail = "Badart_William@bah.com";
+    extraConfig.gpg = {
+      format = "x509";
+      x509.program = "smimesign";
+    };
+    signing.key = "954a581cdfb686755165d80850b5e738b1952110";
+  };
   programs.zsh = {
     enable = true;
     initExtra = ''

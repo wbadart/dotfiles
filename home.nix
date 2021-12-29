@@ -7,6 +7,7 @@
   home = {
     sessionPath = [
       "$HOME/.local/bin"
+      "$HOME/.local/sbin"
       "$HOME/.local/miniconda3/bin"
     ];
     sessionVariables = {
@@ -33,6 +34,7 @@
       fd
       hledger
       hugo
+      jq jiq
       mosh
       # neuron-notes
       nmap
@@ -68,7 +70,7 @@
       fzf-vim
       goyo-vim
       lightline-vim
-      neuron-vim
+      neuron-nvim
       stan-vim
       unicode-vim
       vim-colorschemes
@@ -109,7 +111,6 @@
     lfs = { enable = true; };
     signing = {
       signByDefault = true;
-      key = "B1B7F6AF530849E66D9AD057C0BFCABCFFB2398B";
     };
     userName = "Will Badart";
     extraConfig = {
@@ -135,8 +136,8 @@
       grep = "rg";
       timeit = "hyperfine";
       ls = "exa --git";
-      l = "exa -l --git";
-      ll = "exa -al --git";
+      l = "exa -l --git --group-directories-first";
+      ll = "exa -al --git --group-directories-first";
       g = "git";
       ga = "git add";
       gb = "git branch";
