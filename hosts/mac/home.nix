@@ -15,8 +15,8 @@
       emacs
       emacs.pkgs.agda2-mode
       emacs.pkgs.doom
+      (ghc.withPackages (p: [p.lens p.relude]))
       racket-minimal
-      neuronPkg.default
       smimesign
     ];
   };
@@ -37,29 +37,5 @@
       fi
       exec fish --login --interactive
     '';
-  };
-
-  programs.alacritty = {
-    enable = true;
-    settings = {
-      window = {
-        # padding = { x = 20; y = 20; };
-        decorations = "transparent";
-      };
-      font = {
-        size = 14.0;
-        normal.family = "LiterationMono Nerd Font Mono";
-        offset.y = 10;
-        glyph_offset.y = 5;
-      };
-      mouse = {
-        hide_when_typing = true;
-      };
-      cursor = {
-        style = {
-          shape = "Beam";
-        };
-      };
-    };
   };
 }
