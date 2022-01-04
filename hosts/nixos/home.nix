@@ -53,6 +53,7 @@
   };
 
   programs.git.userEmail = "will@willbadart.com";
+  programs.git.signing.key = "B1B7F6AF530849E66D9AD057C0BFCABCFFB2398B";
   services.syncthing.enable = true;
   services.unclutter.enable = true;
   services.lorri.enable = true;
