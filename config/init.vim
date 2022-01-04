@@ -33,3 +33,5 @@ nnoremap <Leader><Leader> :G<CR>
 nnoremap <C-P> :GFiles<CR>
 nnoremap <C-T> :BTags<CR>
 cmap w!! w !sudo tee > /dev/null %
+
+let g:vim_svelte_plugin_use_typescript = 1
