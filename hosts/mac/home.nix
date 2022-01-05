@@ -8,15 +8,18 @@
     username = "williambadart";
     homeDirectory = "/Users/williambadart";
     sessionPath = [
+      "/Users/williambadart/Library/Python/3.9/bin"
     ];
     packages = with pkgs; [
       agda
       agda-pkg
+      curlie
       emacs
       emacs.pkgs.agda2-mode
       emacs.pkgs.doom
       (ghc.withPackages (p: [p.lens p.relude]))
-      racket-minimal
+      python39Packages.pipx
+      # racket-minimal
       smimesign
     ];
   };
@@ -38,4 +41,5 @@
       exec fish --login --interactive
     '';
   };
+  programs.fish.shellAliases.c = "curlie";
 }
