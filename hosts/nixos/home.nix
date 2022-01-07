@@ -18,38 +18,15 @@
       transmission
       signal-desktop
       protonvpn-cli
-      # protonvpn-gui
       unzip
-
-      # https://nixos.wiki/wiki/Sway
-      # swaylock
-      # swayidle
-      # wl-clipboard
-      # mako # notification daemon
-      # dmenu # Dmenu is the default in the config but i recommend wofi since its wayland native
     ];
     sessionVariables = {
-      LEDGER_DIR = "${config.home.homeDirectory}/Documents/ledger";
+      LEDGER_DIR = "/home/will/Documents/ledger";
     };
   };
 
   programs.alacritty = {
     enable = true;
-    # settings = {
-    #   env.TERM = "alacritty";
-    #   window = {
-    #     padding = { x = 12; y = 0; };
-    #   };
-    #   font = {
-    #     normal = {
-    #       family = "FiraCode Nerd Font";
-    #       style = "Medium";
-    #     };
-    #     size = 8;
-    #     offset.y = 10;
-    #     glyph_offset.y = 5;
-    #   };
-    # };
   };
 
   programs.git.userEmail = "will@willbadart.com";
@@ -68,9 +45,4 @@
         ExecStart = "${neuron}/bin/neuron -d ${notesDir} rib -wS";
       };
     };
-
-    # wayland.windowManager.sway = {
-    #   enable = true;
-    #   wrapperFeatures.gtk = true ;
-    # };
 }
