@@ -4,19 +4,19 @@
     enable = true;
     layout = "us";
     libinput.enable = true;
-    # displayManager.gdm.enable = true;
-    # desktopManager.gnome.enable = true;
+    displayManager.gdm.enable = true;
+    desktopManager.gnome.enable = true;
     windowManager.xmonad = {
       enable = true;
       enableContribAndExtras = true;
-      # config = ...
+      config = builtins.readFile ../../modules/xmonad/xmonad.hs;
     };
   };
 
   environment.systemPackages = with pkgs; [
     dmenu
     firefox
-    # gnome3.gnome-tweak-tool
+    gnome3.gnome-tweak-tool
     xsel
   ];
 
