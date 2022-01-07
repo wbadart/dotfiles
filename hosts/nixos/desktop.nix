@@ -14,6 +14,7 @@
   };
 
   environment.systemPackages = with pkgs; [
+    dmenu
     firefox
     # gnome3.gnome-tweak-tool
     xsel

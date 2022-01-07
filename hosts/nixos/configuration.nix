@@ -14,7 +14,7 @@
     description = "Will";
     shell = pkgs.fish;
   };
-  home-manager.users.will = (import ./home.nix pkgs);
+  home-manager.users.will = (import ../../home.nix pkgs);
 
   networking.hostName = "wb-machine";
   networking.networkmanager.enable = true;
