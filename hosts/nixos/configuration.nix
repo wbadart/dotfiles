@@ -48,4 +48,6 @@
       }];
     }
   ];
+
+  hardware.acpilight.enable = true;
 }

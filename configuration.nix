@@ -8,7 +8,7 @@
     <home-manager/nixos>
   ];
   home-manager.useGlobalPkgs = true;
-  time.timeZone = "America/Denver";
+  time.timeZone = "America/New_York";
 
   sound.enable = true;
   hardware.pulseaudio.enable = true;

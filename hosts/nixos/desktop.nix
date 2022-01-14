@@ -5,6 +5,7 @@
     layout = "us";
     libinput.enable = true;
     displayManager.gdm.enable = true;
+    displayManager.defaultSession = "none+xmonad";
     desktopManager.gnome.enable = true;
     windowManager.xmonad = {
       enable = true;
