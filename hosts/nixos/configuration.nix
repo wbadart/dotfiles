@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 {
   imports = [
     /etc/nixos/cachix.nix
@@ -39,6 +39,12 @@
   programs.adb.enable = true;
   programs.dconf.enable = true;
   programs.fish.enable = true;
+  programs.steam.enable = true;
+  nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
+    "steam"
+    "steam-original"
+    "steam-runtime"
+  ];
 
   security.sudo.extraRules = [
     { users = [ "will" "root" ];
@@ -50,4 +56,5 @@
   ];
 
   hardware.acpilight.enable = true;
+  hardware.bluetooth.enable = true;
 }
