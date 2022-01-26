@@ -17,6 +17,7 @@ in
     } // importIfExists ./secrets.nix {};
 
     packages = with pkgs; [
+      autossh
       cachix
       # curlie
       # dhall-lsp-server
@@ -31,7 +32,6 @@ in
       # universal-ctags
       entr
       exa
-      fd
       hugo
       jq jiq
       j
@@ -167,7 +167,6 @@ in
 
   programs.direnv = {
     enable = true;
-    enableFishIntegration = true;
     nix-direnv.enable = true;
     stdlib = ''
       layout_poetry() {
