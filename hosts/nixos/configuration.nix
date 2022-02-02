@@ -40,6 +40,14 @@
   programs.dconf.enable = true;
   programs.fish.enable = true;
   programs.steam.enable = true;
+  programs.proxychains = {
+    enable = true;
+    proxies.default = {
+      type = "socks4";
+      host = "127.0.0.1";
+      port = 9050;
+    };
+  };
   nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
     "steam"
     "steam-original"
