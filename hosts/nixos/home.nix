@@ -21,6 +21,7 @@
     ];
     sessionVariables = {
       LEDGER_DIR = "/home/will/Documents/ledger";
+      KASTEN_DIR = "/home/will/Documents/Kasten";
     };
   };
 
@@ -33,15 +34,4 @@
   services.syncthing.enable = true;
   services.unclutter.enable = true;
   services.lorri.enable = true;
-
-  systemd.user.services.neuron =
-    let notesDir = "/home/will/Documents/Kasten";
-        neuron = import ../../modules/neuron-pkg.nix;
-    in {
-      Unit.Description = "Neuron zettelkasten service";
-      Install.WantedBy = [ "graphical-session.target" ];
-      Service = {
-        ExecStart = "${neuron}/bin/neuron -d ${notesDir} rib -wS";
-      };
-    };
 }
