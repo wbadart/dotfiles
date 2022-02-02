@@ -17,7 +17,6 @@
       niv
       transmission
       signal-desktop
-      protonvpn-cli
       unzip
     ];
     sessionVariables = {
