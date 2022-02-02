@@ -15,6 +15,7 @@
       firefox
       nextcloud-client
       niv
+      racket-minimal
       transmission
       signal-desktop
       unzip
