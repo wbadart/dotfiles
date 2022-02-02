@@ -6,7 +6,7 @@
     ./hardware-configuration.nix
   ];
 
-  nix.trustedUsers = ["root" "will"];
+  nix.settings.trusted-users = ["root" "will"];
 
   users.users.will = {
     isNormalUser = true;
