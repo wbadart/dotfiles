@@ -9,17 +9,18 @@
     homeDirectory = "/Users/williambadart";
     sessionPath = [
       "/Users/williambadart/Library/Python/3.9/bin"
+      "/Users/williambadart/.emacs.d/bin"
     ];
+    sessionVariables = {
+      DOOMDIR = "/Users/williambadart/Documents/dotfiles/modules/doom";
+    };
     packages = with pkgs; [
       agda
       agda-pkg
       curlie
-      emacs
-      emacs.pkgs.agda2-mode
-      emacs.pkgs.doom
+      emacs-nox
       (ghc.withPackages (p: [p.lens p.relude]))
       python39Packages.pipx
-      # racket-minimal
       smimesign
     ];
   };
@@ -41,5 +42,4 @@
       exec fish --login --interactive
     '';
   };
-  programs.fish.shellAliases.c = "curlie";
 }

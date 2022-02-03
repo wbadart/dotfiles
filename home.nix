@@ -19,17 +19,6 @@ in
     packages = with pkgs; [
       autossh
       cachix
-      # curlie
-      # dhall-lsp-server
-      # haskell-language-server
-      # haskellPackages.lhs2tex
-      # haskellPackages.stack
-      # ormolu
-      # pandoc
-      # procs
-      # texlive.combined.scheme-full
-      # tokei
-      # universal-ctags
       entr
       exa
       hugo
