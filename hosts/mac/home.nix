@@ -17,6 +17,7 @@
     packages = with pkgs; [
       agda
       agda-pkg
+      cloc
       curlie
       emacs-nox
       (ghc.withPackages (p: [p.lens p.relude]))
