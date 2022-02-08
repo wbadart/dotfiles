@@ -6,11 +6,11 @@
     ./hardware-configuration.nix
   ];
 
-  nix.settings.trusted-users = ["root" "will"];
+  nix.settings.trusted-users = [ "root" "will" ];
 
   users.users.will = {
     isNormalUser = true;
-    extraGroups = [ "sudo" "wheel" "networkmanager" "adbusers" "video" ];
+    extraGroups = [ "sudo" "wheel" "networkmanager" "adbusers" "video" "libvirtd" ];
     description = "Will";
     shell = pkgs.fish;
   };
@@ -39,7 +39,6 @@
   programs.adb.enable = true;
   programs.dconf.enable = true;
   programs.fish.enable = true;
-  programs.steam.enable = true;
   programs.proxychains = {
     enable = true;
     proxies.default = {
@@ -48,11 +47,6 @@
       port = 9050;
     };
   };
-  nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
-    "steam"
-    "steam-original"
-    "steam-runtime"
-  ];
 
   hardware.acpilight.enable = true;
   hardware.bluetooth.enable = true;

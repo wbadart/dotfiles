@@ -17,21 +17,10 @@ in
     } // importIfExists ./secrets.nix {};
 
     packages = with pkgs; [
-      autossh
       cachix
-      # curlie
-      # dhall-lsp-server
-      # haskell-language-server
-      # haskellPackages.lhs2tex
-      # haskellPackages.stack
-      # ormolu
-      # pandoc
-      # procs
-      # texlive.combined.scheme-full
-      # tokei
-      # universal-ctags
       entr
       exa
+      fd
       hugo
       jq jiq
       j
@@ -47,14 +36,6 @@ in
   programs.bat.enable = true;
   programs.htop.enable = true;
   programs.jq.enable = true;
-
-  programs.lazygit = {
-    enable = true;
-    settings = {
-      allBranchesLogCmd = "git log --all --graph --oneline --color=always --abbrev-commit --decorate --date=relative --pretty=medium {{branchName}}";
-      branchLogCmd = "git log --graph --oneline --color=always --abbrev-commit --decorate --date=relative --pretty=medium {{branchName}}";
-    };
-  };
 
   programs.neovim = {
     enable = true;
@@ -93,8 +74,8 @@ in
   programs.fzf = {
     enable = true;
     enableFishIntegration = true;
-    changeDirWidgetCommand = "fd --type d";
-    fileWidgetCommand = "fd --type f";
+    changeDirWidgetCommand = "${pkgs.fd}/bin/fd --type d";
+    fileWidgetCommand = "${pkgs.fd}/bin/fd --type f";
   };
 
   programs.git = {
@@ -133,8 +114,6 @@ in
     shellAliases = {
       cat = "bat";
       tree = "exa -T --group-directories-first";
-      grep = "rg";
-      timeit = "hyperfine";
       ls = "exa --git";
       l = "exa -l --git --group-directories-first";
       ll = "exa -al --git --group-directories-first";

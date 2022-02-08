@@ -5,17 +5,11 @@
     layout = "us";
     libinput.enable = true;
     displayManager.gdm.enable = true;
-    displayManager.defaultSession = "none+xmonad";
+    displayManager.defaultSession = "gnome";
     desktopManager.gnome.enable = true;
-    windowManager.xmonad = {
-      enable = true;
-      enableContribAndExtras = true;
-      config = builtins.readFile ../../modules/xmonad/xmonad.hs;
-    };
   };
 
   environment.systemPackages = with pkgs; [
-    dmenu
     firefox
     gnome3.gnome-tweaks
     xsel
