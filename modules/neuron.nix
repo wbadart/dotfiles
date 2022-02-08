@@ -2,6 +2,9 @@
 let neuron = (import ./neuron-pkg.nix).default;
 in {
   home.packages = [ neuron ];
+} //
+(if builtins.currentSystem == "x86_64-darwin" then {} else
+{
   systemd.user.services.neuron =
     let notesDir =
           assert config.home.sessionVariables?KASTEN_DIR;
@@ -13,4 +16,4 @@ in {
         ExecStart = "${neuron}/bin/neuron -d ${notesDir} rib -ws 0.0.0.0:8080";
       };
     };
-}
+})
