@@ -6,11 +6,11 @@
     ./hardware-configuration.nix
   ];
 
-  nix.trustedUsers = ["root" "will"];
+  nix.settings.trusted-users = [ "root" "will" ];
 
   users.users.will = {
     isNormalUser = true;
-    extraGroups = [ "sudo" "wheel" "networkmanager" "adbusers" "video" ];
+    extraGroups = [ "sudo" "wheel" "networkmanager" "adbusers" "video" "libvirtd" ];
     description = "Will";
     shell = pkgs.fish;
   };
@@ -39,22 +39,45 @@
   programs.adb.enable = true;
   programs.dconf.enable = true;
   programs.fish.enable = true;
-  programs.steam.enable = true;
-  nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
-    "steam"
-    "steam-original"
-    "steam-runtime"
-  ];
-
-  security.sudo.extraRules = [
-    { users = [ "will" "root" ];
-      commands = [{
-      	command = "${pkgs.protonvpn-cli}/bin/protonvpn";
-        options = [ "NOPASSWD" ];
-      }];
-    }
-  ];
+  programs.proxychains = {
+    enable = true;
+    proxies.default = {
+      type = "socks4";
+      host = "127.0.0.1";
+      port = 9050;
+    };
+  };
 
   hardware.acpilight.enable = true;
   hardware.bluetooth.enable = true;
+
+  networking.wg-quick.interfaces = {
+    wg0 = {
+      address = [ "10.0.0.3/24" ];
+      dns = [ "1.1.1.1" "1.0.0.1" ];
+      privateKeyFile = "/home/will/wireguard-keys/private";
+      peers = [
+        {
+          publicKey = "61D6QGriV+wL8R+XcfWU7IQ3sA6pHtEbRRGuRVWjkjQ=";
+          allowedIPs = [ "0.0.0.0/0" ];
+          endpoint = "207.246.84.28:26969";
+          persistentKeepalive = 25;
+        }
+      ];
+    };
+  };
+
+  networking.firewall.interfaces.wg0 = {
+    allowedTCPPorts = [
+      22
+      22000  # syncthing
+    ];
+    allowedTCPPortRanges = [
+      { from = 8000; to = 8999; }
+    ];
+    allowedUDPPorts = [
+      22000  # syncthing QUIC
+      21027  # syncthing discovery
+    ];
+  };
 }
