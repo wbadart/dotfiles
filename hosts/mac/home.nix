@@ -30,7 +30,7 @@
     userEmail = "Badart_William@bah.com";
     extraConfig.gpg = {
       format = "x509";
-      x509.program = "smimesign";
+      x509.program = "${pkgs.smimesign}/bin/smimesign";
     };
     signing.key = "954a581cdfb686755165d80850b5e738b1952110";
   };
