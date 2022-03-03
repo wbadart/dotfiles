@@ -53,14 +53,15 @@
 
   networking.wg-quick.interfaces = {
     wg0 = {
-      address = [ "10.0.0.3/24" ];
+      address = [ "10.69.0.11/32" ];
       dns = [ "1.1.1.1" "1.0.0.1" ];
       privateKeyFile = "/home/will/wireguard-keys/private";
       peers = [
         {
-          publicKey = "61D6QGriV+wL8R+XcfWU7IQ3sA6pHtEbRRGuRVWjkjQ=";
+          publicKey = "Q+YhxX1ZJ+fTIgGkXPbwV0poZeDRoMsxRV3u86AYSxM=";
+          presharedKeyFile = "/home/will/wireguard-keys/2022-03-03-vps.psk";
           allowedIPs = [ "0.0.0.0/0" ];
-          endpoint = "207.246.84.28:26969";
+          endpoint = "207.246.109.54:59934";
           persistentKeepalive = 25;
         }
       ];
