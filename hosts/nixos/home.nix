@@ -20,6 +20,7 @@
       transmission
       signal-desktop
       unzip
+      vlc
     ];
     sessionPath = [
       "/home/will/.emacs.d/bin"
