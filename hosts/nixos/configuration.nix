@@ -1,3 +1,5 @@
+let importIfExists = path: default: if builtins.pathExists path then import path else default;
+in
 { pkgs, lib, ... }:
 {
   imports = [
@@ -56,15 +58,7 @@
       address = [ "10.69.0.11/32" ];
       dns = [ "1.1.1.1" "1.0.0.1" ];
       privateKeyFile = "/home/will/wireguard-keys/private";
-      peers = [
-        {
-          publicKey = "Q+YhxX1ZJ+fTIgGkXPbwV0poZeDRoMsxRV3u86AYSxM=";
-          presharedKeyFile = "/home/will/wireguard-keys/2022-03-03-vps.psk";
-          allowedIPs = [ "0.0.0.0/0" ];
-          endpoint = "207.246.109.54:59934";
-          persistentKeepalive = 25;
-        }
-      ];
+      peers = importIfExists /home/will/.local/opt/infra/wg-server.nix [];
     };
   };
 
