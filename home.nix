@@ -19,15 +19,16 @@ in
     packages = with pkgs; [
       cachix
       entr
-      exa
+      eza
       fd
+      helix
       hugo
       jq jiq
       j
       magic-wormhole
       mosh
       nmap
-      python39Packages.poetry
+      poetry
       ripgrep
       watch
     ];

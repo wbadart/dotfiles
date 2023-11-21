@@ -3,20 +3,30 @@ in
 { pkgs, lib, ... }:
 {
   imports = [
-    /etc/nixos/cachix.nix
+    # /etc/nixos/cachix.nix
     ./desktop.nix
     ./hardware-configuration.nix
+    # (
+    #   import /home/will/Documents/proj/nixos-router/mkRouter.nix {
+    #     internalInterface = "enp0s31f6";
+    #     externalInterface = "wlp4s0";
+    #     dnsServers = [ "1.1.1.1" "1.0.0.1" ];
+    #   }
+    # )
   ];
 
   nix.settings.trusted-users = [ "root" "will" ];
 
   users.users.will = {
     isNormalUser = true;
-    extraGroups = [ "sudo" "wheel" "networkmanager" "adbusers" "video" "libvirtd" ];
+    extraGroups = [ "audio" "sudo" "wheel" "networkmanager" "adbusers" "video" "libvirtd" "vboxusers" ];
     description = "Will";
     shell = pkgs.fish;
   };
   home-manager.users.will = (import ../../home.nix pkgs);
+
+  virtualisation.virtualbox.host.enable = true;
+  virtualisation.virtualbox.guest.enable = true;
 
   networking.hostName = "wb-machine";
   networking.networkmanager.enable = true;
@@ -26,12 +36,17 @@ in
     wlp4s0.useDHCP = true;
   };
 
+  environment.systemPackages = with pkgs; [
+    mullvad-vpn
+  ];
+  services.mullvad-vpn.enable = true;
+  #services.tailscale.enable = true;
+
   boot.loader.grub.enable = true;
   boot.loader.grub.device = "/dev/nvme0n1";
   boot.loader.grub.enableCryptodisk = true;
   boot.loader.grub.splashImage = null;
   boot.loader.grub.useOSProber = true;
-  boot.loader.grub.version = 2;
   boot.loader.timeout = 1;
 
   programs.gnupg.agent = {
@@ -54,12 +69,12 @@ in
   hardware.bluetooth.enable = true;
 
   networking.wg-quick.interfaces = {
-    wg0 = {
-      address = [ "10.69.0.11/32" ];
-      dns = [ "1.1.1.1" "1.0.0.1" ];
-      privateKeyFile = "/home/will/wireguard-keys/private";
-      peers = importIfExists /home/will/.local/opt/infra/wg-server.nix [];
-    };
+    # wg0 = {
+    #   address = [ "10.69.0.11/32" ];
+    #   dns = [ "1.1.1.1" "1.0.0.1" ];
+    #   privateKeyFile = "/home/will/wireguard-keys/private";
+    #   peers = importIfExists /home/will/.local/opt/infra/wg-server.nix [];
+    # };
   };
 
   networking.firewall.interfaces.wg0 = {

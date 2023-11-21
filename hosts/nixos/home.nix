@@ -3,6 +3,7 @@
   imports = [
     ../../modules/hledger.nix
     ../../modules/neuron.nix
+    ../../modules/emacs.nix
   ];
 
   home = {
@@ -11,19 +12,13 @@
     packages = with pkgs; [
       calibre
       chromium
-      emacs-nox
-      nextcloud-client
       niv
-      nyxt
       protonvpn-cli
       racket-minimal
       transmission
       signal-desktop
       unzip
       vlc
-    ];
-    sessionPath = [
-      "/home/will/.emacs.d/bin"
     ];
     sessionVariables = {
       LEDGER_DIR = "/home/will/Documents/ledger";
