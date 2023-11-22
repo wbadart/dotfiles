@@ -24,7 +24,7 @@ in
       helix
       hugo
       jq jiq
-      j
+      #j
       magic-wormhole
       mosh
       nmap

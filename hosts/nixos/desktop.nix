@@ -5,10 +5,10 @@
     layout = "us";
     libinput.enable = true;
     displayManager.gdm.enable = true;
-    #displayManager.defaultSession = "gnome";
-    #desktopManager.gnome.enable = true;
-    desktopManager.xterm.enable = false;
-    displayManager.defaultSession = "none+xmonad";
+    displayManager.defaultSession = "gnome";
+    desktopManager.gnome.enable = true;
+    #desktopManager.xterm.enable = false;
+    #displayManager.defaultSession = "none+xmonad";
     windowManager.xmonad = {
         enable = true;
         enableContribAndExtras = true;
@@ -26,7 +26,8 @@
   };
 
   environment.systemPackages = with pkgs; [
-    firefox
+    #firefox
+    chromium
     dmenu
     # gnome.gnome-tweaks
     # gnomeExtensions.material-shell
@@ -35,6 +36,7 @@
     xmobar
     alacritty
   ];
+  environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
   fonts.packages = with pkgs; [
     (nerdfonts.override { fonts = [ "FiraCode" ]; })
