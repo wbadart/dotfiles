@@ -4,7 +4,8 @@ in
 {
   imports = [
     # /etc/nixos/cachix.nix
-    ./desktop.nix
+    # ./desktop.nix
+    ./sway.nix
     ./hardware-configuration.nix
     # (
     #   import /home/will/Documents/proj/nixos-router/mkRouter.nix {
