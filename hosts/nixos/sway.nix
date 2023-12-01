@@ -62,6 +62,8 @@ in
     wdisplays # tool to configure displays
     xfce.thunar
     xfce.tumbler
+    zoxide
+    feh
   ];
 
 

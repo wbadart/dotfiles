@@ -11,7 +11,7 @@
   time.timeZone = "America/Los_Angeles";
 
   sound.enable = true;
-  hardware.pulseaudio.enable = true;
+  #hardware.pulseaudio.enable = true;
   programs.light.enable = true;
   networking.firewall.enable = true;
 

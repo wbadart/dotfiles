@@ -18,6 +18,7 @@ in
 
     packages = with pkgs; [
       cachix
+      duckdb
       entr
       eza
       fd
@@ -111,6 +112,15 @@ in
       starship init fish | source
       set fish_greeting
       set --global --export GPG_TTY (tty)
+      zoxide init fish | source
+      '';
+    loginShellInit = ''
+      if [ -z "$SSH_AUTH_SOCK" ];
+        eval (ssh-agent -c) >/dev/null
+      end
+      if [ -z "$WAYLAND_DISPLAY" ] && [ "$XDG_VTNR" -eq 1 ];
+        exec sway
+      end
     '';
     shellAliases = {
       cat = "bat";
