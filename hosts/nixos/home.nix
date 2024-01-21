@@ -10,13 +10,16 @@
     username = "will";
     homeDirectory = "/home/will";
     packages = with pkgs; [
+      # chromium
       calibre
-      chromium
+      dig
+      libreoffice-fresh
       niv
       protonvpn-cli
       racket-minimal
-      transmission
       signal-desktop
+      traceroute
+      transmission
       unzip
       vlc
     ];

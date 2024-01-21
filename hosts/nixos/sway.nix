@@ -58,12 +58,14 @@ in
     slurp # screenshot functionality
     wl-clipboard # wl-copy and wl-paste for copy/paste from stdin / stdout
     bemenu # wayland clone of dmenu
+    rofi-wayland
     mako # notification system developed by swaywm maintainer
     wdisplays # tool to configure displays
     xfce.thunar
     xfce.tumbler
     zoxide
     feh
+    ly
   ];
 
 

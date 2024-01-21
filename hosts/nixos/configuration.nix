@@ -36,12 +36,23 @@ in
     enp0s31f6.useDHCP = true;
     wlp4s0.useDHCP = true;
   };
+  # networking.nameservers = [
+  #   "100.100.100.100"  # TS magic dns
+  #   "9.9.9.9"          # quad9
+  #   "149.112.112.112"  # quad9 backup
+  # ]
+  # networking.search = [
+  #   "tail0dae.ts.net"  # Tailnet name
+  # ];
 
-  environment.systemPackages = with pkgs; [
-    mullvad-vpn
-  ];
-  services.mullvad-vpn.enable = true;
-  #services.tailscale.enable = true;
+  # environment.systemPackages = with pkgs; [
+  #   mullvad-vpn
+  # ];
+  # services.mullvad-vpn.enable = true;
+  services.tailscale = {
+    enable = true;
+    useRoutingFeatures = "client";
+  };
 
   boot.loader.grub.enable = true;
   boot.loader.grub.device = "/dev/nvme0n1";
