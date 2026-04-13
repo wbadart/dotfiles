@@ -27,6 +27,16 @@
     ];
   };
 
+  programs.nix-your-shell = {
+    enable = true;
+    nix-output-monitor.enable = true;
+  };
+
+  programs.direnv = {
+    enable = true;
+    nix-direnv.enable = true;
+  };
+
   programs.starship.enable = true;
   programs.zoxide.enable = true;
 }
