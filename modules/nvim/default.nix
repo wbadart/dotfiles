@@ -15,6 +15,7 @@
       nvim-treesitter.withAllGrammars
       nvim-web-devicons
       vim-fugitive
+      vim-gitgutter
     ];
   };
 
