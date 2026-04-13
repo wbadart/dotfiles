@@ -1,6 +1,7 @@
 {
   imports = [
     ./modules/git.nix
+    ./modules/hledger.nix
     ./modules/nvim
     ./modules/zsh.nix
   ];
