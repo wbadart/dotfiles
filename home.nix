@@ -5,6 +5,7 @@ in
   imports = [
     ./modules/git.nix
     ./modules/hledger.nix
+    ./modules/nix.nix
     ./modules/tmux.nix
     ./modules/nvim
     ./modules/zsh.nix
@@ -15,5 +16,8 @@ in
   home.preferXdgDirectories = true;
 
   home.stateVersion = "26.05";
-  programs.home-manager.enable = true;
+  programs.home-manager = {
+    enable = true;
+    path = "${sources.home-manager}";
+  };
 }

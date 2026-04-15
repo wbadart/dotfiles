@@ -8,6 +8,9 @@
         email = "will@willbadart.com";
       };
       init.defaultBranch = "main";
+      alias = {
+        lol = "log --all --decorate --graph --oneline";
+      };
     };
   };
 

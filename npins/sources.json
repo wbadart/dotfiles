@@ -13,6 +13,19 @@
       "url": "https://github.com/ryantm/agenix/archive/b027ee29d959fda4b60b57566d64c98a202e0feb.tar.gz",
       "hash": "sha256-9VnK6Oqai65puVJ4WYtCTvlJeXxMzAp/69HhQuTdl/I="
     },
+    "home-manager": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "nix-community",
+        "repo": "home-manager"
+      },
+      "branch": "master",
+      "submodules": false,
+      "revision": "3c7524c68348ef79ce48308e0978611a050089b2",
+      "url": "https://github.com/nix-community/home-manager/archive/3c7524c68348ef79ce48308e0978611a050089b2.tar.gz",
+      "hash": "sha256-No6QGBmIv5ChiwKCcbkxjdEQ/RO2ZS1gD7SFy6EZ7rc="
+    },
     "nixpkgs": {
       "type": "Channel",
       "name": "nixpkgs-unstable",
