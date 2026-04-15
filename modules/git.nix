@@ -1,14 +1,15 @@
+{ lib, ... }:
 {
   programs.git = {
     enable = true;
     lfs.enable = true;
     settings = {
-      user = {
-        name = "Will Badart";
-        email = "will@willbadart.com";
-      };
+      user.name = lib.mkDefault "Will Badart";
+      user.email = lib.mkDefault "will@willbadart.com";
       init.defaultBranch = "main";
+      push.autoSetupRemote = true;
       alias = {
+        lo = "log --decorate --graph --oneline";
         lol = "log --all --decorate --graph --oneline";
       };
     };
@@ -19,18 +20,19 @@
     ga = "git add";
     gb = "git branch";
     gc = "git commit -v";
-    gcb = "git checkout -b";
     gca = "git commit -av";
+    gcb = "git checkout -b";
     gcl = "git clone --recursive";
     gco = "git checkout";
     gd = "git diff";
     gdc = "git diff --cached";
     gdm = "git diff --merge-base";
-    gf = "git fetch";
+    gf = "git fetch --all --prune";
     gl = "git pull";
     gp = "git push";
     gr = "git rebase";
     grm = "git remote";
+    gs = "git stash";
     gst = "git status";
   };
 
