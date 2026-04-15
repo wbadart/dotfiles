@@ -23,6 +23,7 @@
   };
 
   imports = [
+    ./modules/lua
     ./modules/nix
   ];
 

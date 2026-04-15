@@ -2,17 +2,17 @@
 {
   programs.neovim = {
     initLua = ''
-      vim.lsp.enable 'nixd'
+      vim.lsp.enable 'lua_ls'
     '';
     plugins = [
       (pkgs.vimUtils.buildVimPlugin {
-        name = "nix-config";
+        name = "lua-config";
         src = ./.;
       })
     ];
   };
 
   home.packages = with pkgs; [
-    nixd
+    lua-language-server
   ];
 }
