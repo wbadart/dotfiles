@@ -2,6 +2,12 @@ let
   sources = import ./npins;
 in
 {
+  config,
+  lib,
+  pkgs,
+  ...
+}:
+{
   imports = [
     ./modules/git.nix
     ./modules/hledger.nix
@@ -12,12 +18,39 @@ in
     "${sources.agenix}/modules/age-home.nix"
   ];
 
-  xdg.enable = true;
-  home.preferXdgDirectories = true;
+  options.dotfiles = {
+    location = lib.mkOption {
+      type = lib.types.str;
+      description = "Path of dotfiles repo on disk";
+    };
+    hostAttr = lib.mkOption {
+      type = lib.types.str;
+      description = "Attribute in default.nix pointing to this system's config";
+    };
+  };
 
-  home.stateVersion = "26.05";
-  programs.home-manager = {
-    enable = true;
-    path = "${sources.home-manager}";
+  config = {
+    xdg.enable = true;
+    home.preferXdgDirectories = true;
+
+    home.stateVersion = "26.05";
+    programs.home-manager = {
+      enable = true;
+      path = "${sources.home-manager}";
+    };
+
+    home.shellAliases =
+      let
+        host = config.dotfiles.hostAttr;
+        location = config.dotfiles.location;
+        nom = "--log-format internal-json 2> >(${lib.getExe pkgs.nix-output-monitor} --json)";
+        pkgsExpr = "import (import ${location}/npins).nixpkgs {}";
+      in
+      {
+        hm = ''home-manager -f ${location} -A ${host} --arg pkgs "${pkgsExpr}"'';
+        hmb = ''home-manager build -f ${location} -A ${host} --arg pkgs "${pkgsExpr}" ${nom}'';
+        hms = ''home-manager switch -f ${location} -A ${host} --arg pkgs "${pkgsExpr}" ${nom}'';
+        hmn = ''home-manager news -f ${location} -A ${host} --arg pkgs "${pkgsExpr}"'';
+      };
   };
 }
