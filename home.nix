@@ -1,9 +1,13 @@
+let
+  sources = import ./npins;
+in
 {
   imports = [
     ./modules/git.nix
     ./modules/hledger.nix
     ./modules/nvim
     ./modules/zsh.nix
+    "${sources.agenix}/modules/age-home.nix"
   ];
 
   xdg.enable = true;

@@ -9,6 +9,7 @@
     history.append = true;
     history.share = false;
     syntaxHighlighting.enable = true;
+    envExtra = ". ${config.age.secrets.env.path}";
   };
 
   home.shellAliases = {
@@ -40,4 +41,6 @@
 
   programs.starship.enable = true;
   programs.zoxide.enable = true;
+
+  age.secrets.env.file = ../secrets/env.age;
 }
