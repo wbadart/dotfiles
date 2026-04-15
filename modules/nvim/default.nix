@@ -16,6 +16,8 @@
       nvim-web-devicons
       vim-fugitive
       vim-gitgutter
+      vim-repeat
+      vim-surround
     ];
   };
 
