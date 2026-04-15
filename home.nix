@@ -5,6 +5,7 @@ in
   imports = [
     ./modules/git.nix
     ./modules/hledger.nix
+    ./modules/tmux.nix
     ./modules/nvim
     ./modules/zsh.nix
     "${sources.agenix}/modules/age-home.nix"
