@@ -12,6 +12,10 @@
     envExtra = ". ${config.age.secrets.env.path}";
   };
 
+  home.sessionPath = [
+    "$HOME/.local/bin"
+  ];
+
   home.shellAliases = {
     l = "eza -l";
     ll = "eza -la";
