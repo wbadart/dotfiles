@@ -12,4 +12,6 @@
     hms = "home-manager switch -f $HOME/Documents/dotfiles -A mba";
     hmn = "home-manager news -f $HOME/Documents/dotfiles -A mba";
   };
+
+  services.tailscale-systray.enable = true;
 }
