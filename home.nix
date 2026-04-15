@@ -23,11 +23,13 @@ in
       type = lib.types.nullOr lib.types.str;
       description = "Path of dotfiles repo on disk";
       default = null;
+      example = "$HOME/dotfiles";
     };
     hostAttr = lib.mkOption {
       type = lib.types.nullOr lib.types.str;
       description = "Attribute in default.nix pointing to this system's config";
       default = null;
+      example = "mba";
     };
   };
 
