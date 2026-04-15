@@ -42,6 +42,10 @@
     enable = true;
     nix-direnv.enable = true;
     silent = true;
+    config.global = {
+      strict_env = true;
+      warn_timeout = 0;
+    };
   };
 
   programs.starship.enable = true;
