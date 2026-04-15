@@ -35,10 +35,10 @@ in
     xdg.enable = true;
     home.preferXdgDirectories = true;
 
-    home.stateVersion = "26.05";
+    home.stateVersion = lib.mkDefault "26.05";
     programs.home-manager = {
       enable = true;
-      path = "${sources.home-manager}";
+      path = lib.mkDefault "${sources.home-manager}";
     };
 
     home.shellAliases =
