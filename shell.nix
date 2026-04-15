@@ -3,7 +3,7 @@ let
   agenix = import sources.agenix;
 in
 {
-  pkgs ? import sources.nixpkgs (import ./npins/nixpkgs-config.nix),
+  pkgs ? import sources.nixpkgs { },
   ...
 }:
 pkgs.mkShell {
