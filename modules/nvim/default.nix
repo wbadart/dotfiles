@@ -22,6 +22,10 @@
     ];
   };
 
+  imports = [
+    ./modules/nix
+  ];
+
   # fzf-lua dependencies
   programs.bat.enable = true;
   programs.delta.enable = true;
