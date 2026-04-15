@@ -6,7 +6,7 @@ in
     ./modules/git.nix
     ./modules/hledger.nix
     ./modules/nix.nix
-    ./modules/tmux.nix
+    ./modules/tmux
     ./modules/nvim
     ./modules/zsh.nix
     "${sources.agenix}/modules/age-home.nix"
