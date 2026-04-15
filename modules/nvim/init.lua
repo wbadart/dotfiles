@@ -26,8 +26,11 @@ vim.opt.scrolloff = 3
 vim.opt.expandtab = true
 vim.opt.smarttab = true
 
-vim.cmd 'syntax off'  -- defer to treesitter
-require('nvim-treesitter.configs').setup {
-  highlight = { enable = true },
-  indent = { enable = true },
-}
+local ts = require 'nvim-treesitter'
+vim.cmd 'syntax off'
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = ts.get_available(),
+  callback = function ()
+    vim.treesitter.start()
+  end
+})
