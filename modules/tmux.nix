@@ -8,6 +8,7 @@
     sensibleOnTop = true;
     shell = lib.getExe pkgs.zsh;
     shortcut = "a";
+    terminal = "screen-256color";
 
     extraConfig = ''
       bind-key -r h select-pane -L

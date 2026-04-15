@@ -18,6 +18,7 @@
       vim-gitgutter
       vim-repeat
       vim-surround
+      vim-unimpaired
     ];
   };
 
