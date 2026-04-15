@@ -21,6 +21,7 @@
     ll = "eza -la";
     ls = "eza";
     lt = "eza --tree";
+    cat = "bat";
   };
 
   programs.eza = {
