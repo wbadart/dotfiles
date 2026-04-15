@@ -20,12 +20,14 @@ in
 
   options.dotfiles = {
     location = lib.mkOption {
-      type = lib.types.str;
+      type = lib.types.nullOr lib.types.str;
       description = "Path of dotfiles repo on disk";
+      default = null;
     };
     hostAttr = lib.mkOption {
-      type = lib.types.str;
+      type = lib.types.nullOr lib.types.str;
       description = "Attribute in default.nix pointing to this system's config";
+      default = null;
     };
   };
 
@@ -46,7 +48,7 @@ in
         nom = "--log-format internal-json 2> >(${lib.getExe pkgs.nix-output-monitor} --json)";
         pkgsExpr = "import (import ${location}/npins).nixpkgs {}";
       in
-      {
+      lib.mkIf (host != null && location != null) {
         hm = ''home-manager -f ${location} -A ${host} --arg pkgs "${pkgsExpr}"'';
         hmb = ''home-manager build -f ${location} -A ${host} --arg pkgs "${pkgsExpr}" ${nom}'';
         hms = ''home-manager switch -f ${location} -A ${host} --arg pkgs "${pkgsExpr}" ${nom}'';
