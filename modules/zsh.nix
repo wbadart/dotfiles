@@ -6,6 +6,8 @@
     autosuggestion.enable = true;
     defaultKeymap = "viins";
     dotDir = "${config.xdg.configHome}/zsh";
+    enableCompletion = true;
+    enableVteIntegration = true;
     envExtra = ". ${config.age.secrets.env.path}";
     history.append = true;
     history.share = false;
@@ -27,7 +29,7 @@
   programs.eza = {
     enable = true;
     git = true;
-    icons = "always";
+    icons = "auto";
     extraOptions = [
       "--group-directories-first"
     ];
@@ -48,6 +50,12 @@
     };
   };
 
+  programs.bat.enable = true;
+  programs.fd.enable = true;
+  programs.fzf.enable = true;
+  programs.jq.enable = true;
+  programs.jqp.enable = true;
+  programs.ripgrep.enable = true;
   programs.starship.enable = true;
   programs.zoxide.enable = true;
 
