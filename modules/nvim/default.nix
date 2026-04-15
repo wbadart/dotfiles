@@ -24,6 +24,7 @@
 
   imports = [
     ./modules/lua
+    ./modules/misc
     ./modules/nix
   ];
 
@@ -33,6 +34,4 @@
   programs.fd.enable = true;
   programs.fzf.enable = true;
   programs.ripgrep.enable = true;
-
-  xdg.configFile."nvim/ftplugin".source = ./ftplugin;
 }
