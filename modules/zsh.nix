@@ -6,10 +6,10 @@
     autosuggestion.enable = true;
     defaultKeymap = "viins";
     dotDir = "${config.xdg.configHome}/zsh";
+    envExtra = ". ${config.age.secrets.env.path}";
     history.append = true;
     history.share = false;
     syntaxHighlighting.enable = true;
-    envExtra = ". ${config.age.secrets.env.path}";
   };
 
   home.sessionPath = [
