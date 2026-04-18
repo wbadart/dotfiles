@@ -1,14 +1,10 @@
-let
-  sources = import ./npins;
-in
+let sources = import ./npins; in
 {
   pkgs ? import sources.nixpkgs { },
+  agenix ? import sources.agenix { inherit pkgs; },
+  home-manager ? import sources.home-manager { inherit pkgs; },
   ...
 }:
-let
-  agenix = import sources.agenix { inherit pkgs; };
-  home-manager = import sources.home-manager { inherit pkgs; };
-in
 pkgs.mkShell {
   packages = with pkgs; [
     agenix.agenix
