@@ -23,6 +23,7 @@
         fzf-lua
         nvim-treesitter.withAllGrammars
         nvim-web-devicons
+        oil-nvim
         vim-fugitive
         vim-gitgutter
         vim-repeat
