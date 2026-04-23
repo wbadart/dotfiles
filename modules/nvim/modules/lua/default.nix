@@ -1,7 +1,7 @@
 { pkgs, ... }:
 {
   programs.neovim = {
-    initLua = ''
+    extraLuaConfig = ''
       vim.lsp.enable 'lua_ls'
     '';
     plugins = [
