@@ -31,6 +31,8 @@
         ls = "eza";
         lt = "eza --tree";
         cat = "bat";
+        da = "direnv allow";
+        dr = "direnv reload";
       };
 
       programs.eza = {
