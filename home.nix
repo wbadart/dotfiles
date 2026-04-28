@@ -14,6 +14,7 @@ in
     ./modules/nix.nix
     ./modules/tmux
     ./modules/nvim
+    ./modules/pi
     ./modules/zsh.nix
     "${sources.agenix}/modules/age-home.nix"
   ];
