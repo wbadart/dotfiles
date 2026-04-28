@@ -54,6 +54,7 @@ in
       lib.mkIf (host != null && location != null) {
         hm = ''home-manager -f ${location} -A ${host} --arg pkgs "${pkgsExpr}"'';
         hmb = ''home-manager build -f ${location} -A ${host} --arg pkgs "${pkgsExpr}" ${nom}'';
+        hme = "home-manager edit -f ${location}";
         hms = ''home-manager switch -f ${location} -A ${host} --arg pkgs "${pkgsExpr}" ${nom}'';
         hmn = ''home-manager news -f ${location} -A ${host} --arg pkgs "${pkgsExpr}"'';
       };
