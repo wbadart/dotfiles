@@ -13,4 +13,7 @@
   };
 
   services.tailscale-systray.enable = true;
+  home.shellAliases = {
+    ts = "tailscale";
+  };
 }
