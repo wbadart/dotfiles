@@ -31,6 +31,7 @@ in
       default = null;
       example = "mba";
     };
+    secrets.enable = lib.mkEnableOption "dotfiles' secrets";
   };
 
   config = {
