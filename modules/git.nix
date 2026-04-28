@@ -40,4 +40,12 @@
     enable = true;
     enableGitIntegration = true;
   };
+
+  programs.jujutsu = {
+    enable = true;
+    settings = {
+      user.name = "Will Badart";
+      user.email = "will@willbadart.com";
+    };
+  };
 }
