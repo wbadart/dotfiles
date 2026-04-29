@@ -1,5 +1,10 @@
-{ pkgs, ... }:
 {
+  config,
+  lib,
+  pkgs,
+  ...
+}:
+lib.mkIf config.dotfiles.neovim.enable {
   programs.neovim = {
     extraLuaConfig = ''
       vim.lsp.enable 'lua_ls'
