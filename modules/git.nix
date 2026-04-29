@@ -1,11 +1,15 @@
 { lib, ... }:
+let
+  name = lib.mkDefault "Will Badart";
+  email = lib.mkDefault "will@willbadart.com";
+in
 {
   programs.git = {
     enable = true;
     lfs.enable = true;
     settings = {
-      user.name = lib.mkDefault "Will Badart";
-      user.email = lib.mkDefault "will@willbadart.com";
+      user.name = name;
+      user.email = email;
       init.defaultBranch = "main";
       push.autoSetupRemote = true;
       alias = {
@@ -34,6 +38,18 @@
     grm = "git remote";
     gs = "git stash";
     gst = "git status";
+
+    j = "jj";
+    jb = "jj bookmark";
+    jba = "jj bookmark advance";
+    jc = "jj commit --iteractive";
+    je = "jj edit";
+    jd = "jj diff";
+    jf = "jj git fetch --all-remotes";
+    jp = "jj git push";
+    jr = "jj rebase";
+    js = "jj squash";
+    jst = "jj status";
   };
 
   programs.delta = {
@@ -44,9 +60,10 @@
   programs.jujutsu = {
     enable = true;
     settings = {
-      user.name = "Will Badart";
-      user.email = "will@willbadart.com";
+      user.name = name;
+      user.email = email;
     };
   };
+
   programs.jjui.enable = true;
 }
