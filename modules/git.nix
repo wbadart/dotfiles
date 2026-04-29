@@ -48,4 +48,5 @@
       user.email = "will@willbadart.com";
     };
   };
+  programs.jjui.enable = true;
 }
