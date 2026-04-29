@@ -1,6 +1,7 @@
 { config, lib, pkgs, ... }:
 {
   imports = [
+    ./modules/haskell
     ./modules/lua
     ./modules/misc
     ./modules/nix
