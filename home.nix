@@ -60,5 +60,9 @@ in
         hms = ''home-manager switch -f ${location} -A ${host} --arg pkgs "${pkgsExpr}" ${nom}'';
         hmn = ''home-manager news -f ${location} -A ${host} --arg pkgs "${pkgsExpr}"'';
       };
+
+    nixpkgs.overlays = [
+      (final: prev: { direnv = prev.direnv.overrideAttrs { doCheck = false; }; })
+    ];
   };
 }

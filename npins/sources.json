@@ -26,6 +26,19 @@
       "url": "https://github.com/nix-community/home-manager/archive/af59809e9413ec8adb9597a8636491af356fe525.tar.gz",
       "hash": "sha256-P7XjzOo8Cbuj5eBSO1LaQ1hOy3ir8rtUB64EFZ6kKiQ="
     },
+    "nix-darwin": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "wbadart",
+        "repo": "nix-darwin"
+      },
+      "branch": "master",
+      "submodules": false,
+      "revision": "cc558096374c9c1fc587fe0c139778f67cc9afd8",
+      "url": "https://github.com/wbadart/nix-darwin/archive/cc558096374c9c1fc587fe0c139778f67cc9afd8.tar.gz",
+      "hash": "sha256-AOTs/0MhEktX9wnKyoAvrBck9s1G3Uc5+LYHjXuyv8s="
+    },
     "nixpkgs": {
       "type": "Channel",
       "name": "nixpkgs-unstable",
