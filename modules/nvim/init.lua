@@ -17,7 +17,7 @@ vim.opt.wildmenu = true
 
 -- Appearance
 -- ==========
-vim.cmd.colorscheme 'unokai'
+vim.cmd.colorscheme 'catppuccin'
 vim.opt.cursorline = true
 vim.opt.number = true
 vim.opt.relativenumber = true

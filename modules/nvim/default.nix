@@ -21,6 +21,7 @@
       withRuby = false;
 
       plugins = with pkgs.vimPlugins; [
+        catppuccin-nvim
         fzf-lua
         nvim-treesitter.withAllGrammars
         nvim-web-devicons
@@ -30,6 +31,16 @@
         vim-repeat
         vim-surround
         vim-unimpaired
+
+        (pkgs.vimUtils.buildVimPlugin {
+          name = "auto-dark-mode.nvim";
+          src = pkgs.fetchFromGitHub {
+            repo = "auto-dark-mode.nvim";
+            owner = "f-person";
+            rev = "main";
+            sha256 = "sha256-xTgRyct3L6Gcz/vdYSc+h2IUgi/+Lh1Q4mxJwHISeis=";
+          };
+        })
       ];
     };
 
