@@ -42,10 +42,13 @@ in
     j = "jj";
     jb = "jj bookmark";
     jba = "jj bookmark advance";
-    jc = "jj commit --iteractive";
+    jc = "jj commit";
+    jci = "jj commit --iteractive";
     je = "jj edit";
     jd = "jj diff";
+    jds = "jj describe";
     jf = "jj git fetch --all-remotes";
+    jg = "jj git";
     jp = "jj git push";
     jr = "jj rebase";
     js = "jj squash";
