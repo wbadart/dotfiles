@@ -17,6 +17,7 @@ in
     ./modules/nvim
     ./modules/pi
     ./modules/ssh.nix
+    ./modules/zk
     ./modules/zsh.nix
     "${sources.agenix}/modules/age-home.nix"
   ];
