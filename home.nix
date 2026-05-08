@@ -12,6 +12,7 @@ in
     ./modules/git.nix
     ./modules/hledger.nix
     ./modules/nix.nix
+    ./modules/obsidian.nix
     ./modules/tmux
     ./modules/nvim
     ./modules/pi
