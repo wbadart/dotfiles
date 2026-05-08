@@ -1,12 +1,14 @@
-{ lib, pkgs, ... }:
-let
-  notebook = "/home/will/Documents/Notes";
-in
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 {
   programs.zk = {
     enable = true;
     settings = {
-      notebook.dir = notebook;
+      notebook.dir = "/home/will/Documents/Notes";
       tool.fzf-preview = "${lib.getExe pkgs.bat} -p --color always {-1}";
 
       alias.daily = ''zk new --no-input "$ZK_NOTEBOOK_DIR/daylies"'';
@@ -25,7 +27,7 @@ in
   };
 
   home.activation.ensureNotebookDir = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
-    run mkdir -p ${notebook}
+    run mkdir -p ${config.programs.zk.settings.notebook.dir}
   '';
 
   home.shellAliases = {
