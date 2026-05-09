@@ -22,9 +22,11 @@
       dotfiles = {
         hostAttr = "mba-mac";
         location = "$HOME/Documents/Projects/dotfiles";
+        InstantSpaceSwitcher.enable = true;
         ghostty.enable = true;
         neovim.enable = true;
         pi.enable = true;
+        rectangle.enable = true;
         secrets.enable = true;
       };
       home.sessionSearchVariables.MANPATH = [

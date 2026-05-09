@@ -9,14 +9,16 @@ in
 }:
 {
   imports = [
+    ./modules/InstantSpaceSwitcher
     ./modules/ghostty.nix
     ./modules/git.nix
     ./modules/hledger.nix
     ./modules/nix.nix
-    ./modules/tmux
     ./modules/nvim
     ./modules/pi
+    ./modules/rectangle.nix
     ./modules/ssh.nix
+    ./modules/tmux
     ./modules/zk
     ./modules/zsh.nix
     "${sources.agenix}/modules/age-home.nix"
