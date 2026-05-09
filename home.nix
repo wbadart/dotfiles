@@ -9,6 +9,7 @@ in
 }:
 {
   imports = [
+    ./modules/ghostty.nix
     ./modules/git.nix
     ./modules/hledger.nix
     ./modules/nix.nix
