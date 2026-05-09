@@ -4,6 +4,9 @@
   pkgs,
   ...
 }:
+let
+  notebook = config.programs.zk.settings.notebook.dir;
+in
 {
   programs.zk = {
     enable = true;
@@ -27,9 +30,9 @@
   };
 
   home.activation.ensureNotebookDir = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
-    run mkdir -p "${config.programs.zk.settings.notebook.dir}"
-    run test -d "${config.programs.zk.settings.notebook.dir}/.zk" \
-      || ${lib.getExe pkgs.zk} init --no-input "${config.programs.zk.settings.notebook.dir}"
+    run mkdir -p "${notebook}"
+    run test -d "${notebook}/.zk" \
+      || ${lib.getExe pkgs.zk} init --no-input "${notebook}"
   '';
 
   home.shellAliases = {
@@ -37,16 +40,17 @@
     zke = "zk edit --interactive";
   };
 
+  home.sessionVariables.ZK_NOTEBOOK_DIR = notebook;
+
   programs.neovim = {
     extraLuaConfig = ''
+      vim.g.mapleader = ' '
       vim.lsp.enable 'zk-nvim'
       require('zk').setup({
         picker = 'fzf_lua',
       })
-      vim.keymap.set("n", "<leader>zn", "<Cmd>ZkNew { title = vim.fn.input('Title: ') }<CR>")
-      vim.keymap.set("n", "<leader>zo", "<Cmd>ZkNotes { sort = { 'modified' } }<CR>")
-      vim.keymap.set("n", "<leader>zt", "<Cmd>ZkTags<CR>")
-      vim.keymap.set("n", "<leader>zf", "<Cmd>ZkNotes { sort = { 'modified' }, match = { vim.fn.input('Search: ') } }<CR>")
+      vim.keymap.set('n', '<leader>zk', "<Cmd>ZkNotes<CR>")
+      vim.keymap.set('n', '<leader>zt', "<Cmd>ZkTags<CR>")
     '';
     plugins = with pkgs.vimPlugins; [
       zk-nvim
