@@ -1,0 +1,6 @@
+{
+  imports = [
+    ./InstantSpaceSwitcher
+    ./rectangle.nix
+  ];
+}

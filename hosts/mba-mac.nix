@@ -18,6 +18,7 @@
     {
       imports = [
         ../home.nix
+        ../modules/desktop
       ];
       dotfiles = {
         hostAttr = "mba-mac";

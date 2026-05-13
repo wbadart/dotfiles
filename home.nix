@@ -9,14 +9,12 @@ in
 }:
 {
   imports = [
-    ./modules/InstantSpaceSwitcher
     ./modules/ghostty.nix
     ./modules/git.nix
     ./modules/hledger.nix
     ./modules/nix.nix
     ./modules/nvim
     ./modules/pi
-    ./modules/rectangle.nix
     ./modules/ssh.nix
     ./modules/tmux
     ./modules/zk
