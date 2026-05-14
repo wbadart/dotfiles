@@ -21,7 +21,7 @@ in
           filename = "{{format-date now '%Y-%m-%d'}}";
           extension = "md";
           template = pkgs.writeText "daily.md" ''
-            # {{format-date now "long"}}
+            # {{format-date now '%Y-%m-%d (%a)'}}
 
           '';
         };
