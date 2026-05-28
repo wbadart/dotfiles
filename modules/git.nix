@@ -1,4 +1,4 @@
-{ lib, ... }:
+{ lib, pkgs, ... }:
 let
   name = lib.mkDefault "Will Badart";
   email = lib.mkDefault "will@willbadart.com";
@@ -49,6 +49,7 @@ in
     jds = "jj describe";
     jf = "jj git fetch --all-remotes";
     jg = "jj git";
+    jn = "jj new";
     jp = "jj git push";
     jr = "jj rebase";
     js = "jj squash";
@@ -58,6 +59,7 @@ in
   programs.delta = {
     enable = true;
     enableGitIntegration = true;
+    enableJujutsuIntegration = true;
   };
 
   programs.jujutsu = {
@@ -66,6 +68,22 @@ in
       user.name = name;
       user.email = email;
     };
+    package = pkgs.jujutsu.overrideAttrs (
+      final: prev: {
+        version = "0.41.0";
+        src = pkgs.fetchFromGitHub {
+          owner = "jj-vcs";
+          repo = "jj";
+          tag = "v${final.version}";
+          hash = "sha256-id35e2kzyHyXCRy0aomkd1l0K7qzD0RnzdAzxKUGiso=";
+        };
+        cargoDeps = pkgs.rustPlatform.fetchCargoVendor {
+          inherit (final) src;
+          name = "jujutsu-${final.version}-vendor";
+          hash = "sha256-zWfdIac+SsNdfXAfD4NVTl7YfXzAlrK82KNduFgG1EA=";
+        };
+      }
+    );
   };
 
   programs.jjui.enable = true;
