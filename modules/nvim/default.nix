@@ -13,7 +13,7 @@
     programs.neovim = {
       enable = true;
       defaultEditor = true;
-      extraLuaConfig = builtins.readFile ./init.lua;
+      initLua = builtins.readFile ./init.lua;
       viAlias = true;
       vimAlias = true;
       vimdiffAlias = true;

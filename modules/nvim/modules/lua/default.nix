@@ -6,7 +6,7 @@
 }:
 lib.mkIf config.dotfiles.neovim.enable {
   programs.neovim = {
-    extraLuaConfig = ''
+    initLua = ''
       vim.lsp.enable 'lua_ls'
     '';
     plugins = [
