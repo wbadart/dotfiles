@@ -43,7 +43,7 @@ in
   home.sessionVariables.ZK_NOTEBOOK_DIR = notebook;
 
   programs.neovim = {
-    extraLuaConfig = ''
+    initLua = ''
       vim.g.mapleader = ' '
       vim.lsp.enable 'zk-nvim'
       require('zk').setup({
