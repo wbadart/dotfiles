@@ -21,7 +21,7 @@ in
   security.pam.services.sudo_local.touchIdAuth = true;
 
   home-manager = {
-    users.will = {
+    users.will = { pkgs, ... }: {
       imports = [
         ../home.nix
         ../modules/desktop
@@ -39,12 +39,7 @@ in
       };
       age.identityPaths = [ "/home/will/.ssh/id_ed25519" ];
       home.sessionSearchVariables.MANPATH = [
-        "/Users/will/.nix-profile/share/man"
-        "/run/current-system/sw/share/man"
-        "/usr/share/man"
-        "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/share/man"
-        "/Library/Developer/CommandLineTools/usr/share/man"
-        "/nix/store/n49nilx5qjfqmqn67pgzhn4k85nn8ars-determinate-nix-manual-3.19.0-man/share/man"
+        "${pkgs.nix.man}/share/man"
       ];
     };
 
