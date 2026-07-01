@@ -14,11 +14,11 @@ in
   ];
 
   home.shellAliases = {
-    h = "hledger -V --pretty";
+    h = "hledger -V --pretty --pager=n";
   };
 
   home.sessionVariables = {
-    LEDGER_FILE = "${config.home.homeDirectory}/Documents/Ledger/2026/202605.journal";
+    LEDGER_FILE = "${config.home.homeDirectory}/Documents/Ledger/2026/202606.journal";
   };
 
   age.secrets.ALPHAVANTAGE_API_KEY.file = ../secrets/ALPHAVANTAGE_API_KEY.age;

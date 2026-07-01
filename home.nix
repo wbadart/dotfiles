@@ -14,8 +14,9 @@ in
     ./modules/hledger.nix
     ./modules/nix.nix
     ./modules/nvim
-    ./modules/pi
+    ./modules/pi.nix
     ./modules/ssh.nix
+    ./modules/syncthing.nix
     ./modules/tmux
     ./modules/zk
     ./modules/zsh.nix
@@ -40,6 +41,7 @@ in
 
   config = {
     xdg.enable = true;
+    xdg.autostart.enable = true;
     home.preferXdgDirectories = true;
 
     home.stateVersion = lib.mkDefault "26.05";

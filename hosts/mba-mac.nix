@@ -1,11 +1,11 @@
-{ pkgs, ... }:
+let
+  sources = import ../npins;
+in
 {
   imports = [
-    "${(import ../npins).home-manager}/nix-darwin"
+    "${sources.home-manager}/nix-darwin"
   ];
-  environment.systemPackages = with pkgs; [
-    hello
-  ];
+
   system.stateVersion = 6;
   nix.enable = false;
 
@@ -14,8 +14,14 @@
     home = "/Users/will";
   };
 
-  home-manager.users.will =
-    {
+  nixpkgs.config = {
+    allowUnfree = true;
+  };
+
+  security.pam.services.sudo_local.touchIdAuth = true;
+
+  home-manager = {
+    users.will = {
       imports = [
         ../home.nix
         ../modules/desktop
@@ -30,6 +36,7 @@
         rectangle.enable = true;
         secrets.enable = true;
       };
+      age.identityPaths = [ "/home/will/.ssh/id_ed25519" ];
       home.sessionSearchVariables.MANPATH = [
         "/Users/will/.nix-profile/share/man"
         "/run/current-system/sw/share/man"
@@ -39,4 +46,7 @@
         "/nix/store/n49nilx5qjfqmqn67pgzhn4k85nn8ars-determinate-nix-manual-3.19.0-man/share/man"
       ];
     };
+
+    backupFileExtension = ".bak";
+  };
 }

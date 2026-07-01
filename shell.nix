@@ -12,6 +12,7 @@ in
 }:
 pkgs.mkShell {
   packages = [
+    pkgs.age
     agenix.agenix
     home-manager.home-manager
     nix-darwin.darwin-rebuild

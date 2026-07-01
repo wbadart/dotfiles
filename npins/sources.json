@@ -22,9 +22,9 @@
       },
       "branch": "master",
       "submodules": false,
-      "revision": "fdb2ccba9d5e1238d32e0c4a3ec1a277efa80c1d",
-      "url": "https://github.com/nix-community/home-manager/archive/fdb2ccba9d5e1238d32e0c4a3ec1a277efa80c1d.tar.gz",
-      "hash": "sha256-dhFgEjoeJMYN/7OY6xfxS799YB4IjbbYXTjyGIJyLpc="
+      "revision": "2a37d71bbe69e1522ddabf03a4cea0374958bdbe",
+      "url": "https://github.com/nix-community/home-manager/archive/2a37d71bbe69e1522ddabf03a4cea0374958bdbe.tar.gz",
+      "hash": "sha256-vzs4SBgPsK4aNzlJR2PpFwtARazXMOxZonQnDz0YHxk="
     },
     "nix-darwin": {
       "type": "Git",
@@ -35,15 +35,15 @@
       },
       "branch": "master",
       "submodules": false,
-      "revision": "cc558096374c9c1fc587fe0c139778f67cc9afd8",
-      "url": "https://github.com/wbadart/nix-darwin/archive/cc558096374c9c1fc587fe0c139778f67cc9afd8.tar.gz",
-      "hash": "sha256-AOTs/0MhEktX9wnKyoAvrBck9s1G3Uc5+LYHjXuyv8s="
+      "revision": "f6efef5843f89c0ba91d21b2c29ba0debb7f4303",
+      "url": "https://github.com/wbadart/nix-darwin/archive/f6efef5843f89c0ba91d21b2c29ba0debb7f4303.tar.gz",
+      "hash": "sha256-ZQxFVebPnviMsQ3R6/6tVqjocYMcN3+2OlinX3QH9zY="
     },
     "nixpkgs": {
       "type": "Channel",
       "name": "nixpkgs-unstable",
-      "url": "https://releases.nixos.org/nixpkgs/nixpkgs-26.05pre993588.68a8af93ff42/nixexprs.tar.xz",
-      "hash": "sha256-Z5mLDoR8p0d7psIY4LnyaHHRykXngMcWXTZ9JWvtvPc="
+      "url": "https://releases.nixos.org/nixpkgs/nixpkgs-26.11pre1024597.7a1a64774a5f/nixexprs.tar.xz",
+      "hash": "sha256-L3gmggVc+GxfmG8b6bWL0wkiniDNppQRsfaKc0IfyRA="
     }
   },
   "version": 7
