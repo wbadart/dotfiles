@@ -71,4 +71,17 @@ in
   };
 
   programs.jjui.enable = true;
+
+  programs.starship = {
+    extraPackages = [ pkgs.jj-starship ];
+    settings = {
+      custom.jj = {
+        when = "jj-starship detect";
+        shell = ["jj-starship" "--no-git-id"];
+        format = "$output ";
+      };
+      git_branch.disabled = true;
+      git_status.disabled = true;
+    };
+  };
 }
