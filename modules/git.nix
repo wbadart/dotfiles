@@ -81,6 +81,7 @@ in
         format = "$output ";
       };
       git_branch.disabled = true;
+      git_commit.disabled = true;
       git_status.disabled = true;
     };
   };
