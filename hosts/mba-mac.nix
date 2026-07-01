@@ -20,6 +20,15 @@ in
 
   security.pam.services.sudo_local.touchIdAuth = true;
 
+  services.openssh = {
+    enable = true;
+    extraConfig = ''
+      AuthenticationMethods publickey
+    '';
+  };
+  # TODO: users.users.will.authorizedKeys
+  # TODO: networking.applicationFirewall?
+
   home-manager = {
     users.will = { pkgs, ... }: {
       imports = [
