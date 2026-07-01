@@ -12,6 +12,8 @@ in
     ./modules/ghostty.nix
     ./modules/git.nix
     ./modules/hledger.nix
+    ./modules/kdeconnect
+    ./modules/keepass.nix
     ./modules/nix.nix
     ./modules/nvim
     ./modules/pi.nix

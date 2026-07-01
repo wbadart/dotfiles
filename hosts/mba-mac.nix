@@ -31,6 +31,7 @@ in
         location = "$HOME/Documents/Projects/dotfiles";
         InstantSpaceSwitcher.enable = true;
         ghostty.enable = true;
+        kdeconnect.enable = true;
         neovim.enable = true;
         pi.enable = true;
         rectangle.enable = true;
