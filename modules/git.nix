@@ -53,6 +53,7 @@ in
     jp = "jj git push";
     jr = "jj rebase";
     js = "jj squash";
+    jsp = "jj split";
     jst = "jj status";
   };
 
