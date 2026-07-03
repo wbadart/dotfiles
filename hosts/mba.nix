@@ -1,20 +1,25 @@
+{ config, ... }:
 {
-  imports = [
-    ../home.nix
-  ];
+  imports = [ ../darwin ];
+  environment.darwinConfig = "${config.users.users.will.home}/Documents/Projects/dotfiles/hosts/mba.nix";
 
-  home.username = "will";
-  home.homeDirectory = "/home/will";
-  dotfiles = {
-    hostAttr = "mba";
-    location = "$HOME/Documents/dotfiles";
-    neovim.enable = true;
-    pi.enable = true;
-    secrets.enable = true;
+  users.users.will = {
+    name = "will";
+    home = "/Users/will";
   };
 
-  services.tailscale-systray.enable = true;
-  home.shellAliases = {
-    ts = "tailscale";
+  home-manager = {
+    users.will = { pkgs, ... }: {
+      imports = [ ../home ];
+      wb.secrets.enable = true;
+      age.identityPaths = [ "/home/will/.ssh/id_ed25519" ];
+      home.sessionSearchVariables.MANPATH = [
+        "${pkgs.nix.man}/share/man"
+      ];
+      home.stateVersion = "26.05";
+    };
   };
+
+  system.stateVersion = 6;
+  nix.enable = false; # Using Determinate
 }

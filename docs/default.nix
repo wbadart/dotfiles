@@ -4,7 +4,12 @@
   ...
 }:
 let
-  inherit (pkgs) lib nixosOptionsDoc nixos-render-docs documentation-highlighter;
+  inherit (pkgs)
+    lib
+    nixosOptionsDoc
+    nixos-render-docs
+    documentation-highlighter
+    ;
 
   hmSrc = src.home-manager;
   extendedLib = import "${hmSrc}/modules/lib/stdlib-extended.nix" lib;
@@ -17,7 +22,7 @@ let
 
   eval = extendedLib.evalModules {
     modules = hmModules ++ [
-      ../home.nix
+      ../home
       { _module.check = false; }
     ];
     class = "homeManager";
@@ -25,8 +30,9 @@ let
 
   # Filter to only our custom dotfiles.* options
   optionsDoc = nixosOptionsDoc {
-    options = builtins.removeAttrs eval.options
-      (builtins.filter (n: n != "dotfiles") (builtins.attrNames eval.options));
+    options = builtins.removeAttrs eval.options (
+      builtins.filter (n: n != "wb") (builtins.attrNames eval.options)
+    );
   };
 in
 pkgs.stdenv.mkDerivation {

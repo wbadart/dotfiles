@@ -6,7 +6,10 @@
 }:
 writeShellApplication {
   name = "prices.sh";
-  runtimeInputs = [ curl jq ];
+  runtimeInputs = [
+    curl
+    jq
+  ];
   text = ''
     ALPHAVANTAGE_API_KEY="$(cat "${ALPHAVANTAGE_API_KEY}")"
     security_endpoint="query?function=TIME_SERIES_DAILY&symbol=%s&apikey=$ALPHAVANTAGE_API_KEY"
