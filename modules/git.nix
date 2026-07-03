@@ -68,6 +68,7 @@ in
     settings = {
       user.name = name;
       user.email = email;
+      ui.default-command = "log";
     };
   };
 
