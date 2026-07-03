@@ -35,6 +35,15 @@ vim.api.nvim_create_autocmd('FileType', {
   end
 })
 
+-- LSP
+-- ==========
+vim.api.nvim_create_autocmd('LspAttach', {
+  callback = function()
+    vim.keymap.set('n', 'grd', vim.lsp.buf.definition);
+    vim.keymap.set('n', 'grs', ':lsp-restart<CR>');
+  end
+})
+
 -- Misc.
 -- ==========
 require('oil').setup()
