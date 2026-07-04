@@ -10,22 +10,22 @@ home-manager -f ./dotfiles -A MY_HOST switch
 ## Organization
 
 ```
- .
-├──  darwin
+.
+├── darwin
 │   │   == nix-darwin modules ==
-│   ├──  default.nix
-│   └──  ...
-├── 󱂵 home
+│   ├── default.nix
+│   └── ...
+├── home
 │   │   == home-manager modules ==
-│   ├──  default.nix
-│   └──  ...
-├──  hosts
+│   ├── default.nix
+│   └── ...
+├── hosts
 │   │   == top-level configs ==
-│   ├──  mba.nix
-│   └──  ...
-├──  scripts
-├──  secrets
-└──  default.nix <- reexport top-level configs
+│   ├── mba.nix
+│   └── ...
+├── scripts
+├── secrets
+└── default.nix <- reexport top-level configs
 ```
 
 `default.nix` is an attribute set that exports each host-specific configuration. The
