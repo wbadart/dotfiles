@@ -6,6 +6,7 @@
     ./kdeconnect
     ./keepass.nix
     ./rectangle.nix
+    ./signal.nix
   ];
 
   options.wb.desktop.disable =
