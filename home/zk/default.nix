@@ -44,7 +44,6 @@ in
 
   programs.neovim = {
     initLua = ''
-      vim.g.mapleader = ' '
       vim.lsp.enable 'zk-nvim'
       require('zk').setup({
         picker = 'fzf_lua',
