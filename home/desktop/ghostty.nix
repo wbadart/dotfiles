@@ -37,6 +37,9 @@ in
           "cmd+shift+j=new_split:down"
           "cmd+shift+k=new_split:up"
           "cmd+shift+l=new_split:right"
+
+          "super+f=toggle_split_zoom"
+          "global:cmd+shift+backquote=toggle_quick_terminal"
         ];
       };
     };
