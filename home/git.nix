@@ -1,7 +1,8 @@
-{ lib, pkgs, ... }:
+{ config, lib, pkgs, ... }:
 let
   name = lib.mkDefault "Will Badart";
   email = lib.mkDefault "will@willbadart.com";
+  cfg = config.programs.git;
 in
 {
   programs.git = {
@@ -66,8 +67,7 @@ in
   programs.jujutsu = {
     enable = true;
     settings = {
-      user.name = name;
-      user.email = email;
+      user = { inherit (cfg.settings.user) name email; };
       ui.default-command = "log";
     };
   };
@@ -79,10 +79,7 @@ in
     settings = {
       custom.jj = {
         when = "jj-starship detect";
-        shell = [
-          "jj-starship"
-          "--no-git-id"
-        ];
+        shell = [ "jj-starship" "--no-git-id" ];
         format = "$output ";
       };
       git_branch.disabled = true;
