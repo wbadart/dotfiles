@@ -21,6 +21,9 @@ in
       defaults = {
         launchOnLogin = true;
       };
+      shortcuts = {
+        firstThird = { keyCode = 2; modifierFlags = "ctrl+option"; };
+      };
     };
   };
 }

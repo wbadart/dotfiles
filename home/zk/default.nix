@@ -43,7 +43,7 @@ in
   home.sessionVariables.ZK_NOTEBOOK_DIR = notebook;
 
   programs.neovim = {
-    initLua = ''
+    initLua = lib.mkAfter ''
       vim.lsp.enable 'zk-nvim'
       require('zk').setup({
         picker = 'fzf_lua',
