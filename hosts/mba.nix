@@ -12,7 +12,6 @@
     users.will = { pkgs, ... }: {
       imports = [ ../home ];
       wb.secrets.enable = true;
-      age.identityPaths = [ "/home/will/.ssh/id_ed25519" ];
       home.sessionSearchVariables.MANPATH = [
         "${pkgs.nix.man}/share/man"
       ];
