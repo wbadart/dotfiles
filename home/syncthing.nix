@@ -1,9 +1,4 @@
-{
-  config,
-  lib,
-  pkgs,
-  ...
-}:
+{ config, lib, ... }:
 let
   cfg = config.wb.syncthing;
 in
@@ -25,8 +20,5 @@ in
       overrideDevices = false;
       overrideFolders = false;
     };
-    home.packages = with pkgs; [
-      syncthing-macos
-    ];
   };
 }
