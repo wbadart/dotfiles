@@ -1,4 +1,9 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 {
   options.wb.signal.disable =
     let
@@ -16,5 +21,12 @@
     home.packages = with pkgs; [
       signal-desktop
     ];
+
+    nixpkgs.overlays = [
+      (_: prev: {
+        signal-desktop = prev.callPackage ./package.nix { };
+      })
+    ];
+
   };
 }
