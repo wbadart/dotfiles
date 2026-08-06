@@ -4,6 +4,9 @@
   pkgs,
   ...
 }:
+let
+  cfg = config.wb.keepass;
+in
 {
   options.wb.signal.disable =
     let
@@ -17,7 +20,7 @@
       description = "Whether to disable the Signal desktop app";
     };
 
-  config = {
+  config = lib.mkIf (!cfg.disable) {
     home.packages = with pkgs; [
       signal-desktop
     ];
