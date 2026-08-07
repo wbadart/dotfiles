@@ -41,7 +41,8 @@ vim.api.nvim_create_autocmd('FileType', {
 -- ==========
 vim.api.nvim_create_autocmd('LspAttach', {
   callback = function()
-    vim.keymap.set('n', 'grd', vim.lsp.buf.definition);
+    vim.keymap.set('n', 'grd', fzf.lsp_definitions);
+    vim.keymap.set('n', 'grr', fzf.lsp_references);
     vim.keymap.set('n', 'grf', vim.lsp.buf.format);
     vim.keymap.set('n', 'grs', ':lsp restart<CR>');
   end
