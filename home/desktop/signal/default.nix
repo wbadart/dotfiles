@@ -5,7 +5,7 @@
   ...
 }:
 let
-  cfg = config.wb.keepass;
+  cfg = config.wb.signal;
 in
 {
   options.wb.signal.disable =
