@@ -24,12 +24,10 @@ in
     home.packages = with pkgs; [
       signal-desktop
     ];
-
     nixpkgs.overlays = [
-      (_: prev: {
-        signal-desktop = prev.callPackage ./package.nix { };
+      (final: _: {
+        signal-desktop = final.callPackage ./package.nix { };
       })
     ];
-
   };
 }

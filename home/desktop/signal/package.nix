@@ -4,11 +4,11 @@
   stdenvNoCC,
   undmg,
 }: stdenvNoCC.mkDerivation (self: {
-  version = "8.22.0";
+  version = "8.23.0";
   pname = "signal-desktop-bin";
   src = fetchurl {
     url = "https://updates.signal.org/desktop/signal-desktop-mac-universal-${self.version}.dmg";
-    hash = "sha256-B9ZuOscJjs0zRFxRTrAdlQCWjKcatYq2UL+jT5czl2U=";
+    hash = "sha256-v36VDOlHb3CtkYuFoi8rh+qHmtlDf3aaA5Yd2RW2XSU=";
   };
   sourceRoot = ".";
   nativeBuildInputs = [ undmg ];
@@ -21,5 +21,4 @@
     runHook postInstall
   '';
   meta.platforms = lib.platforms.darwin;
-
 })
