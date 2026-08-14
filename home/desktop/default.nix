@@ -2,6 +2,8 @@
 {
   imports = [
     ./InstantSpaceSwitcher
+    ./brave.nix
+    ./firefox.nix
     ./ghostty.nix
     ./kdeconnect
     ./keepass.nix
