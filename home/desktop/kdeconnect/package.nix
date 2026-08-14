@@ -1,14 +1,15 @@
 {
   fetchurl,
+  lib,
   stdenvNoCC,
   undmg,
 }:
 stdenvNoCC.mkDerivation (self: {
   pname = "kdeconnect";
-  version = "6325";
+  version = "26.04.2";
   src = fetchurl {
-    url = "https://origin.cdn.kde.org/ci-builds/network/kdeconnect-kde/master/macos-arm64/kdeconnect-kde-master-${self.version}-macos-clang-arm64.dmg";
-    hash = "sha256-f5CLB/pP8AXSdrL9rn8kt8O3odJtqm8bXhpVudauKeE=";
+    url = "https://download.kde.org/stable/release-service/${self.version}/macos/kdeconnect-kde-macos-clang-arm64.dmg";
+    hash = "sha256-4r5CZBfrVf+aS835WdBcdHUaK4MkCiNotWRa70JS1xg=";
   };
   sourceRoot = ".";
   nativeBuildInputs = [ undmg ];
@@ -20,4 +21,5 @@ stdenvNoCC.mkDerivation (self: {
 
     runHook postInstall
   '';
+  meta.platforms = lib.platforms.darwin;
 })
