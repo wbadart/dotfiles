@@ -1,7 +1,7 @@
 let
   sources = import ../npins;
 in
-{ lib, ... }:
+{ lib, pkgs, ... }:
 {
   imports = [
     ./desktop
@@ -26,6 +26,10 @@ in
     xdg.enable = true;
     xdg.autostart.enable = true;
     home.preferXdgDirectories = true;
+
+    home.packages = with pkgs; [
+      ffmpeg
+    ];
 
     programs.home-manager = {
       enable = true;
