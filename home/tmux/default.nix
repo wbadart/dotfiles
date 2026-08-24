@@ -18,4 +18,15 @@
     ta = "tmux attach";
     tn = ''tmux new -s "$(basename "$PWD")"'';
   };
+
+  nixpkgs.overlays = [
+    (_: prev: {
+      tmux = prev.tmux.overrideAttrs (
+        _: tmuxPrev: {
+          nativeBuildInputs = [ pkgs.jemalloc ] ++ tmuxPrev.nativeBuildInputs;
+          configureFlags = [ "--enable-jemalloc" ] ++ tmuxPrev.configureFlags;
+        }
+      );
+    })
+  ];
 }

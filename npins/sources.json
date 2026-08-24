@@ -28,9 +28,9 @@
       },
       "branch": "master",
       "submodules": false,
-      "revision": "c554d3441f725537854e877519f01cbd60680174",
-      "url": "https://github.com/nix-community/home-manager/archive/c554d3441f725537854e877519f01cbd60680174.tar.gz",
-      "hash": "sha256-ybGtuwGKTUCefKYsplzvw4xcCqznto0c7BaiQhgILtA="
+      "revision": "03f4cd46bc1dd4f3a96da778d2ce9f7ce39dd450",
+      "url": "https://github.com/nix-community/home-manager/archive/03f4cd46bc1dd4f3a96da778d2ce9f7ce39dd450.tar.gz",
+      "hash": "sha256-MHwk52ty3NsLhq9a1IbIfBJZlCUJIdiUYFo52JLK9hY="
     },
     "nix-darwin": {
       "type": "Git",
@@ -49,8 +49,8 @@
       "type": "Channel",
       "name": "nixpkgs-unstable",
       "artifact": "nixexprs.tar.xz",
-      "url": "https://releases.nixos.org/nixpkgs/nixpkgs-26.11pre1052792.044bfe75bfe4/nixexprs.tar.xz",
-      "hash": "sha256-Cwffw7dPM56d8spt4/queFQ1cKg69D9qrsp+wfwKvfo="
+      "url": "https://releases.nixos.org/nixpkgs/nixpkgs-26.11pre1059707.c8f90650c152/nixexprs.tar.xz",
+      "hash": "sha256-wS+SNrj0wobAXQONggzrpetnZ9E0FL7l0WVWDRQ77Sc="
     }
   },
   "version": 8
