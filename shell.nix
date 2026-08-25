@@ -17,5 +17,6 @@ pkgs.mkShell {
     home-manager.home-manager
     nix-darwin.darwin-rebuild
     pkgs.npins
+    (pkgs.callPackage ./scripts/update-signal.nix { })
   ];
 }
