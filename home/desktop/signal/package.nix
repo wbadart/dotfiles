@@ -4,11 +4,11 @@
   stdenvNoCC,
   undmg,
 }: stdenvNoCC.mkDerivation (self: {
-  version = "8.24.1";
+  version = "8.25.0";
   pname = "signal-desktop-bin";
   src = fetchurl {
     url = "https://updates.signal.org/desktop/signal-desktop-mac-universal-${self.version}.dmg";
-    hash = "sha256-XL5YgZ5xhc9mEejja9/x0+4QYYoR5K/jJPL8oRZq3u4=";
+    hash = "sha256:072d1inq5d1mkykncgqgaj9lx3cf09xlypncg2mjsvbjs2kxlzxa";
   };
   sourceRoot = ".";
   nativeBuildInputs = [ undmg ];

@@ -11,7 +11,7 @@
       | awk -F '[:/]' '
           $1 == "location" {
             sub("^v", "", $NF)
-            gsub("\r", "", $NF)
+            sub("\r$", "", $NF)
             printf "https://updates.signal.org/desktop/signal-desktop-mac-universal-%s.dmg\n", $NF
           }
         ' \
