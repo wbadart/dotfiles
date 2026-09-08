@@ -3,7 +3,7 @@ let
   ifSecrets = x: lib.mkIf config.wb.secrets.enable x;
 in
 {
-  options.wb.zsh.doProfile =
+  options.zsh.wb.doProfile =
     let
       inherit (lib) types;
     in
@@ -16,7 +16,7 @@ in
 
   config =
     let
-      cfg = config.wb.zsh.doProfile;
+      cfg = config.zsh.wb;
     in
     {
       programs.zsh = {
