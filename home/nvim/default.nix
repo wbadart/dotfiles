@@ -55,7 +55,7 @@ in
             repo = "auto-dark-mode.nvim";
             owner = "f-person";
             rev = "main";
-            sha256 = "sha256-xTgRyct3L6Gcz/vdYSc+h2IUgi/+Lh1Q4mxJwHISeis=";
+            sha256 = "sha256-xBpdk0D2LauLJoktw/vQfvic07NsKaBDeL8KAl4KE7s=";
           };
         })
       ];
