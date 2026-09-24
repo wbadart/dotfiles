@@ -12,11 +12,13 @@ in
 }:
 pkgs.mkShell {
   packages = [
-    pkgs.age
     agenix.agenix
     home-manager.home-manager
     nix-darwin.darwin-rebuild
-    pkgs.npins
-    (pkgs.callPackage ./scripts/update-signal.nix { })
-  ];
+  ]
+  ++ (with pkgs; [
+    age
+    npins
+    (callPackage ./scripts/update-signal.nix { })
+  ]);
 }

@@ -1,4 +1,7 @@
 { config, ... }:
+let
+  sources = import ../npins;
+in
 {
   imports = [ ../darwin ];
   environment.darwinConfig = "${config.users.users.will.home}/Documents/Projects/dotfiles/hosts/mba.nix";
@@ -10,7 +13,7 @@
 
   home-manager = {
     users.will = { pkgs, ... }: {
-      imports = [ ../home ];
+      imports = [ (import ../home { inherit (sources) agenix home-manager; }) ];
       wb.secrets.enable = true;
       home.sessionSearchVariables.MANPATH = [
         "${pkgs.nix.man}/share/man"

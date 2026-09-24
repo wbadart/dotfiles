@@ -1,6 +1,7 @@
-let
-  sources = import ../npins;
-in
+{
+  agenix,
+  home-manager,
+}:
 { lib, pkgs, ... }:
 {
   imports = [
@@ -15,7 +16,7 @@ in
     ./tmux
     ./zk
     ./zsh.nix
-    "${sources.agenix}/modules/age-home.nix"
+    "${agenix}/modules/age-home.nix"
   ];
 
   options.wb = {
@@ -33,7 +34,7 @@ in
 
     programs.home-manager = {
       enable = true;
-      path = lib.mkDefault "${sources.home-manager}";
+      path = lib.mkDefault "${home-manager}";
     };
   };
 }
