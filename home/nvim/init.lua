@@ -42,10 +42,10 @@ vim.api.nvim_create_autocmd('FileType', {
 -- ==========
 vim.api.nvim_create_autocmd('LspAttach', {
   callback = function()
-    vim.keymap.set('n', 'grd', fzf.lsp_definitions);
-    vim.keymap.set('n', 'grr', fzf.lsp_references);
-    vim.keymap.set('n', 'grf', vim.lsp.buf.format);
-    vim.keymap.set('n', 'grs', ':lsp restart<CR>');
+    vim.keymap.set('n', 'grd', fzf.lsp_definitions, { desc = 'definitions' });
+    vim.keymap.set('n', 'grr', fzf.lsp_references, { desc = 'references' });
+    vim.keymap.set('n', 'grf', vim.lsp.buf.format, { desc = 'format' });
+    vim.keymap.set('n', 'grs', ':lsp restart<CR>', { desc = 'restart' });
   end
 })
 
