@@ -4,11 +4,12 @@ vim.g.mapleader = ' '
 vim.keymap.set('i', 'jk', '<Esc>')
 
 local fzf = require 'fzf-lua'
-vim.keymap.set('n', '<Leader>sb', fzf.buffers)
-vim.keymap.set('n', '<Leader>sd', fzf.diagnostics_workspace)
-vim.keymap.set('n', '<Leader>sf', fzf.files)
-vim.keymap.set('n', '<Leader>sg', fzf.live_grep)
-vim.keymap.set('n', '<C-p>', fzf.global)
+vim.keymap.set('n', '<Leader>s<space>', fzf.buffers, { desc = 'buffers' })
+vim.keymap.set('n', '<Leader>sb', fzf.buffers, { desc = 'buffers' })
+vim.keymap.set('n', '<Leader>sd', fzf.diagnostics_workspace, { desc = 'diagnostics' })
+vim.keymap.set('n', '<Leader>sf', fzf.files, { desc = 'files' })
+vim.keymap.set('n', '<Leader>sg', fzf.live_grep, { desc = 'live grep' })
+vim.keymap.set('n', '<C-p>', fzf.global, { desc = 'global' })
 
 -- Search
 -- ==========
