@@ -1,3 +1,4 @@
+inputs:
 { lib, ... }:
 {
   imports = [
@@ -8,7 +9,7 @@
     ./kdeconnect
     ./keepass.nix
     ./rectangle.nix
-    ./signal
+    (import ./signal inputs)
   ];
 
   options.wb.desktop.disable =

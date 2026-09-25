@@ -1,11 +1,11 @@
-{
-  agenix,
-  home-manager,
-}:
+let
+  sources = import ../npins;
+in
+inputs:
 { lib, pkgs, ... }:
 {
   imports = [
-    ./desktop
+    (import ./desktop inputs)
     ./git.nix
     ./hledger.nix
     ./nix.nix
@@ -16,7 +16,7 @@
     ./tmux
     ./zk
     ./zsh.nix
-    "${agenix}/modules/age-home.nix"
+    "${inputs.agenix}/modules/age-home.nix"
   ];
 
   options.wb = {
@@ -34,7 +34,7 @@
 
     programs.home-manager = {
       enable = true;
-      path = lib.mkDefault "${home-manager}";
+      path = lib.mkDefault "${inputs.home-manager}";
     };
   };
 }

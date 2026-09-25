@@ -1,3 +1,6 @@
+let
+  inputs = import ../npins;
+in
 { config, ... }:
 let
   sources = import ../npins;
@@ -13,7 +16,7 @@ in
 
   home-manager = {
     users.will = { pkgs, ... }: {
-      imports = [ (import ../home { inherit (sources) agenix home-manager; }) ];
+      imports = [ (import ../home inputs) ];
       wb.secrets.enable = true;
       home.sessionSearchVariables.MANPATH = [
         "${pkgs.nix.man}/share/man"
