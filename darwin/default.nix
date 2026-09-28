@@ -1,11 +1,9 @@
-let
-  sources = import ../npins;
-in
+inputs:
 { lib, pkgs, ... }:
 {
   imports = [
     ./sshd.nix
-    "${sources.home-manager}/nix-darwin"
+    "${inputs.home-manager}/nix-darwin"
   ];
   home-manager.backupFileExtension = lib.mkDefault ".bak";
   nix.nixPath = [ { nixpkgs = "${pkgs}"; } ];

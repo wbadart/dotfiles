@@ -1,12 +1,12 @@
 let
-  sources = import ./npins;
+  inputs = import ./npins;
 in
 {
-  pkgs ? import sources.nixpkgs { },
-  agenix ? import sources.agenix { inherit pkgs; },
-  home-manager ? import sources.home-manager { inherit pkgs; },
-  nix-darwin ? import sources.nix-darwin {
-    inherit (sources) nixpkgs;
+  pkgs ? import inputs.nixpkgs { },
+  agenix ? import inputs.agenix { inherit pkgs; },
+  home-manager ? import inputs.home-manager { inherit pkgs; },
+  nix-darwin ? import inputs.nix-darwin {
+    inherit (inputs) nixpkgs;
     inherit pkgs;
   },
 }:

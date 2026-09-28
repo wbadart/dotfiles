@@ -1,6 +1,3 @@
-let
-  sources = import ../npins;
-in
 inputs:
 { lib, pkgs, ... }:
 {

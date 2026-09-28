@@ -2,11 +2,8 @@ let
   inputs = import ../npins;
 in
 { config, ... }:
-let
-  sources = import ../npins;
-in
 {
-  imports = [ ../darwin ];
+  imports = [ (import ../darwin inputs) ];
   environment.darwinConfig = "${config.users.users.will.home}/Documents/Projects/dotfiles/hosts/mba.nix";
 
   users.users.will = {
