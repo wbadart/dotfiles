@@ -41,22 +41,23 @@ in
   config = lib.mkIf (!cfg.disable) {
     programs.calibre = {
       enable = true;
-      package = pkgs.stdenvNoCC.mkDerivation (self: {
-        pname = "calibre-bin";
-        version = "9.15.0";
-        src = pkgs.fetchurl {
-          url = "https://download.calibre-ebook.com/${self.version}/calibre-${self.version}.dmg";
-          hash = "sha256-Gzp0URdbc64rqij+G8HFPuNNZbSJiB5+wCwg+eD/YBk=";
-        };
-        nativeBuildInputs = [ pkgs.undmg ];
-        installPhase = ''
-          runHook preInstall
-          mkdir -p "$out/Applications"
-          cp -r *.app "$out/Applications"
-          runHook postInstall
-        '';
-        meta.platforms = lib.platforms.darwin;
-      });
+      package = null;
+      # package = pkgs.stdenvNoCC.mkDerivation (self: {
+      #   pname = "calibre-bin";
+      #   version = "9.15.0";
+      #   src = pkgs.fetchurl {
+      #     url = "https://download.calibre-ebook.com/${self.version}/calibre-${self.version}.dmg";
+      #     hash = "sha256-Gzp0URdbc64rqij+G8HFPuNNZbSJiB5+wCwg+eD/YBk=";
+      #   };
+      #   nativeBuildInputs = [ pkgs.undmg ];
+      #   installPhase = ''
+      #     runHook preInstall
+      #     mkdir -p "$out/Applications"
+      #     cp -r *.app "$out/Applications"
+      #     runHook postInstall
+      #   '';
+      #   meta.platforms = lib.platforms.darwin;
+      # });
       plugins = [
         dedrm
         deacsm
