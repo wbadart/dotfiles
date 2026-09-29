@@ -7,4 +7,5 @@ in
 {
   "secrets/ALPHAVANTAGE_API_KEY.age".publicKeys = me;
   "secrets/env.age".publicKeys = me;
+  "secrets/calibre-drm.tar.age".publicKeys = me;
 }

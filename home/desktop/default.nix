@@ -2,6 +2,8 @@ inputs:
 { lib, ... }:
 {
   imports = [
+    (import ./calibre.nix inputs)
+    (import ./signal inputs)
     ./InstantSpaceSwitcher
     ./brave.nix
     ./firefox.nix
@@ -9,7 +11,6 @@ inputs:
     ./kdeconnect
     ./keepass.nix
     ./rectangle.nix
-    (import ./signal inputs)
   ];
 
   options.wb.desktop.disable =
