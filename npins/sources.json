@@ -9,9 +9,9 @@
       },
       "branch": "main",
       "submodules": false,
-      "revision": "b027ee29d959fda4b60b57566d64c98a202e0feb",
-      "url": "https://github.com/ryantm/agenix/archive/b027ee29d959fda4b60b57566d64c98a202e0feb.tar.gz",
-      "hash": "sha256-9VnK6Oqai65puVJ4WYtCTvlJeXxMzAp/69HhQuTdl/I="
+      "revision": "847720f0e73a77ce6503b63fba6c357c742c28a7",
+      "url": "https://github.com/ryantm/agenix/archive/847720f0e73a77ce6503b63fba6c357c742c28a7.tar.gz",
+      "hash": "sha256-Ptf4Drj8JYQDpNGEo9o+Tc7+hyjYxe+zrYO3J4jrYT4="
     },
     "deacsm": {
       "type": "Url",
@@ -40,9 +40,9 @@
       },
       "branch": "master",
       "submodules": false,
-      "revision": "2c0350c759688177331b8f5242311fae8877bdb3",
-      "url": "https://github.com/nix-community/home-manager/archive/2c0350c759688177331b8f5242311fae8877bdb3.tar.gz",
-      "hash": "sha256-v9wJd32eZ2bvhBzVOd7TIjLQd011P7nwOhjKtWlci5I="
+      "revision": "ec80131710bffcdf3b8498cf41f3a0579833b023",
+      "url": "https://github.com/nix-community/home-manager/archive/ec80131710bffcdf3b8498cf41f3a0579833b023.tar.gz",
+      "hash": "sha256-TyoYH983Nsc++1scw0SoOEKshPSJWJDxK7tTmuZ974M="
     },
     "nix-darwin": {
       "type": "Git",
@@ -61,14 +61,14 @@
       "type": "Channel",
       "name": "nixpkgs-unstable",
       "artifact": "nixexprs.tar.xz",
-      "url": "https://releases.nixos.org/nixpkgs/nixpkgs-26.11pre1067424.17de0b976395/nixexprs.tar.xz",
-      "hash": "sha256-STqRCiZb+updgn0k5fxafPeVapQKByLEekSAU67A0QQ="
+      "url": "https://releases.nixos.org/nixpkgs/nixpkgs-26.11pre1097569.e513db7b0a65/nixexprs.tar.xz",
+      "hash": "sha256-jWdazKTNUOJQ3KE+9BAvpBOo6THrD0Qyb3S8F2GduUI="
     },
     "signal": {
       "type": "Url",
-      "url": "https://updates.signal.org/desktop/signal-desktop-mac-universal-8.28.0.dmg",
+      "url": "https://updates.signal.org/desktop/signal-desktop-mac-universal-8.31.0.dmg",
       "unpack": false,
-      "hash": "sha256-RqHcJmxt6JZd0OUew2BvH3jVfQgokLxmRuNE+6r1gp4="
+      "hash": "sha256-4J8i/PgdbSAVzFHmVqEg7i/2qYKKVT0QJsXaqnh0Nto="
     }
   },
   "version": 8
