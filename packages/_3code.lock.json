@@ -1,0 +1,100 @@
+{
+  "depends": [
+    {
+      "method": "fetchzip",
+      "path": "/nix/store/a4dwzp7sfx9dicw1xlv9z46jzjbyn2pk-source",
+      "rev": "ca7734f9d0cdff7eb37576fd17ec2189c26315c4",
+      "sha256": "18jqd0nvps1y34gl2y1kypq25ic047xkidhadwpr4dg363bhkm10",
+      "url": "https://github.com/capocasa/streamhttp/archive/ca7734f9d0cdff7eb37576fd17ec2189c26315c4.tar.gz",
+      "ref": "0.5.0",
+      "packages": [
+        "streamhttp"
+      ],
+      "srcDir": "src"
+    },
+    {
+      "method": "fetchzip",
+      "path": "/nix/store/8j2a5v1s2xpkc02fg4ab1fv6fj59hkk2-source",
+      "rev": "bf9e550bc5040e683d89a1beef5896dc9fc66398",
+      "sha256": "1zmxp7avdi9sarawv1lw971jxa4yf1lpwhp9z63kkab2yi834149",
+      "url": "https://github.com/capocasa/ttty/archive/bf9e550bc5040e683d89a1beef5896dc9fc66398.tar.gz",
+      "ref": "0.5.3",
+      "packages": [
+        "ttty"
+      ],
+      "srcDir": "src"
+    },
+    {
+      "method": "fetchzip",
+      "path": "/nix/store/1mcck56sr1h1sf8gv87m761x6f3d1k0l-source",
+      "rev": "7c6ee4bfc184d7121896a098d68b639a96df7af1",
+      "sha256": "06j8d0bjbpv1iibqlmrac4qb61ggv17hvh6nv4pbccqk1rlpxhsq",
+      "url": "https://github.com/nitely/nim-unicodedb/archive/7c6ee4bfc184d7121896a098d68b639a96df7af1.tar.gz",
+      "ref": "v0.9.0",
+      "packages": [
+        "unicodedb"
+      ],
+      "srcDir": "src"
+    },
+    {
+      "method": "fetchzip",
+      "path": "/nix/store/lnn67d58562iqs07bqd6jl39pyd6vqmy-source",
+      "rev": "8faea8ec0e2f2895ad63990c151737170ec3acbf",
+      "sha256": "02djidar4vq2w2i8g4bkpzpy22yhl2jchg2a7xfn766j8fwvmf4a",
+      "url": "https://github.com/capocasa/tinotify/archive/8faea8ec0e2f2895ad63990c151737170ec3acbf.tar.gz",
+      "ref": "0.1.4",
+      "packages": [
+        "tinotify"
+      ],
+      "srcDir": "src"
+    },
+    {
+      "method": "fetchzip",
+      "path": "/nix/store/j4w6skkycmxf5yj8ymvzwqxaxsdsqzyr-source",
+      "rev": "90ae817cd201a36df4b7e9af3e540a4584fcf9ec",
+      "sha256": "18v5zc2vvx6a8cm58f4pda1353xnzzs9q3n0rhwm1d6hg81sds9g",
+      "url": "https://github.com/capocasa/sandwall/archive/90ae817cd201a36df4b7e9af3e540a4584fcf9ec.tar.gz",
+      "ref": "0.5.8",
+      "packages": [
+        "sandwall"
+      ],
+      "srcDir": "src"
+    },
+    {
+      "method": "fetchzip",
+      "path": "/nix/store/9l8szdmb4fpnx9jba8xb3kihl481vhx5-source",
+      "rev": "fcdc448a63cc70814df5e92de050d8225715fe0a",
+      "sha256": "0dsl5mksj0p98d8zgd41gcri4diw033fqpksn1nb8yapqz1nv50b",
+      "url": "https://github.com/forlan-ua/nim-libsha/archive/fcdc448a63cc70814df5e92de050d8225715fe0a.tar.gz",
+      "ref": "master",
+      "packages": [
+        "libsha"
+      ],
+      "srcDir": ""
+    },
+    {
+      "method": "fetchzip",
+      "path": "/nix/store/qh35fnzjzb4njfqjicnmf35hwja3l8hd-source",
+      "rev": "cd562ba43ae8904a4d1ba55611b8a521ef4a179e",
+      "sha256": "1gz2c7v4hz5fzvnn7jw5x86gakxf2r8mcsicwcnn6iykx083y8hi",
+      "url": "https://github.com/guzba/zippy/archive/cd562ba43ae8904a4d1ba55611b8a521ef4a179e.tar.gz",
+      "ref": "0.10.20",
+      "packages": [
+        "zippy"
+      ],
+      "srcDir": "src"
+    },
+    {
+      "method": "fetchzip",
+      "path": "/nix/store/8qaywzr8nzsiddjba77nhf75hzmxx0d9-source",
+      "rev": "29aca5e519ebf5d833f63a6a2769e62ec7bfb83a",
+      "sha256": "16npqgmi2qawjxaddj9ax15rfpdc7sqc37i2r5vg23lyr6znq4wc",
+      "url": "https://github.com/nim-lang/x11/archive/29aca5e519ebf5d833f63a6a2769e62ec7bfb83a.tar.gz",
+      "ref": "1.2",
+      "packages": [
+        "x11"
+      ],
+      "srcDir": ""
+    }
+  ]
+}

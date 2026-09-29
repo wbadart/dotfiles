@@ -1,5 +1,18 @@
 {
   "pins": {
+    "_3code": {
+      "type": "Git",
+      "repository": {
+        "type": "GitHub",
+        "owner": "capocasa",
+        "repo": "3code"
+      },
+      "branch": "main",
+      "submodules": false,
+      "revision": "827bb6c5955e050d3ca6e8ee9af58a059c5f95d2",
+      "url": "https://github.com/capocasa/3code/archive/827bb6c5955e050d3ca6e8ee9af58a059c5f95d2.tar.gz",
+      "hash": "sha256-bYH1NrNJ80E2zLlMC6s8DoFjCu7/bTp3PK8odxg+Xfg="
+    },
     "agenix": {
       "type": "Git",
       "repository": {
