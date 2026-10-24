@@ -1,3 +1,4 @@
+{ nixpkgs-stable, ... }:
 { config, lib, ... }:
 let
   cfg = config.wb.rectangle;
@@ -18,6 +19,7 @@ in
   config = lib.mkIf (!cfg.disable) {
     programs.rectangle = {
       enable = true;
+      package = (import nixpkgs-stable { }).rectangle;
       defaults = {
         launchOnLogin = true;
       };
