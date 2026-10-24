@@ -1,3 +1,4 @@
+{ nixpkgs-stable, ... }:
 { config, lib, ... }:
 let
   cfg = config.wb.firefox;
@@ -18,6 +19,7 @@ in
   config = lib.mkIf (!cfg.disable) {
     programs.firefox = {
       enable = true;
+      package = (import nixpkgs-stable { }).firefox; # more likely to already be cached than pkgs.firefox
     };
   };
 }
