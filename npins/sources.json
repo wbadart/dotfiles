@@ -79,9 +79,9 @@
     },
     "signal": {
       "type": "Url",
-      "url": "https://updates.signal.org/desktop/signal-desktop-mac-universal-8.31.0.dmg",
+      "url": "https://updates.signal.org/desktop/signal-desktop-mac-universal-8.32.0.dmg",
       "unpack": false,
-      "hash": "sha256-4J8i/PgdbSAVzFHmVqEg7i/2qYKKVT0QJsXaqnh0Nto="
+      "hash": "sha256-MYJtVgJNFeB4lDg/LkQLBQZPWUgfROSXTNHcqqD9nLQ="
     }
   },
   "version": 8

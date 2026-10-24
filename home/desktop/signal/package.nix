@@ -4,7 +4,7 @@
   stdenvNoCC,
   undmg,
 }: stdenvNoCC.mkDerivation (self: {
-  version = "8.31.0";
+  version = "8.32.0";
   pname = "signal-desktop-bin";
   src = signal;
   sourceRoot = ".";
