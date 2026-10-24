@@ -34,7 +34,7 @@ in
     };
 
     home.sessionVariables = {
-      LEDGER_FILE = "${config.home.homeDirectory}/Documents/Ledger/2026/202607.journal";
+      LEDGER_FILE = "${config.home.homeDirectory}/Documents/Ledger/2026/202610.journal";
     };
 
     age.secrets.ALPHAVANTAGE_API_KEY.file = ../secrets/ALPHAVANTAGE_API_KEY.age;
