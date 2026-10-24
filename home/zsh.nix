@@ -1,4 +1,9 @@
-{ lib, config, ... }:
+{
+  lib,
+  config,
+  pkgs,
+  ...
+}:
 let
   ifSecrets = x: lib.mkIf config.wb.secrets.enable x;
 in
@@ -96,13 +101,29 @@ in
         };
       };
 
+      programs.starship = {
+        enable = true;
+        settings = {
+          env_var.ZMX_SESSION = {
+            symbol = " ";
+            format = "[$symbol$env_value]($style) ";
+            description = "zmx session name";
+            style = "bold magenta";
+          };
+        };
+        validateFiles.config = true;
+      };
+
+      home.packages = with pkgs; [
+        zmx
+      ];
+
       programs.bat.enable = true;
       programs.fd.enable = true;
       programs.fzf.enable = true;
       programs.jq.enable = true;
       programs.jqp.enable = true;
       programs.ripgrep.enable = true;
-      programs.starship.enable = true;
       programs.zoxide.enable = true;
 
       age.secrets = ifSecrets {
