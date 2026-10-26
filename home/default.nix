@@ -1,5 +1,5 @@
 inputs:
-{ lib, pkgs, ... }:
+{ config, lib, pkgs, ... }:
 {
   imports = [
     (import ./desktop inputs)
@@ -33,5 +33,14 @@ inputs:
       enable = true;
       path = lib.mkDefault "${inputs.home-manager}";
     };
+
+    nixpkgs.overlays = [
+      (_: _: {
+        stable = import inputs.nixpkgs-stable {
+          inherit (config.nixpkgs) config overlays;
+          inherit (pkgs.stdenvNoCC.hostPlatform) system;
+        };
+      })
+    ];
   };
 }
