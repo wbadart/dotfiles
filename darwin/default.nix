@@ -1,7 +1,4 @@
-overrides:
-let
-  inputs = import ../npins // overrides;
-in
+inputs:
 { lib, pkgs, ... }:
 {
   imports = [

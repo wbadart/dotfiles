@@ -1,5 +1,8 @@
+let
+  withPins = f: overrides: f (import ./npins // overrides);
+in
 {
-  darwin.default = import ./darwin;
-  home.default = import ./home;
-  hosts.mba = import ./darwin/mba.nix;
+  darwin.default = withPins (import ./darwin);
+  home.default = withPins (import ./home);
+  hosts.mba = import ./hosts/mba.nix;
 }
