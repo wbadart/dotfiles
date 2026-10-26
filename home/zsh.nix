@@ -111,7 +111,7 @@ in
             style = "bold magenta";
           };
         };
-        validateFiles.config = true;
+        # validateFiles.config = true;
       };
 
       home.packages = with pkgs; [
