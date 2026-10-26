@@ -1,5 +1,8 @@
-inputs:
-{ lib, pkgs, ... }:
+overrides:
+let
+  inputs = import ../npins // overrides;
+in
+{ config, lib, pkgs, ... }:
 {
   imports = [
     (import ./desktop inputs)
@@ -33,5 +36,14 @@ inputs:
       enable = true;
       path = lib.mkDefault "${inputs.home-manager}";
     };
+
+    nixpkgs.overlays = [
+      (_: _: {
+        stable = import inputs.nixpkgs-stable {
+          inherit (config.nixpkgs) config overlays;
+          system = pkgs.stdenvNoCC.hostPlatform.system;
+        };
+      })
+    ];
   };
 }

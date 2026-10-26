@@ -3,14 +3,14 @@ inputs:
 {
   imports = [
     (import ./calibre.nix inputs)
-    (import ./firefox.nix inputs)
-    (import ./rectangle.nix inputs)
     (import ./signal inputs)
     ./InstantSpaceSwitcher
     ./brave.nix
+    ./firefox.nix
     ./ghostty.nix
     ./kdeconnect
     ./keepass.nix
+    ./rectangle.nix
   ];
 
   options.wb.desktop.disable =
