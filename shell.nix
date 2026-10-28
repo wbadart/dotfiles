@@ -20,6 +20,7 @@ pkgs.mkShell {
     age
     npins
     (callPackage ./scripts/update-signal.nix { })
+    (callPackage ./scripts/update-3code-lock.nix { })
     (callPackage (import ./packages/_3code.nix inputs) { })
   ]);
 }

@@ -1,5 +1,10 @@
 inputs:
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 {
   imports = [
     (import ./desktop inputs)
@@ -26,6 +31,7 @@ inputs:
     home.preferXdgDirectories = true;
 
     home.packages = with pkgs; [
+      _3code
       ffmpeg
     ];
 
@@ -35,11 +41,16 @@ inputs:
     };
 
     nixpkgs.overlays = [
-      (_: _: {
-        stable = import inputs.nixpkgs-stable {
-          inherit (config.nixpkgs) config overlays;
-          inherit (pkgs.stdenvNoCC.hostPlatform) system;
-        };
+      (final: _: {
+        stable = import inputs.nixpkgs-stable (
+          lib.filterAttrs (_: v: v != null) {
+            inherit (config.nixpkgs) config overlays;
+          }
+          // {
+            inherit (pkgs.stdenvNoCC.hostPlatform) system;
+          }
+        );
+        _3code = final.callPackage (import ../packages/_3code.nix inputs) { };
       })
     ];
   };

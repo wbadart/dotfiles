@@ -8,6 +8,8 @@
   src = _3code;
   lockFile = ./_3code.lock.json;
   buildInputs = [ openssl ];
+  # tests/tty_expect.nim imports std/re (pcre v1, dropped from nixpkgs)
+  doCheck = false;
   nimFlags = [
     "-d:useOpenssl3"
     "--dynlibOverride:ssl"

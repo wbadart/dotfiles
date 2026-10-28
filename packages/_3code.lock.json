@@ -14,11 +14,11 @@
     },
     {
       "method": "fetchzip",
-      "path": "/nix/store/8j2a5v1s2xpkc02fg4ab1fv6fj59hkk2-source",
-      "rev": "bf9e550bc5040e683d89a1beef5896dc9fc66398",
-      "sha256": "1zmxp7avdi9sarawv1lw971jxa4yf1lpwhp9z63kkab2yi834149",
-      "url": "https://github.com/capocasa/ttty/archive/bf9e550bc5040e683d89a1beef5896dc9fc66398.tar.gz",
-      "ref": "0.5.3",
+      "path": "/nix/store/cbd4311bjyr1rxk78viwwhmbs2x2wx60-source",
+      "rev": "455c4f67989a65bb8f36e62e5b330ee05dc51979",
+      "sha256": "09928ah2cikqkmk9nl7m3l7wvnanjfdn0p0bldx2lpbfm5b8wdls",
+      "url": "https://github.com/capocasa/ttty/archive/455c4f67989a65bb8f36e62e5b330ee05dc51979.tar.gz",
+      "ref": "0.5.4",
       "packages": [
         "ttty"
       ],
@@ -38,11 +38,11 @@
     },
     {
       "method": "fetchzip",
-      "path": "/nix/store/lnn67d58562iqs07bqd6jl39pyd6vqmy-source",
-      "rev": "8faea8ec0e2f2895ad63990c151737170ec3acbf",
-      "sha256": "02djidar4vq2w2i8g4bkpzpy22yhl2jchg2a7xfn766j8fwvmf4a",
-      "url": "https://github.com/capocasa/tinotify/archive/8faea8ec0e2f2895ad63990c151737170ec3acbf.tar.gz",
-      "ref": "0.1.4",
+      "path": "/nix/store/2712wvhsvd7481az2r19j6b05qykfkzq-source",
+      "rev": "eea495daf0bc304698423d2022c0e33495dc22fc",
+      "sha256": "1g42cz64zy3kvsrfin6hs2kvlg3q311317pgb53dxb11hr3zjsmx",
+      "url": "https://github.com/capocasa/tinotify/archive/eea495daf0bc304698423d2022c0e33495dc22fc.tar.gz",
+      "ref": "0.1.5",
       "packages": [
         "tinotify"
       ],
@@ -50,11 +50,11 @@
     },
     {
       "method": "fetchzip",
-      "path": "/nix/store/j4w6skkycmxf5yj8ymvzwqxaxsdsqzyr-source",
-      "rev": "90ae817cd201a36df4b7e9af3e540a4584fcf9ec",
-      "sha256": "18v5zc2vvx6a8cm58f4pda1353xnzzs9q3n0rhwm1d6hg81sds9g",
-      "url": "https://github.com/capocasa/sandwall/archive/90ae817cd201a36df4b7e9af3e540a4584fcf9ec.tar.gz",
-      "ref": "0.5.8",
+      "path": "/nix/store/9ck8y4nzh5s9klcqpzkx1r9fwsmxgnj7-source",
+      "rev": "a00a83bd4d52e1c763e2bc094403782d08b8d2d9",
+      "sha256": "0imd2ycdi4vz7692z2y5v0m1irlpnqyrb6j20qcw2lwpm1xx1j7c",
+      "url": "https://github.com/capocasa/sandwall/archive/a00a83bd4d52e1c763e2bc094403782d08b8d2d9.tar.gz",
+      "ref": "0.5.12",
       "packages": [
         "sandwall"
       ],
@@ -81,6 +81,18 @@
       "ref": "0.10.20",
       "packages": [
         "zippy"
+      ],
+      "srcDir": "src"
+    },
+    {
+      "method": "fetchzip",
+      "path": "/nix/store/h214k8m5qdw6ajh45f2wjzld856qcvc6-source",
+      "rev": "c9c0c7b51e2e83cc9305a895a0b144a297b4bea8",
+      "sha256": "0x1jahhx0wcfay79v0xqddyadf5ckcilhv25cq1g6rarshcg1zvd",
+      "url": "https://github.com/treeform/ws/archive/c9c0c7b51e2e83cc9305a895a0b144a297b4bea8.tar.gz",
+      "ref": "0.6.0",
+      "packages": [
+        "ws"
       ],
       "srcDir": "src"
     },
