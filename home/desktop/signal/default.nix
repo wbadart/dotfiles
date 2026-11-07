@@ -1,4 +1,3 @@
-inputs:
 {
   config,
   lib,
@@ -27,7 +26,7 @@ in
     ];
     nixpkgs.overlays = [
       (final: _: {
-        signal-desktop = final.callPackage (import ./package.nix inputs) { };
+        signal-desktop = final.callPackage ./package.nix { };
       })
     ];
   };

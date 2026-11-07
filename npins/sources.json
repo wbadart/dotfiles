@@ -83,12 +83,6 @@
       "artifact": "nixexprs.tar.xz",
       "url": "https://releases.nixos.org/nixos/26.05/nixos-26.05.12707.718f670e8453/nixexprs.tar.xz",
       "hash": "sha256-b5F1sFDgU/kyvmlntbK77aB9KAQn2z4E07Wz20ZVnPM="
-    },
-    "signal": {
-      "type": "Url",
-      "url": "https://updates.signal.org/desktop/signal-desktop-mac-universal-8.32.0.dmg",
-      "unpack": false,
-      "hash": "sha256-MYJtVgJNFeB4lDg/LkQLBQZPWUgfROSXTNHcqqD9nLQ="
     }
   },
   "version": 8
