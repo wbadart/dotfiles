@@ -9,9 +9,9 @@
       },
       "branch": "main",
       "submodules": false,
-      "revision": "827bb6c5955e050d3ca6e8ee9af58a059c5f95d2",
-      "url": "https://github.com/capocasa/3code/archive/827bb6c5955e050d3ca6e8ee9af58a059c5f95d2.tar.gz",
-      "hash": "sha256-bYH1NrNJ80E2zLlMC6s8DoFjCu7/bTp3PK8odxg+Xfg="
+      "revision": "735090204460797f404a764d688aa61b6cbee740",
+      "url": "https://github.com/capocasa/3code/archive/735090204460797f404a764d688aa61b6cbee740.tar.gz",
+      "hash": "sha256-DyJQqrPkwk12w9Z2JHdCqqCPDCeH0e4PDS25B9GCXXQ="
     },
     "agenix": {
       "type": "Git",
@@ -53,9 +53,9 @@
       },
       "branch": "master",
       "submodules": false,
-      "revision": "1e3ebeb683d055d1675d3f64e6d2b186cb2ee504",
-      "url": "https://github.com/nix-community/home-manager/archive/1e3ebeb683d055d1675d3f64e6d2b186cb2ee504.tar.gz",
-      "hash": "sha256-KdGTOgYXgMDA/ymTV10yLMt9tOjz9EmTgnTvaD+bhe4="
+      "revision": "2c0c1f01521469cf0271180c453c79782d53c2f6",
+      "url": "https://github.com/nix-community/home-manager/archive/2c0c1f01521469cf0271180c453c79782d53c2f6.tar.gz",
+      "hash": "sha256-7OoWDsYO9teiPxl0QdlS5lYE20Pue8/5mpscSL32FUA="
     },
     "nix-darwin": {
       "type": "Git",
@@ -74,15 +74,15 @@
       "type": "Channel",
       "name": "nixpkgs-unstable",
       "artifact": "nixexprs.tar.xz",
-      "url": "https://releases.nixos.org/nixpkgs/nixpkgs-26.11pre1102472.c4c49d9b94a6/nixexprs.tar.xz",
-      "hash": "sha256-WX7pBOStJqdLS8qjP/D+j7dwhXNbBR8zKt+bkRoiMt0="
+      "url": "https://releases.nixos.org/nixpkgs/nixpkgs-26.11pre1108556.6dadaf4375be/nixexprs.tar.xz",
+      "hash": "sha256-JiTUXdoNJNvdD+fjVlftWiLKJfHut3cIi8j2HXL9kT4="
     },
     "nixpkgs-stable": {
       "type": "Channel",
       "name": "nixos-26.05",
       "artifact": "nixexprs.tar.xz",
-      "url": "https://releases.nixos.org/nixos/26.05/nixos-26.05.12707.718f670e8453/nixexprs.tar.xz",
-      "hash": "sha256-b5F1sFDgU/kyvmlntbK77aB9KAQn2z4E07Wz20ZVnPM="
+      "url": "https://releases.nixos.org/nixos/26.05/nixos-26.05.13627.c56a87d8e41c/nixexprs.tar.xz",
+      "hash": "sha256-4D+5oPvxkOa6tTCWXi4jwRfmWhDXGRSrX4+eOTItLh0="
     }
   },
   "version": 8

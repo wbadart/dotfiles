@@ -15,6 +15,7 @@ in
     users.will = { pkgs, ... }: {
       imports = [ (import ../home inputs) ];
       wb.secrets.enable = true;
+      wb.brave.disable = true;
       home.sessionSearchVariables.MANPATH = [
         "${pkgs.nix.man}/share/man"
       ];

@@ -16,8 +16,8 @@ in
     };
 
   config = lib.mkIf (!cfg.disable) {
-    home.packages = with pkgs; [
-      brave
+    home.packages = [
+      pkgs.brave
     ];
   };
 }
