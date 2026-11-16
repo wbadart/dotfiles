@@ -8,6 +8,7 @@ inputs:
 {
   imports = [
     (import ./desktop inputs)
+    ./_3code.nix
     ./git.nix
     ./hledger.nix
     ./nix.nix
@@ -31,9 +32,10 @@ inputs:
     home.preferXdgDirectories = true;
 
     home.packages = with pkgs; [
-      _3code
       ffmpeg
     ];
+
+    wb._3code.enable = lib.mkDefault true;
 
     programs.home-manager = {
       enable = true;
