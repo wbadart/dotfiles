@@ -10,6 +10,7 @@ inputs:
     (import ./desktop inputs)
     ./_3code.nix
     ./git.nix
+    ./herdr.nix
     ./hledger.nix
     ./nix.nix
     ./nvim

@@ -15,6 +15,7 @@ in
     users.will = { pkgs, ... }: {
       imports = [ (import ../home inputs) ];
       wb._3code.enable = false;
+      wb.herdr.enable = true;
       wb.secrets.enable = true;
       wb.brave.disable = true;
       home.sessionSearchVariables.MANPATH = [
