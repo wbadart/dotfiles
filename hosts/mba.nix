@@ -14,6 +14,7 @@ in
   home-manager = {
     users.will = { pkgs, ... }: {
       imports = [ (import ../home inputs) ];
+      wb._3code.enable = false;
       wb.secrets.enable = true;
       wb.brave.disable = true;
       home.sessionSearchVariables.MANPATH = [
